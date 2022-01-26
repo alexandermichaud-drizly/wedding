@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
+import PasswordPage from './pages/password_page';
+import MainPage from './pages/main_page';
+import { correctPassword } from './constants'
 
-function App() {
+interface AppState {
+  password: string;
+  accessGranted: boolean;
+}
+
+const App = (): JSX.Element => {  
+
+  const [state, setState] = React.useState<AppState>({
+    password: '',
+    accessGranted: false,
+  });
+  
+  const onSubmitPassword = (): void => {
+    if (state.password === correctPassword) {
+      setState({
+        ...state,
+        accessGranted: true
+      })
+    }
+  }
+
+  const onPasswordChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ): void => setState({ ...state, password: e.target.value} );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {
+        state.accessGranted 
+          ? <PasswordPage 
+              onSubmitPassword={onSubmitPassword}
+              onPasswordChange={onPasswordChange}
+              accessGranted={state.accessGranted} 
+            />
+          : <MainPage />
+      }
     </div>
   );
-}
+};
 
 export default App;
