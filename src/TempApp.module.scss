@@ -1,0 +1,29 @@
+.Content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .BackgroundImage {
+    background-image: url("./assets/ring.jpg");
+  
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+  }
+  
+  .Ring {
+    z-index: 1; 
+  
+    img {
+      height: 100vh;
+    }
+  }
+  
+}
