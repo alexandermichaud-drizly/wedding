@@ -10,7 +10,7 @@ const TempApp = (): JSX.Element => {
         <img src={ring} alt="ring" />
       </div>
       <Dialog open>
-        <DialogTitle>
+        <DialogTitle classes={{ root: s.DialogTitle }}>
           Check back here on March 27 for our full wedding website!
         </DialogTitle>
       </Dialog>
