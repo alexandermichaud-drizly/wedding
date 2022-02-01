@@ -36,14 +36,15 @@ body {
   }
 }
 
+.Dialog {
+  font-family: $amiri;
+}
 
 .Dialog.Paper {
   padding: 32px;
 }
 
 .Dialog.TitleText {
-  font-family: $amiri;
-  font-style: regular;
   text-align: center;
   font-size: 40px;
   letter-spacing: -0.04em;
@@ -51,7 +52,6 @@ body {
 }
 
 .Dialog.ContentText {
-  font-family: $amiri; 
   font-size: 24px;
   line-height: 1.5em;
   font-style: italic;
