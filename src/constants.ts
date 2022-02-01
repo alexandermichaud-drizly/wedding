@@ -1,1 +1,1 @@
-export const correctPassword = 'nozzetoscana';
+export const correctPassword = '';
