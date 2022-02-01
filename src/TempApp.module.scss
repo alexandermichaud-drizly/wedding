@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600&display=swap');
-
-$garamond: 'EB Garamond', serif;
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=EB+Garamond:ital,wght@1,600&display=swap');
+$amiri: 'Amiri', serif;
 
 body {
   margin: 0px;
@@ -33,13 +32,27 @@ body {
 
     img {
       height: 100vh;
-
-
     }
   }
 }
 
-.DialogTitle {
-    font-family: $garamond;
-    font-size: 40px;
+
+.Dialog.Paper {
+  padding: 32px;
+}
+
+.Dialog.TitleText {
+  font-family: $amiri;
+  font-style: regular;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: -0.04em;
+  line-height: 1.3em;
+}
+
+.Dialog.ContentText {
+  font-family: $amiri; 
+  font-size: 24px;
+  line-height: 1.5em;
+  font-style: italic;
 }
