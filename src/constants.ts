@@ -1,1 +1,1 @@
-export const correctPassword = '';
+export const sitePassword = process.env.SITE_PASSWORD;

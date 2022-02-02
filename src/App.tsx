@@ -2,7 +2,7 @@ import * as React from 'react';
 import './App.css';
 import PasswordPage from './pages/password_page';
 import MainPage from './pages/main_page';
-import { correctPassword } from './constants'
+import { sitePassword } from './constants'
 
 interface AppState {
   password: string;
@@ -17,7 +17,7 @@ const App = (): JSX.Element => {
   });
   
   const onSubmitPassword = (): void => {
-    if (state.password === correctPassword) {
+    if (state.password === sitePassword) {
       setState({
         ...state,
         accessGranted: true
