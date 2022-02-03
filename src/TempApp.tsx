@@ -5,12 +5,22 @@ import s from "./TempApp.module.scss";
 
 const TempApp = (): JSX.Element => {  
   return (
-    <div className={s.Content}>
-      <div className={s.BackgroundImage} />
-      <div className={s.Ring} > 
-        <img src={ring} alt="ring" />
+    <>
+      <div className={s.Content}>
+        <div className={s.BackgroundImage} />        
+        <div className={s.Ring} > 
+          <img src={ring} alt="ring" />
+        </div>
       </div>
-      <Dialog open classes={{ paper: cn(s.Paper, s.Dialog) }}>
+      <Dialog 
+        open 
+        classes={{
+          root: cn(s.Root, s.Dialog),
+          container: cn(s.Container, s.Dialog), 
+          paper: cn(s.Paper, s.Dialog) 
+        }} 
+        BackdropProps={{classes: { root: cn(s.Backdrop, s.Dialog) }}}
+      >
         <DialogTitle className={cn(s.TitleText, s.Dialog)} >
           Coming soon...
         </DialogTitle>
@@ -20,7 +30,7 @@ const TempApp = (): JSX.Element => {
           </DialogContentText>
         </DialogContent>
       </Dialog>
-    </div>
+    </>
   )
 };
 

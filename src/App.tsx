@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './App.css';
 import PasswordPage from './pages/password_page';
 import MainPage from './pages/main_page';
 

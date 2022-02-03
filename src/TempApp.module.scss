@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri&family=EB+Garamond:ital,wght@1,600&display=swap');
 $amiri: 'Amiri', serif;
 
-body {
+html, body, div#root {
   margin: 0px;
-  padding: 0px;
+  padding: 0px !important; // Dialog responsible for an overriding padding-right
+  height: 100vh;
 }
 
 .Content {
@@ -13,32 +14,36 @@ body {
 
   .BackgroundImage {
     background-image: url("./assets/ring.jpg");
-  
     filter: blur(50px);
-    -webkit-filter: blur(50px);    
-    width: 100vw;
-    height: 100vh;
-    transform: scale(1.1);
-
+    -webkit-filter: blur(50px);
+    transform: scale(1.1);  
     position: absolute;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
+    height: 100vh;
+    min-width: 100vw;
   }
-  
+
   .Ring {
-    z-index: 1; 
+    z-index: 10;
+    height: 100vh;
 
     img {
-      height: 100vh;
+      height: 100%;
     }
   }
 }
 
 
+.Dialog.Backdrop, .Dialog.Container, .Dialog.Root {
+  height: 100vh;
+}
+
 .Dialog.Paper {
   padding: 32px;
+  background-color: #FBFAF5;
 }
 
 .Dialog.TitleText {
