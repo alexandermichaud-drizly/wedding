@@ -1,6 +1,6 @@
 import * as React from 'react';
-import PasswordPage from './pages/password_page';
-import MainPage from './pages/main_page';
+import MainPage from './pages/main';
+import LandingPage from './pages/landing';
 
 interface AppState {
   password: string;
@@ -31,12 +31,13 @@ const App = (): JSX.Element => {
     <div>
       {
         state.accessGranted 
-          ? <PasswordPage 
+          ? <MainPage />
+          : <LandingPage
+              tempPage={false} 
               onSubmitPassword={onSubmitPassword}
               onPasswordChange={onPasswordChange}
               accessGranted={state.accessGranted} 
             />
-          : <MainPage />
       }
     </div>
   );

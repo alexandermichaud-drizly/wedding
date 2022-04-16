@@ -1,13 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri&family=EB+Garamond:ital,wght@1,600&display=swap');
-$amiri: 'Amiri', serif;
+@use 'base';
 
-html, body, body > div {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  margin: 0px;
-  padding: 0 !important;
-}
+
 
 .Background {
   display: flex;
@@ -19,7 +12,7 @@ html, body, body > div {
 }
 
 .BackgroundImage {
-  background-image: url("./assets/ring.jpg");
+  background-image: url("../assets/ring.jpg");
   // filter: blur(50px);
   // -webkit-filter: blur(50px);
   // transform: scale(1.1);  
@@ -62,7 +55,7 @@ html, body, body > div {
 }
 
 .Dialog.TitleText {
-  font-family: $amiri;
+  font-family: base.$amiri;
   text-align: center;
   font-size: 40px;
   letter-spacing: -0.04em;
@@ -70,7 +63,7 @@ html, body, body > div {
 }
 
 .Dialog.ContentText {
-  font-family: $amiri;
+  font-family: base.$amiri;
   font-size: 24px;
   line-height: 1.5em;
   font-style: italic;

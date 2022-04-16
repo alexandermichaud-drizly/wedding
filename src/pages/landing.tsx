@@ -1,8 +1,22 @@
-import { Dialog, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import { 
+  Dialog, 
+  DialogContent, 
+  DialogContentText, 
+  DialogTitle, 
+  Button, 
+  TextField 
+} from '@mui/material';
 import cn from 'classnames';
-import ring from "./assets/ring.jpg";
-import s from "./TempApp.module.scss";
+import ring from "../assets/ring.jpg";
+import s from "../styles/landing.module.scss";
 import 'normalize.css';
+
+type LandingPageProps = {
+  tempPage: boolean;
+  onSubmitPassword?(): void;
+  onPasswordChange?(e: React.ChangeEvent<HTMLInputElement>): void;
+  accessGranted?: boolean;
+}
 
 const Background = (): JSX.Element => (
   <div className={s.Background}>
@@ -34,13 +48,25 @@ const ComingSoon = (): JSX.Element => (
   </Dialog>
 );
 
-const TempApp = (): JSX.Element => {  
+const PasswordInput = (props: any): JSX.Element => (
+  <Dialog open={!props.accessGranted} >
+    <DialogTitle>
+      Enter the password to view our wedding website!  
+    </DialogTitle>
+    <DialogContent>
+      <TextField onChange={props.onPasswordChange} />
+      <Button onClick={props.onSubmitPassword}>Enter</Button>
+    </DialogContent>
+  </Dialog>
+);
+
+const LandingPage = (props: LandingPageProps): JSX.Element => {  
   return (
     <>
       <Background />
-      <ComingSoon />
+      {props.tempPage ? <ComingSoon /> : <PasswordInput />}
     </>
   )
 };
 
-export default TempApp;
+export default LandingPage;

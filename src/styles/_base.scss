@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=EB+Garamond:ital,wght@1,600&display=swap');
+$amiri: 'Amiri', serif;
+
+html, body, body > div {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0 !important;
+}

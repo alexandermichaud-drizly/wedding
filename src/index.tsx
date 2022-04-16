@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './App';
-import TempApp from './TempApp';
+import App from './App';
+import LandingPage from './pages/landing';
+
+const useRealApp = false;
 
 ReactDOM.render(
   <React.StrictMode>
-    <TempApp />
+    {useRealApp ? <App /> : <LandingPage tempPage />}
   </React.StrictMode>,
   document.getElementById('root')
 );
