@@ -3,8 +3,8 @@ import {
   DialogContent, 
   DialogContentText, 
   DialogTitle, 
-  Button, 
-  TextField 
+  TextField ,
+  FormControl
 } from '@mui/material';
 import cn from 'classnames';
 import ring from "../assets/ring.jpg";
@@ -49,14 +49,14 @@ const ComingSoon = (): JSX.Element => (
 );
 
 const PasswordInput = (props: any): JSX.Element => (
-  <Dialog open={!props.accessGranted} classes={{root: s.PasswordModal}}>
+  <Dialog open classes={{root: s.PasswordModal}}>
     <DialogTitle className={cn(s.TitleText, s.Dialog)}>
-      What's the password?  
+      What's the password? 
     </DialogTitle>
     <DialogContent className={s.PasswordEntry}>
-      <TextField onChange={props.onPasswordChange} />
-      {/* TODO submit without button */}
-      <Button classes={{text: s.SubmitPassword}} variant="text" onClick={props.onSubmitPassword}>Enter</Button>
+      <FormControl classes={{ root: s.InputField }}>
+        <TextField onChange={props.onPasswordChange} />
+      </FormControl>
     </DialogContent>
   </Dialog>
 );
