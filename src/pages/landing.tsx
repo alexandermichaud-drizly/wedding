@@ -4,16 +4,19 @@ import {
   DialogContentText, 
   DialogTitle, 
   TextField ,
-  FormControl
+  FormControl,
+  Button
 } from '@mui/material';
 import cn from 'classnames';
 import ring from "../assets/ring.jpg";
 import s from "../styles/landing.module.scss";
 import 'normalize.css';
+import { ProgressPlugin } from 'webpack';
+import React from 'react';
 
 type LandingPageProps = {
   tempPage: boolean;
-  onSubmitPassword?(): void;
+  onSubmitPassword?(e: React.KeyboardEvent): void;
   onPasswordChange?(e: React.ChangeEvent<HTMLInputElement>): void;
   accessGranted?: boolean;
 }
@@ -54,8 +57,11 @@ const PasswordInput = (props: any): JSX.Element => (
       What's the password? 
     </DialogTitle>
     <DialogContent className={s.PasswordEntry}>
-      <FormControl classes={{ root: s.InputField }}>
-        <TextField onChange={props.onPasswordChange} />
+      <FormControl classes={{ root: s.InputField }} >
+        <TextField 
+          onChange={props.onPasswordChange} 
+          onKeyPress={props.onSubmitPassword}
+        />
       </FormControl>
     </DialogContent>
   </Dialog>
