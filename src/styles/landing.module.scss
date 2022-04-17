@@ -68,3 +68,20 @@
   line-height: 1.5em;
   font-style: italic;
 }
+
+.PasswordModal {
+  padding: 20px;
+
+  .PasswordEntry {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    .InputField {}
+  
+    .SubmitPassword {
+      font-family: base.$amiri;
+      color: black;
+    }
+  }
+}

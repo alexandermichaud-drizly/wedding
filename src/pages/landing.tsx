@@ -49,13 +49,14 @@ const ComingSoon = (): JSX.Element => (
 );
 
 const PasswordInput = (props: any): JSX.Element => (
-  <Dialog open={!props.accessGranted} >
-    <DialogTitle>
-      Enter the password to view our wedding website!  
+  <Dialog open={!props.accessGranted} classes={{root: s.PasswordModal}}>
+    <DialogTitle className={cn(s.TitleText, s.Dialog)}>
+      What's the password?  
     </DialogTitle>
-    <DialogContent>
+    <DialogContent className={s.PasswordEntry}>
       <TextField onChange={props.onPasswordChange} />
-      <Button onClick={props.onSubmitPassword}>Enter</Button>
+      {/* TODO submit without button */}
+      <Button classes={{text: s.SubmitPassword}} variant="text" onClick={props.onSubmitPassword}>Enter</Button>
     </DialogContent>
   </Dialog>
 );
