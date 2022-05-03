@@ -3,22 +3,17 @@ import {
   DialogContent, 
   DialogContentText, 
   DialogTitle, 
-  TextField ,
-  FormControl,
-  Button
+  TextField 
 } from '@mui/material';
 import cn from 'classnames';
 import ring from "../assets/ring.jpg";
 import s from "../styles/landing.module.scss";
 import 'normalize.css';
-import { ProgressPlugin } from 'webpack';
 import React from 'react';
 
 type LandingPageProps = {
   tempPage: boolean;
-  onSubmitPassword?(e: React.KeyboardEvent): void;
-  onPasswordChange?(e: React.ChangeEvent<HTMLInputElement>): void;
-  accessGranted?: boolean;
+  onPasswordChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
 }
 
 const Background = (): JSX.Element => (
@@ -52,17 +47,12 @@ const ComingSoon = (): JSX.Element => (
 );
 
 const PasswordInput = (props: any): JSX.Element => (
-  <Dialog open classes={{root: s.PasswordModal}}>
+  <Dialog open classes={{paper: cn(s.Dialog, s.Paper)}}>
     <DialogTitle className={cn(s.TitleText, s.Dialog)}>
       What's the password? 
     </DialogTitle>
     <DialogContent className={s.PasswordEntry}>
-      <FormControl classes={{ root: s.InputField }} >
-        <TextField 
-          onChange={props.onPasswordChange} 
-          onKeyPress={props.onSubmitPassword}
-        />
-      </FormControl>
+      <TextField classes={{root: s.InputField}} onChange={props.onInputChange} />
     </DialogContent>
   </Dialog>
 );
@@ -71,7 +61,7 @@ const LandingPage = (props: LandingPageProps): JSX.Element => {
   return (
     <>
       <Background />
-      {props.tempPage ? <ComingSoon /> : <PasswordInput />}
+      {props.tempPage ? <ComingSoon /> : <PasswordInput onInputChange={props.onPasswordChange} />}
     </>
   )
 };
