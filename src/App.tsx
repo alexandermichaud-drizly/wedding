@@ -20,10 +20,10 @@ const App = (): JSX.Element => {
 
   return (
     <div>
-      {accessGranted 
+      {!accessGranted 
         ? <MainPage />
         : <LandingPage
-            tempPage
+            tempPage={false}
             onPasswordChange={onPasswordChange}
           />
       }

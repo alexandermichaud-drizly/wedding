@@ -5,36 +5,3 @@
   min-width: 100%;
   min-height: 100%;
 }
-
-.FadeInAndOut {
-  animation: fade ease 21s;
-  -webkit-animation: fade ease 21s;
-  -moz-animation: fade ease 21s;
-  -o-animation: fade ease 21s;
-  -ms-animation: fade ease 21s;
-}
-
-@keyframes fade {
-  0%,100% { opacity: 0 }
-  20%,80% { opacity: 1 }
-}
-
-@-moz-keyframes fade {
-  0%,100% { opacity: 0 }
-  20%,80% { opacity: 1 }
-}
-
-@-webkit-keyframes fade {
-  0%,100% { opacity: 0 }
-  20%,80% { opacity: 1 }
-}
-
-@-o-keyframes fade {
-  0%,100% { opacity: 0 }
-  20%,80% { opacity: 1 }
-}
-
-@-ms-keyframes fade {
-  0%,100% { opacity: 0 }
-  20%,80% { opacity: 1 }
-}
