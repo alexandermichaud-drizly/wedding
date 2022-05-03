@@ -3,23 +3,26 @@ import s from '../styles/main.module.scss';
 import valley from '../assets/valley.mp4';
 import castle from '../assets/castle.jpg';
 import { Fade } from '@mui/material';
+import { 
+  FADE_OUT_VIDEO_MS, 
+  FADE_OUT_VIDEO_SECONDS,
+  FADE_IN_VIDEO_MS, 
+  FADE_IN_MAIN_ABBREVIATED_MS, 
+  FADE_IN_HEADER_MS, 
+  FADE_IN_CASTLE_MS, 
+  FADE_IN_CASTLE_BUFFER_SECONDS,
+  FADE_IN_HEADER_TIMING_RATIO,
+  PLAYBACK_RATE 
+} from '../constants/video';
 
 
-const FADE_IN_VIDEO_SECONDS = 5;
-const FADE_IN_MAIN_SECONDS = 6;
-const FADE_IN_MAIN_MS = FADE_IN_MAIN_SECONDS * 1000;
-const FADE_IN_VIDEO_MS = FADE_IN_VIDEO_SECONDS * 1000;
-const FADE_IN_MAIN_ABBREVIATED_MS = 2500;
-const FADE_IN_HEADER_MS = 6500;
-const FADE_IN_CASTLE_MS = 10000;
-const FADE_IN_CASTLE_ABBREVIATED_MS = 5000;
-const PLAYBACK_RATE = 0.7;
 
 const Main = (): JSX.Element => {
 
   const videoRef = useRef() as React.RefObject<HTMLVideoElement>;
 
-  const [fadeInMain, setFadeInMain] = useState(false);
+  const [fadeInVideo, setFadeInVideo] = useState(true);
+  const [fadeInImage, setFadeInImage] = useState(false);
   const [showHeading, setShowHeading] = useState(false);
   const [endVideoEarly, setEndVideoEarly] = useState(false);
 
@@ -32,22 +35,32 @@ const Main = (): JSX.Element => {
     const video = videoRef.current;
     if (video) {
       const { currentTime, duration } = video;
-      if (!showHeading && currentTime > duration / 3) setShowHeading(true);
-      if (!fadeInMain && currentTime > duration - FADE_IN_MAIN_SECONDS) setFadeInMain(true);
+
+      const startVideoFadeOut = duration - FADE_OUT_VIDEO_SECONDS;
+      const startImageFadeIn = startVideoFadeOut + FADE_IN_CASTLE_BUFFER_SECONDS; 
+
+      if (!showHeading && currentTime > duration * FADE_IN_HEADER_TIMING_RATIO) { 
+        setShowHeading(true); 
+      } else if (fadeInVideo && currentTime > duration - FADE_OUT_VIDEO_SECONDS) { 
+        setFadeInVideo(false);
+      } else if (currentTime > startImageFadeIn) { 
+        setFadeInImage(true); 
+      }
     }
   }
 
   const onClickVideo = (): void => {
-    if (!fadeInMain && !endVideoEarly) { 
-      setFadeInMain(true); 
-      setShowHeading(true); 
+    if (fadeInVideo && !endVideoEarly) { 
+      setFadeInVideo(false); 
+      setShowHeading(true);
+      setFadeInImage(true)
       setEndVideoEarly(true);
     }
   };
 
   return (
     <div className={s.Wrapper}>
-      <Fade in={!fadeInMain} timeout={{ enter: FADE_IN_VIDEO_MS, exit: endVideoEarly ? FADE_IN_MAIN_ABBREVIATED_MS : FADE_IN_MAIN_MS }} unmountOnExit>
+      <Fade in={fadeInVideo} timeout={{ enter: FADE_IN_VIDEO_MS, exit: endVideoEarly ? FADE_IN_MAIN_ABBREVIATED_MS : FADE_OUT_VIDEO_MS }} unmountOnExit>
         <video 
           autoPlay 
           muted id="valley" 
@@ -59,10 +72,12 @@ const Main = (): JSX.Element => {
           <source src={valley} type="video/mp4" />
         </video>
       </Fade>
-      <Fade in={showHeading} timeout={endVideoEarly ? FADE_IN_MAIN_ABBREVIATED_MS : FADE_IN_HEADER_MS}>
-        <h1 style={{ textAlign: 'center', color: "white" }}>Join Us on May 23</h1>
+      <Fade in={showHeading} timeout={endVideoEarly ? FADE_IN_MAIN_ABBREVIATED_MS : FADE_IN_HEADER_MS} mountOnEnter>
+        <h1 style={{ textAlign: 'center', marginTop: '48px' }}>May 23, 2023</h1>
       </Fade>
-      <Fade in={fadeInMain} timeout={endVideoEarly ? FADE_IN_CASTLE_ABBREVIATED_MS : FADE_IN_CASTLE_MS }><div className={s.Castle} /></Fade>
+      <Fade in={fadeInImage} timeout={endVideoEarly ? FADE_IN_MAIN_ABBREVIATED_MS : FADE_IN_CASTLE_MS } easing="ease-in" mountOnEnter>
+        <img className={s.Castle} src={castle} alt="castle"/>
+      </Fade>
     </div>
   );
 };
