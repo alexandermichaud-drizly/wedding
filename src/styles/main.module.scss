@@ -1,7 +1,19 @@
+.Wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .Video {
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+}
+
+.Castle {
+  background-image: url('../assets/castle.jpg');
+  height: 100vh;
+  width: 100%;
 }
