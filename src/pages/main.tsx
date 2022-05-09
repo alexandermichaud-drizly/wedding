@@ -72,9 +72,6 @@ const Main = (): JSX.Element => {
           <source src={valley} type="video/mp4" />
         </video>
       </Fade>
-      <Fade in={showHeading && fadeInVideo} timeout={endVideoEarly ? FADE_IN_MAIN_ABBREVIATED_MS : FADE_IN_HEADER_MS} mountOnEnter>
-        <h1 className={s.Heading}>Join Us In Tuscany, May 2023</h1>
-      </Fade>
       <Fade in={fadeInImage} timeout={endVideoEarly ? FADE_IN_MAIN_ABBREVIATED_MS : FADE_IN_CASTLE_MS } easing="ease-in" mountOnEnter>
         <img className={s.Castle} src={castle} alt="castle"/>
       </Fade>
