@@ -1,15 +1,27 @@
-.Container {
-  margin-top: 30px;
-}
+@use 'base';
 
-.Tabs {
-  font-family: 'MinionVariableRoman';
+.Container {
+  margin-top: 54px;
 }
 
 .Tabs.Tab.TabColor {
-  color: #50382a;
+  color: base.$brown;
+  font-family: 'MinionVariableRoman';
+  font-size: 16px;
 }
 
 .Tabs.Indicator {
-  background-color: #50382a;
+  background-color: base.$brown;
+}
+
+.Schedule {
+  font-family: 'MinionVariableRoman'; 
+}
+
+.Event {
+  margin-bottom: 12px;
+}
+
+.EventDetails {
+  margin-bottom: 6px;
 }

@@ -14,11 +14,11 @@ $amiri: 'Amiri', serif;
   src: local('MinionVariableItalic'), url('../fonts/MinionVariableItalic.otf') format('opentype');
 }
 
+$brown: #50382a;
+
 html, body, body > div {
-  height: 100vh;
   width: 100vw;
-  overflow: hidden;
   margin: 0px;
   padding: 0 !important;
-  color: #50382a;
+  color: $brown;
 }

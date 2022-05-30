@@ -8,7 +8,6 @@ import {
   FADE_OUT_VIDEO_SECONDS,
   FADE_IN_VIDEO_MS, 
   FADE_IN_MAIN_ABBREVIATED_MS, 
-  FADE_IN_HEADER_MS, 
   FADE_IN_CASTLE_MS, 
   FADE_IN_CASTLE_BUFFER_SECONDS,
   FADE_IN_HEADER_TIMING_RATIO,
@@ -24,7 +23,6 @@ const Main = (): JSX.Element => {
 
   const [fadeInVideo, setFadeInVideo] = useState(true);
   const [fadeInImage, setFadeInImage] = useState(false);
-  const [showHeading, setShowHeading] = useState(false);
   const [endVideoEarly, setEndVideoEarly] = useState(false);
 
   useEffect((): void => {
@@ -40,9 +38,7 @@ const Main = (): JSX.Element => {
       const startVideoFadeOut = duration - FADE_OUT_VIDEO_SECONDS;
       const startImageFadeIn = startVideoFadeOut + FADE_IN_CASTLE_BUFFER_SECONDS; 
 
-      if (!showHeading && currentTime > duration * FADE_IN_HEADER_TIMING_RATIO) { 
-        setShowHeading(true); 
-      } else if (fadeInVideo && currentTime > duration - FADE_OUT_VIDEO_SECONDS) { 
+      if (fadeInVideo && currentTime > duration - FADE_OUT_VIDEO_SECONDS) { 
         setFadeInVideo(false);
       } else if (currentTime > startImageFadeIn) { 
         setFadeInImage(true); 
@@ -53,7 +49,6 @@ const Main = (): JSX.Element => {
   const onClickVideo = (): void => {
     if (fadeInVideo && !endVideoEarly) { 
       setFadeInVideo(false); 
-      setShowHeading(true);
       setFadeInImage(true)
       setEndVideoEarly(true);
     }
