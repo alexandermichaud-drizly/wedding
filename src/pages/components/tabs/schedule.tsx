@@ -28,6 +28,14 @@ const DAYS: Day[] = [
     date: "Monday, May 22",
     events: [
       {
+        time: "10AM",
+        title: "American Breakfast on Restaurant Terrace",
+      },
+      {
+        time: "3PM",
+        title: "Poolside Gelatto",
+      },
+      {
         time: "6PM",
         title: "Wood-Fired Pizza Dinner",
       },
@@ -37,14 +45,34 @@ const DAYS: Day[] = [
     date: "Tuesday, May 23",
     events: [
       {
+        time: "10AM",
+        title: "Italian Breakfast on Restaurant Terrace",
+      },
+      {
         time: "5PM",
-        title: "Wedding Ceremony",
+        title: "Wedding Ceremony in Castle Courtyard",
+      },
+      {
+        time: "6PM",
+        title: "Aperitivo in Castle Gardens",
+      },
+      {
+        time: "7PM",
+        title: "Wedding Dinner",
+      },
+      {
+        time: "10PM",
+        title: "Drinks and Dancing",
       },
     ],
   },
   {
     date: "Wednesday, May 24",
     events: [
+      {
+        time: "11AM",
+        title: "Brunch on Restaurant Terrace",
+      },
       {
         time: "4PM",
         title: "Italian Dessert Buffet",
@@ -55,7 +83,7 @@ const DAYS: Day[] = [
     date: "Thursday, May 25",
     events: [
       {
-        time: "12PM",
+        time: "9AM",
         title: "Guests Check Out",
       },
     ],
