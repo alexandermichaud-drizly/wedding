@@ -13,13 +13,27 @@
   min-height: 100%;
 }
 
+.Hero {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .Castle {
-  height: 800px;
-  width: max-content;
+  height: 450px;
+  width: 650px;
+  object-fit: cover;
 }
 
 .Heading {
   text-align: center; 
-  margin-top: 48px; 
-  color: #00008b;
+  margin: 48px 0 24px; 
+  font-family: 'MinionVariableItalic';
+  font-size: 54px;
+}
+
+.Names {
+  font-family: 'BlantePanamaScript';
+  font-size: 64px;
+  text-align: center;
 }

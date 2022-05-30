@@ -14,6 +14,7 @@ import {
   FADE_IN_HEADER_TIMING_RATIO,
   PLAYBACK_RATE 
 } from '../constants/video';
+import TabbedSection from './components/tabbed_content';
 
 
 
@@ -72,8 +73,15 @@ const Main = (): JSX.Element => {
           <source src={valley} type="video/mp4" />
         </video>
       </Fade>
-      <Fade in={fadeInImage} timeout={endVideoEarly ? FADE_IN_MAIN_ABBREVIATED_MS : FADE_IN_CASTLE_MS } easing="ease-in" mountOnEnter>
-        <img className={s.Castle} src={castle} alt="castle"/>
+      <Fade in={fadeInImage} timeout={FADE_IN_CASTLE_MS} easing="ease-in" mountOnEnter>
+        <>
+          <div className={s.Hero}>
+            <div className={s.Heading}>Join us May 23, 2023</div>
+            <img className={s.Castle} src={castle} alt="castle"/>
+            <div className={s.Names}>Andrea and Alexander</div>
+          </div>
+          <TabbedSection />
+        </>
       </Fade>
     </div>
   );
