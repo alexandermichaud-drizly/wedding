@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, memo } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import s from '../styles/main.module.scss';
 import valley from '../assets/valley.mp4';
 import castle from '../assets/castle.jpg';
@@ -74,14 +74,14 @@ const Main = (): JSX.Element => {
         </video>
       </Fade>
       <Fade in={fadeInImage} timeout={FADE_IN_CASTLE_MS} easing="ease-in" mountOnEnter>
-        <>
+        <div>
           <div className={s.Hero}>
             <div className={s.Heading}>Join us May 23, 2023</div>
             <img className={s.Castle} src={castle} alt="castle"/>
             <div className={s.Names}>Andrea and Alexander</div>
           </div>
           <TabbedSection />
-        </>
+        </div>
       </Fade>
     </div>
   );
