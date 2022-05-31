@@ -29,7 +29,7 @@ const DAYS: Day[] = [
     events: [
       {
         time: "10AM",
-        title: "American Breakfast on Restaurant Terrace",
+        title: "American Breakfast on the Restaurant Terrace",
       },
       {
         time: "3PM",
@@ -46,15 +46,15 @@ const DAYS: Day[] = [
     events: [
       {
         time: "10AM",
-        title: "Italian Breakfast on Restaurant Terrace",
+        title: "Italian Breakfast on the Restaurant Terrace",
       },
       {
         time: "5PM",
-        title: "Wedding Ceremony in Castle Courtyard",
+        title: "Wedding Ceremony in the Castle Courtyard",
       },
       {
         time: "6PM",
-        title: "Aperitivo in Castle Gardens",
+        title: "Aperitivo in the Castle Gardens",
       },
       {
         time: "7PM",
@@ -93,15 +93,15 @@ const DAYS: Day[] = [
 const Schedule = (): JSX.Element => 
   <div className={s.Schedule}>
     {DAYS.map(day => 
-      <div className={s.Event}>
+      <div className={s.Day}>
         <h1>{day.date}</h1>
         <div>
           {day.events.map(event => 
             <div className={s.Event}>
-              <div className={s.EventDetails}>
+              <div>
                 {event.time}
               </div>
-              <div className={s.EventDetails}>
+              <div>
                 {event.title}
               </div>
             </div>

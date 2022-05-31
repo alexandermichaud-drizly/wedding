@@ -7,7 +7,7 @@
 .Tabs.Tab.TabColor {
   color: base.$brown;
   font-family: 'MinionVariableRoman';
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .Tabs.Indicator {
@@ -15,13 +15,24 @@
 }
 
 .Schedule {
-  font-family: 'MinionVariableRoman'; 
+  font-family: 'MinionVariableRoman';
+}
+
+.Day {
+  margin-bottom: 48px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 28px;
+  }
 }
 
 .Event {
-  margin-bottom: 12px;
-}
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 18px;
 
-.EventDetails {
-  margin-bottom: 6px;
+  div {
+    margin-bottom: 6px;
+  }
 }
