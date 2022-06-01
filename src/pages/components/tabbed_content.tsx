@@ -11,6 +11,7 @@ import Gifts from './tabs/gifts';
 import FAQ from './tabs/faq';
 import Attire from './tabs/attire';
 import CastleHistory from './tabs/castle_history';
+import SpecialActivities from './tabs/special_activities';
 
 
 const TABS = [
@@ -39,6 +40,10 @@ const TABS = [
     content: <CastleHistory />,
   },
   {
+    props: { label: "Special Activities" },
+    content: <SpecialActivities />,
+  }, 
+  {
     props: { label: "Venue Photos" },
     content: <Photos />,
   },
@@ -49,7 +54,7 @@ const TABS = [
   {
     props: { label: "FAQ" },
     content: <FAQ />,
-  }, 
+  },
   {
     props: { label: "RSVP" },
     content: <RSVP />,
@@ -60,7 +65,7 @@ const TABS = [
 const TabbedSection = (): JSX.Element => {
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 

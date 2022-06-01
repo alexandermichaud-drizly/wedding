@@ -10,7 +10,6 @@ import {
   FADE_IN_MAIN_ABBREVIATED_MS, 
   FADE_IN_CASTLE_MS, 
   FADE_IN_CASTLE_BUFFER_SECONDS,
-  FADE_IN_HEADER_TIMING_RATIO,
   PLAYBACK_RATE 
 } from '../constants/video';
 import TabbedSection from './components/tabbed_content';
