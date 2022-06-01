@@ -2,25 +2,54 @@
 
 .Container {
   margin-top: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Tabs.Tab.TabColor {
   color: base.$brown;
   font-family: 'MinionVariableRoman';
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.Tabs.Tab.Selected {
+  background-color: base.$tan;
+  border-radius: 8px;
+  color: white;
 }
 
 .Tabs.Indicator {
-  background-color: base.$brown;
+  display: none;
 }
 
-.Schedule {
-  font-family: 'MinionVariableRoman';
+.Tabs.FlexContainer {
+  max-width: 900px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.TabContent {
+  max-width: 800px;
+  padding: 36px;
+
+  h1, div {
+    line-height: 24px;
+    text-align: center;
+    font-family: 'MinionVariableRoman';
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  div { 
+    font-size: 18px;
+  }
 }
 
 .Day {
   margin-bottom: 48px;
-  text-align: center;
 
   h1 {
     margin-bottom: 28px;
@@ -29,10 +58,15 @@
 
 .Event {
   margin-bottom: 24px;
-  font-size: 18px;
   line-height: 18px;
 
   div {
     margin-bottom: 6px;
+  }
+}
+
+.GiftsCopy {
+  div {
+    margin: 18px 0;
   }
 }

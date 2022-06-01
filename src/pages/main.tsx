@@ -14,8 +14,7 @@ import {
   PLAYBACK_RATE 
 } from '../constants/video';
 import TabbedSection from './components/tabbed_content';
-
-
+import Countdown from './components/countdown';
 
 const Main = (): JSX.Element => {
 
@@ -75,6 +74,7 @@ const Main = (): JSX.Element => {
             <img className={s.Castle} src={castle} alt="castle"/>
             <div className={s.Names}>Andrea and Alexander</div>
           </div>
+          <Countdown />
           <TabbedSection />
         </div>
       </Fade>
