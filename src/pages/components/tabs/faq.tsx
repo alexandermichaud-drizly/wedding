@@ -1,11 +1,20 @@
 import s from '../../../styles/tabbed_content.module.scss';
 
-type FAQ = {
+type Faq = {
   question: string;
   answer: string;
 }
 
-const faqs: FAQ[] = [];
+const faqs: Faq[] = [
+  { 
+    question: '', 
+    answer: '',
+  },
+  { 
+    question: '', 
+    answer: '',
+  },
+];
 
 const FAQ = (): JSX.Element => 
   <div className={s.Schedule}>
