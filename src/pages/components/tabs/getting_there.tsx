@@ -1,118 +1,24 @@
 import s from '../../../styles/tabbed_content.module.scss';
 
-type Event = {
-  time: string;
-  title: string;
-}
+const transportation = "Regardless of your travel plans, contact us when you have determined when and how you'll arrive. We can help you arrange transportation that's offered by the venue."
+const flying = 'The most convenient point of entry will be the Florence airport (FLO). You will almost certainly have to stop over in a larger European city on the way.';
+const trains = 'If you are travelling in Italy beforehand, you might also consider arriving by train. We are also able to arrange transportation from the Santa Maria Novella station.';
+const driving = 'The castle is approximately a half hour drive from Florence. Transportation arranged through us will be able drop you off at the door of your villa. We do not recommend arranging a private taxi or uber to the castle. They will be more expensive and will not be able to take you directly to the villa in which you are staying. Let us save you the trouble of bringing your bags up the hill!';
 
-type Day = {
-  date: string;
-  events: Event[];
-};
-
-const DAYS: Day[] = [
-  {
-    date: "Sunday, May 21",
-    events: [
-      {
-        time: "2-6PM",
-        title: "Guests Arrive",
-      },
-      {
-        time: "6PM",
-        title: "Welcome Cocktails + Castle Tour",
-      },
-      {
-        time: "7PM",
-        title: "Welcome Dinner, Courtesy of Mr. and Mrs. Zurita",
-      },
-    ]
-  },
-  {
-    date: "Monday, May 22",
-    events: [
-      {
-        time: "10AM",
-        title: "American Breakfast on the Restaurant Terrace",
-      },
-      {
-        time: "3PM",
-        title: "Poolside Gelatto",
-      },
-      {
-        time: "6PM",
-        title: "Wood-Fired Pizza Dinner",
-      },
-    ],
-  },
-  {
-    date: "Tuesday, May 23",
-    events: [
-      {
-        time: "10AM",
-        title: "Italian Breakfast on the Restaurant Terrace",
-      },
-      {
-        time: "5PM",
-        title: "Wedding Ceremony in the Castle Courtyard",
-      },
-      {
-        time: "6PM",
-        title: "Aperitivo in the Castle Gardens",
-      },
-      {
-        time: "7PM",
-        title: "Wedding Dinner",
-      },
-      {
-        time: "10PM",
-        title: "Drinks and Dancing",
-      },
-    ],
-  },
-  {
-    date: "Wednesday, May 24",
-    events: [
-      {
-        time: "11AM",
-        title: "Brunch on the Restaurant Terrace",
-      },
-      {
-        time: "4PM",
-        title: "Italian Dessert Buffet",
-      },
-    ],
-  },  
-  {
-    date: "Thursday, May 25",
-    events: [
-      {
-        time: "9AM",
-        title: "Guests Check Out",
-      },
-    ],
-  },
-];
-
-const Schedule = (): JSX.Element => 
-  <div className={s.Schedule}>
-    {DAYS.map(day => 
-      <div className={s.Day}>
-        <h1>{day.date}</h1>
-        <div>
-          {day.events.map(event => 
-            <div className={s.Event}>
-              <div>
-                {event.time}
-              </div>
-              <div>
-                {event.title}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    )}
+const GettingThere = (): JSX.Element => 
+  <div className={s.GettingThere}>
+    <div>
+      {transportation}
+    </div>
+    <div>
+      {flying}
+    </div>
+    <div>
+      {trains}
+    </div>
+    <div>
+      {driving}
+    </div>
   </div>;
 
-export default Schedule;
+export default GettingThere;
