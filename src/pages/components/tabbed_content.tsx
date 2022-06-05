@@ -45,11 +45,11 @@ const TABS = [
   }, 
   {
     props: { label: "Venue Photos" },
-    content: <Photos />,
+    content: <Photos version="venue" />,
   },
   {
     props: { label: "Engagement Photos" },
-    content: <Photos />,
+    content: <Photos version="engagement" />,
   },
   {
     props: { label: "FAQ" },
