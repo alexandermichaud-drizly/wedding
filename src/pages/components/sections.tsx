@@ -1,5 +1,4 @@
-import {  } from '@mui/material';
-import s from '../../styles/tabbed_content.module.scss';
+import { Box, Drawer, List, ListItemButton, ListItemText } from '@mui/material';
 import Photos from './tabs/photos';
 import RSVP from './tabs/rsvp';
 import Schedule from './tabs/schedule';
@@ -11,12 +10,12 @@ import Attire from './tabs/attire';
 import CastleHistory from './tabs/castle_history';
 import SpecialActivities from './tabs/special_activities';
 
-export type TabType = {
+export type SectionType = {
   label: string;
   content: JSX.Element;
 };
 
-export const TABS: TabType[] = [
+export const Sections: SectionType[] = [
   {
     label: "Schedule",
     content: <Schedule />,
@@ -62,3 +61,25 @@ export const TABS: TabType[] = [
     content: <RSVP />,
   },
 ];
+
+export const drawer = (
+  open: boolean,
+  toggleDrawer: (newValue?: boolean) => () => void,
+  onClickSection: (section: SectionType) => () => void,
+) => (
+  <Drawer
+    anchor="left"
+    open={open}
+    onClose={toggleDrawer(false)}
+  >
+    <List>
+      {Sections.map(section => 
+        <Box onClick={toggleDrawer()}>
+          <ListItemButton onClick={onClickSection(section)}>
+            <ListItemText primary={section.label} />
+          </ListItemButton>
+        </Box>
+      )}
+    </List>
+  </Drawer>
+);
