@@ -1,8 +1,11 @@
+@use 'base';
+
 .Wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding: 25px;
 }
 
 .Video {
@@ -24,6 +27,11 @@
   height: 450px;
   width: 650px;
   object-fit: cover;
+
+  @media screen and (max-width: 600px) {
+    width: 80vw;
+    height: 230px;
+  }
 }
 
 .Heading {
@@ -44,4 +52,104 @@
   padding: 56px 0 0;
   font-family: 'MinionVariableRoman';
   font-size: 36px;
+}
+
+.Container {
+  margin-top: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Tabs.Tab.TabColor {
+  color: base.$brown;
+  font-family: 'MinionVariableRoman';
+  font-size: 20px;
+}
+
+.Tabs.Tab.Selected {
+  background-color: base.$tan;
+  border-radius: 8px;
+  color: white;
+}
+
+.Tabs.Indicator {
+  display: none;
+}
+
+.Tabs.FlexContainer {
+  max-width: 700px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.TabContent {
+  max-width: 800px;
+  padding: 36px;
+
+  h1, div {
+    line-height: 24px;
+    text-align: center;
+    font-family: 'MinionVariableRoman';
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  div { 
+    font-size: 18px;
+  }
+}
+
+.Day {
+  margin-bottom: 48px;
+
+  h1 {
+    margin-bottom: 28px;
+  }
+}
+
+.Event {
+  margin-bottom: 24px;
+  line-height: 18px;
+
+  div {
+    margin-bottom: 6px;
+  }
+}
+
+.GiftsCopy, .GettingThere, .Accommodations, .RSVP {
+  div {
+    margin: 18px 0;
+  }
+}
+
+.Occasion.Container {
+  margin-bottom: 24px;
+}
+
+.Occasion.Title {
+  font-size: 32px;
+  margin: 8px 0;
+}
+
+.Occasion.Subtitle {
+  font-size: 24px;
+  margin: 12px 0;
+}
+
+span.Gender {
+  font-weight: 700;
+}
+
+.GettingThere {
+  div {
+    margin: 12px;
+  }
+}
+
+.MenuText {
+  margin-left: 12px;
+  font-size: 18px;
 }

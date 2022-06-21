@@ -1,4 +1,4 @@
-import s from '../../../styles/tabbed_content.module.scss';
+import s from '../../../styles/main.module.scss';
 
 const expectations = "Making the journey to Italy is more than we could ever expect from our guests, so please do not feel obligated to give us anything more. The greatest gift we can receive is your presence on our special day.";
 const request = "We are currently in the process of searching for a home in DC, so if you are strongly inclined to give us something, we would greatly appreciate contributions to our home fund. Anything helps, but again, nothing is expected."

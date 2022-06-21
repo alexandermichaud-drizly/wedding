@@ -1,4 +1,4 @@
-import s from '../../../styles/tabbed_content.module.scss';
+import s from '../../../styles/main.module.scss';
 
 const CastleHistory = (): JSX.Element => 
   <div className={s.CastleHistory}>

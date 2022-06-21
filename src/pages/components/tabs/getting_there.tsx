@@ -1,4 +1,4 @@
-import s from '../../../styles/tabbed_content.module.scss';
+import s from '../../../styles/main.module.scss';
 
 const transportation = "Regardless of your travel plans, contact us when you have determined when and how you'll arrive. We can help you arrange transportation that's offered by the venue."
 const flying = 'The most convenient point of entry will be the Florence airport (FLO). You will almost certainly have to stop over in a larger European city on the way.';

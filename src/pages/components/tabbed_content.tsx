@@ -1,7 +1,5 @@
-import React from 'react';
-import { Tabs, Tab } from '@mui/material';
+import {  } from '@mui/material';
 import s from '../../styles/tabbed_content.module.scss';
-import cn from 'classnames';
 import Photos from './tabs/photos';
 import RSVP from './tabs/rsvp';
 import Schedule from './tabs/schedule';
@@ -13,80 +11,54 @@ import Attire from './tabs/attire';
 import CastleHistory from './tabs/castle_history';
 import SpecialActivities from './tabs/special_activities';
 
+export type TabType = {
+  label: string;
+  content: JSX.Element;
+};
 
-const TABS = [
+export const TABS: TabType[] = [
   {
-    props: { label: "Schedule" },
+    label: "Schedule",
     content: <Schedule />,
   },
   {
-    props: { label: "Getting There" },
+    label: "Getting There",
     content: <GettingThere />,
   },
   {
-    props: { label: "Accommodations" },
+    label: "Accommodations",
     content: <Accommodations />,
   },
   {
-    props: { label: "Attire" },
+    label: "Attire",
     content: <Attire />,
   },
   {
-    props: { label: "Gifts" },
+    label: "Gifts",
     content: <Gifts />,
   },
   {
-    props: { label: "History of the Castle" },
+    label: "History of the Castle",
     content: <CastleHistory />,
   },
   {
-    props: { label: "Special Activities" },
+    label: "Special Activities",
     content: <SpecialActivities />,
   }, 
   {
-    props: { label: "Venue Photos" },
+    label: "Venue Photos",
     content: <Photos version="venue" />,
   },
   {
-    props: { label: "Engagement Photos" },
+    label: "Engagement Photos",
     content: <Photos version="engagement" />,
   },
   {
-    props: { label: "FAQ" },
+    label: "FAQ",
     content: <FAQ />,
   },
   {
-    props: { label: "RSVP" },
+    label: "RSVP",
     content: <RSVP />,
   },
 ];
-
-
-const TabbedSection = (): JSX.Element => {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
-
-  return (
-    <div className={s.Container}>
-      <Tabs classes={{ indicator: cn(s.Tabs, s.Indicator), flexContainer: cn(s.Tabs, s.FlexContainer) }} onChange={handleChange} value={value}>
-        {TABS.map(tab =>
-          <Tab 
-            {...tab.props}  
-            classes={{ root: cn(s.Tabs, s.Tab, s.TabColor), selected: cn(s.Tabs, s.Tab, s.Selected) }}
-          />
-        )}
-      </Tabs>
-      {TABS.map((tab, index) => value === index ? (
-          <div className={s.TabContent}>
-            {tab.content}
-          </div>
-        ) : <></>
-      )}
-    </div>
-  );
-};
-
-export default TabbedSection;

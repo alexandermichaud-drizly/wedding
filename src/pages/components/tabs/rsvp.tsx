@@ -1,4 +1,4 @@
-import s from '../../../styles/tabbed_content.module.scss';
+import s from '../../../styles/main.module.scss';
 
 const placeholder = "Guests will be able to RSVP through the site later this summer. We'll let you know when it's ready!"
 
