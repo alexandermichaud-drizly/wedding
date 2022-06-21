@@ -9,6 +9,8 @@ import FAQ from './tabs/faq';
 import Attire from './tabs/attire';
 import CastleHistory from './tabs/castle_history';
 import SpecialActivities from './tabs/special_activities';
+import cn from 'classnames';
+import s from '../../styles/drawer.module.scss';
 
 export type SectionType = {
   label: string;
@@ -68,6 +70,7 @@ export const drawer = (
   onClickSection: (section: SectionType) => () => void,
 ) => (
   <Drawer
+    classes={{ paper: cn(s.Drawer, s.Root)}}
     anchor="left"
     open={open}
     onClose={toggleDrawer(false)}
@@ -76,7 +79,7 @@ export const drawer = (
       {Sections.map(section => 
         <Box onClick={toggleDrawer()}>
           <ListItemButton onClick={onClickSection(section)}>
-            <ListItemText primary={section.label} />
+            <ListItemText classes={{primary: cn(s.Drawer, s.Text)}} primary={section.label} />
           </ListItemButton>
         </Box>
       )}
