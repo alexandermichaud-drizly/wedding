@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import { ImageList, ImageListItem } from "@mui/material";
 
 type Version = "venue" | "engagement";
@@ -15,35 +15,38 @@ const srcset = (image: string, size: number, rows = 1, cols = 1) => {
     src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
     srcSet: `${image}?w=${size * cols}&h=${
       size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
+    }&fit=crop&auto=format&dpr=2 2x`
   };
 };
 
 const VENUE_PHOTOS: Photo[] = [
   {
-    src: 'string',
-    alt: 'string',
+    src: "string",
+    alt: "string"
   }
 ];
 
 const ENGAGEMENT_PHOTOS: Photo[] = [
   {
-    src: 'string',
-    alt: 'string',
+    src: "string",
+    alt: "string"
   }
 ];
 
-const VenuePhotos = (props: Props): JSX.Element => 
+const VenuePhotos = (props: Props): JSX.Element => (
   <ImageList variant="quilted">
-    {(props.version === "venue" ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS).map(data => 
-      <ImageListItem key={data.alt}>
-        <img
-          {...srcset(data.src, 121, data.rows, data.cols)}
-          alt={data.alt}
-          loading="lazy"
-        />
-      </ImageListItem>
+    {(props.version === "venue" ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS).map(
+      (data) => (
+        <ImageListItem key={data.alt}>
+          <img
+            {...srcset(data.src, 121, data.rows, data.cols)}
+            alt={data.alt}
+            loading="lazy"
+          />
+        </ImageListItem>
+      )
     )}
-  </ImageList>;
+  </ImageList>
+);
 
 export default VenuePhotos;

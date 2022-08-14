@@ -1,10 +1,10 @@
-import * as React from 'react';
-import s from '../../../styles/main.module.scss';
+import * as React from "react";
+import s from "../../../styles/main.module.scss";
 
 type Event = {
   time: string;
   title: string;
-}
+};
 
 type Day = {
   date: string;
@@ -17,16 +17,16 @@ const DAYS: Day[] = [
     events: [
       {
         time: "2-6PM",
-        title: "Guests Arrive",
+        title: "Guests Arrive"
       },
       {
         time: "6PM",
-        title: "Welcome Cocktails + Castle Tour",
+        title: "Welcome Cocktails + Castle Tour"
       },
       {
         time: "7PM",
-        title: "Welcome Dinner, Courtesy of Mr. and Mrs. Zurita",
-      },
+        title: "Welcome Dinner, Courtesy of Mr. and Mrs. Zurita"
+      }
     ]
   },
   {
@@ -34,86 +34,83 @@ const DAYS: Day[] = [
     events: [
       {
         time: "10AM",
-        title: "American Breakfast on the Restaurant Terrace",
+        title: "American Breakfast on the Restaurant Terrace"
       },
       {
         time: "3PM",
-        title: "Poolside Gelatto",
+        title: "Poolside Gelatto"
       },
       {
         time: "6PM",
-        title: "Wood-Fired Pizza Dinner",
-      },
-    ],
+        title: "Wood-Fired Pizza Dinner"
+      }
+    ]
   },
   {
     date: "Tuesday, May 23",
     events: [
       {
         time: "10AM",
-        title: "Italian Breakfast on the Restaurant Terrace",
+        title: "Italian Breakfast on the Restaurant Terrace"
       },
       {
         time: "5PM",
-        title: "Wedding Ceremony in the Castle Courtyard",
+        title: "Wedding Ceremony in the Castle Courtyard"
       },
       {
         time: "6PM",
-        title: "Aperitivo in the Castle Gardens",
+        title: "Aperitivo in the Castle Gardens"
       },
       {
         time: "7PM",
-        title: "Wedding Dinner",
+        title: "Wedding Dinner"
       },
       {
         time: "10PM",
-        title: "Drinks and Dancing",
-      },
-    ],
+        title: "Drinks and Dancing"
+      }
+    ]
   },
   {
     date: "Wednesday, May 24",
     events: [
       {
         time: "11AM",
-        title: "Brunch on the Restaurant Terrace",
+        title: "Brunch on the Restaurant Terrace"
       },
       {
         time: "4PM",
-        title: "Italian Dessert Buffet",
-      },
-    ],
-  },  
+        title: "Italian Dessert Buffet"
+      }
+    ]
+  },
   {
     date: "Thursday, May 25",
     events: [
       {
         time: "9AM",
-        title: "Guests Check Out",
-      },
-    ],
-  },
+        title: "Guests Check Out"
+      }
+    ]
+  }
 ];
 
-const Schedule = (): JSX.Element => 
+const Schedule = (): JSX.Element => (
   <div className={s.Schedule}>
-    {DAYS.map(day => 
+    {DAYS.map((day) => (
       <div key={day.date.toLowerCase()} className={s.Day}>
         <h1>{day.date}</h1>
         <div>
-          {day.events.map(event => 
+          {day.events.map((event) => (
             <div key={event.title.toLowerCase()} className={s.Event}>
-              <div>
-                {event.time}
-              </div>
-              <div>
-                {event.title}
-              </div>
+              <div>{event.time}</div>
+              <div>{event.title}</div>
             </div>
-          )}
+          ))}
         </div>
       </div>
-    )}
-  </div>;
+    ))}
+  </div>
+);
 
 export default Schedule;

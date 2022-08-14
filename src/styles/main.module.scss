@@ -1,4 +1,4 @@
-@use 'base';
+@use "base";
 
 .Wrapper {
   display: flex;
@@ -35,14 +35,14 @@
 }
 
 .Heading {
-  text-align: center; 
-  margin: 48px 0 24px; 
-  font-family: 'MinionVariableItalic';
+  text-align: center;
+  margin: 48px 0 24px;
+  font-family: "MinionVariableItalic";
   font-size: 54px;
 }
 
 .Names {
-  font-family: 'BlantePanamaScript';
+  font-family: "BlantePanamaScript";
   font-size: 64px;
   text-align: center;
 }
@@ -50,7 +50,7 @@
 .Countdown {
   text-align: center;
   padding: 56px 0 0;
-  font-family: 'MinionVariableRoman';
+  font-family: "MinionVariableRoman";
   font-size: 28px;
 }
 
@@ -63,7 +63,7 @@
 
 .Tabs.Tab.TabColor {
   color: base.$brown;
-  font-family: 'MinionVariableRoman';
+  font-family: "MinionVariableRoman";
   font-size: 20px;
 }
 
@@ -101,7 +101,10 @@
   }
 }
 
-.GiftsCopy, .GettingThere, .Accommodations, .RSVP {
+.GiftsCopy,
+.GettingThere,
+.Accommodations,
+.RSVP {
   div {
     margin: 18px 0;
   }
@@ -138,7 +141,7 @@ span.Gender {
 
 .Schedule {
   text-align: center;
-  font-family: 'MinionVariableRoman';
+  font-family: "MinionVariableRoman";
 
   h1 {
     font-size: 36px;

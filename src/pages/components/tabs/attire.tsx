@@ -1,6 +1,6 @@
-import * as React from 'react';
-import s from '../../../styles/main.module.scss';
-import cn from 'classnames';
+import * as React from "react";
+import s from "../../../styles/main.module.scss";
+import cn from "classnames";
 
 type Occasion = {
   title: string;
@@ -21,7 +21,7 @@ const occasions: Occasion[] = [
     general: "Comfortable",
     men: "Bathing suits welcome. Summer wear recommended.",
     women: "Bathing suits welcome. Summer wear recommended."
-  }, 
+  },
   {
     title: "Wedding Dinner",
     general: "Black Tie Optional",
@@ -30,17 +30,26 @@ const occasions: Occasion[] = [
   }
 ];
 
-const Attire = (): JSX.Element => 
+const Attire = (): JSX.Element => (
   <div className={s.Attire}>
-    {occasions.map(occasion => 
-      <div key={occasion.title.toLowerCase()} className={cn(s.Occasion, s.Container)}>
+    {occasions.map((occasion) => (
+      <div
+        key={occasion.title.toLowerCase()}
+        className={cn(s.Occasion, s.Container)}
+      >
         <h1 className={cn(s.Occasion, s.Title)}>{occasion.title}</h1>
         <div className={cn(s.Occasion, s.Subtitle)}>{occasion.general}</div>
-        <div><span className={s.Gender}>Gentlemen: </span>{occasion.men}</div>
-        <div><span className={s.Gender}>Ladies: </span>{occasion.women}</div>
+        <div>
+          <span className={s.Gender}>Gentlemen: </span>
+          {occasion.men}
+        </div>
+        <div>
+          <span className={s.Gender}>Ladies: </span>
+          {occasion.women}
+        </div>
       </div>
-    )}
-  </div>;
-
+    ))}
+  </div>
+);
 
 export default Attire;
