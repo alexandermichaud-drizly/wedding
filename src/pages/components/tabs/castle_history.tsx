@@ -20,7 +20,7 @@ const CastleHistory = (): JSX.Element =>
         Shortly after, Lorenzo gave the order to hang all the conspirators in Palazzo della Signoria, as a display of the Medici supremacy. One of the conspirators, Iacopo De’ Pazzi, managed to escape Florence and take refuge temporarily in Castello del Trebbio, but was finally captured after he relocated to the Mugello countryside. The Pazzi family was abolished, and Lorenzo confiscated all their property, including Castello del Trebbio.  
       </div>
       <div> 
-        The Medicis’ support of the arts and humanities turned Florence into the cradle of the Renaissance. The Medici family produced four popes, and their genes have been mixed into many of Europe’s royal families. The last Medici ruler died without a male heir in 1737, ending the family dynasty after almost 300 years. 
+        The Medicis&apos; support of the arts and humanities turned Florence into the cradle of the Renaissance. The Medici family produced four popes, and their genes have been mixed into many of Europe’s royal families. The last Medici ruler died without a male heir in 1737, ending the family dynasty after almost 300 years. 
       </div>
     </div>
   </div>;
