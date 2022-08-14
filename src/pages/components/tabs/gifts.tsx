@@ -9,7 +9,7 @@ const Gifts = (): JSX.Element => (
       greatest gift we can receive is your presence on our special day.
     </div>
     <div>
-      We recently purchased a home in DC, so if you are strongly inclined to
+      We recently purchased our dream home, so if you are strongly inclined to
       give us something, we would greatly appreciate contributions that will go
       toward furnishings, repairs, and upkeep. Anything helps, but again,
       nothing is expected.
