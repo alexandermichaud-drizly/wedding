@@ -1,5 +1,5 @@
-import * as React from "react";
-import s from "../../../styles/main.module.scss";
+import * as React from 'react';
+import s from '../../../styles/main.module.scss';
 
 type Faq = {
   question: string;
@@ -8,7 +8,7 @@ type Faq = {
 
 const faqs: Faq[] = [
   {
-    question: "What meals are included?",
+    question: 'What meals are included?',
     answer: (
       <div>
         See the meal schedule below:
@@ -35,10 +35,10 @@ const faqs: Faq[] = [
         tried it ourselves. We strongly recommend you save your appetite on the
         wedding day.
       </div>
-    )
+    ),
   },
   {
-    question: "Where can I purchase more food?",
+    question: 'Where can I purchase more food?',
     answer: (
       <div>
         <div>
@@ -67,10 +67,10 @@ const faqs: Faq[] = [
           <li>Eggplant Parmigiana: $18 EUR per person</li>
         </ul>
       </div>
-    )
+    ),
   },
   {
-    question: "What grocery stores are nearby?",
+    question: 'What grocery stores are nearby?',
     answer: (
       <div>
         <div>
@@ -82,20 +82,20 @@ const faqs: Faq[] = [
           del Vivo, 1, 50065 Pontassieve
         </div>
       </div>
-    )
+    ),
   },
   {
-    question: "What drinks are included?",
+    question: 'What drinks are included?',
     answer: (
       <div>
         Wine is included with the welcome dinner, the pizza dinner, and the
         wedding feast. There will also be cocktails with the wedding aperitivo,
         and an open bar during the wedding party.
       </div>
-    )
+    ),
   },
   {
-    question: "Where can I purchase more to drink?",
+    question: 'Where can I purchase more to drink?',
     answer: (
       <div>
         <div>
@@ -110,11 +110,11 @@ const faqs: Faq[] = [
           and consumed around the property without restriction.
         </div>
       </div>
-    )
+    ),
   },
   {
     question:
-      "What are the surfaces at and around the Castle like? What shoes should I wear?",
+      'What are the surfaces at and around the Castle like? What shoes should I wear?',
     answer: (
       <div>
         The path in between the villas/ apartments and the main restaurant and
@@ -123,10 +123,10 @@ const faqs: Faq[] = [
         night, for women planning on wearing heels, we’d recommend considering
         wedges (given the aperitivo will be at a courtyard, on grass).
       </div>
-    )
+    ),
   },
   {
-    question: "What other clothing should I bring?",
+    question: 'What other clothing should I bring?',
     answer: (
       <div>
         Swimsuits! And active wear if you want to take advantage of the outdoor
@@ -134,10 +134,10 @@ const faqs: Faq[] = [
         etc., so make sure to bring some comfortable clothes in addition to the
         wedding attire!
       </div>
-    )
+    ),
   },
   {
-    question: "What is there to do around the area?",
+    question: 'What is there to do around the area?',
     answer: (
       <div>
         <div>
@@ -158,14 +158,14 @@ const faqs: Faq[] = [
           </ul>
         </div>
       </div>
-    )
-  }
+    ),
+  },
 ];
 
 const FAQ = (): JSX.Element => (
-  <div className={s.Schedule}>
+  <div>
     {faqs.map((faq) => (
-      <div key={faq.question.toLowerCase()} className={s.FaqQuestion}>
+      <div key={faq.question.toLowerCase()}>
         <h1>{faq.question}</h1>
         <div>{faq.answer}</div>
       </div>

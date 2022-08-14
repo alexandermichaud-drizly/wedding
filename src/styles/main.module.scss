@@ -1,4 +1,4 @@
-@use "base";
+@use 'base';
 
 .Wrapper {
   display: flex;
@@ -34,15 +34,15 @@
   }
 }
 
-.Heading {
+.JoinUs {
   text-align: center;
   margin: 48px 0 24px;
-  font-family: "MinionVariableItalic";
+  font-family: 'MinionVariableItalic';
   font-size: 54px;
 }
 
 .Names {
-  font-family: "BlantePanamaScript";
+  font-family: 'BlantePanamaScript';
   font-size: 64px;
   text-align: center;
 }
@@ -50,7 +50,7 @@
 .Countdown {
   text-align: center;
   padding: 56px 0 0;
-  font-family: "MinionVariableRoman";
+  font-family: 'MinionVariableRoman';
   font-size: 28px;
 }
 
@@ -61,90 +61,7 @@
   align-items: center;
 }
 
-.Tabs.Tab.TabColor {
-  color: base.$brown;
-  font-family: "MinionVariableRoman";
-  font-size: 20px;
-}
-
-.Tabs.Tab.Selected {
-  background-color: base.$tan;
-  border-radius: 8px;
-  color: white;
-}
-
-.Tabs.Indicator {
-  display: none;
-}
-
-.Tabs.FlexContainer {
-  max-width: 700px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.Day {
-  margin-bottom: 64px;
-
-  h1 {
-    margin-bottom: 28px;
-  }
-}
-
-.Event {
-  margin-bottom: 24px;
-  line-height: 24px;
-  font-size: 24px;
-
-  div {
-    margin-bottom: 6px;
-  }
-}
-
-.GiftsCopy,
-.GettingThere,
-.Accommodations,
-.RSVP {
-  div {
-    margin: 18px 0;
-  }
-}
-
-.Occasion.Container {
-  margin-bottom: 24px;
-}
-
-.Occasion.Title {
-  font-size: 32px;
-  margin: 8px 0;
-}
-
-.Occasion.Subtitle {
-  font-size: 24px;
-  margin: 12px 0;
-}
-
-span.Gender {
-  font-weight: 700;
-}
-
-.GettingThere {
-  div {
-    margin: 12px;
-  }
-}
-
 .MenuText {
   margin-left: 12px;
   font-size: 18px;
-}
-
-.Schedule {
-  text-align: center;
-  font-family: "MinionVariableRoman";
-
-  h1 {
-    font-size: 36px;
-    line-height: 36px;
-  }
 }

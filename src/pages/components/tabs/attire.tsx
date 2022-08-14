@@ -1,6 +1,6 @@
-import * as React from "react";
-import s from "../../../styles/main.module.scss";
-import cn from "classnames";
+import * as React from 'react';
+import s from '../../../styles/main.module.scss';
+import cn from 'classnames';
 
 type Occasion = {
   title: string;
@@ -11,40 +11,37 @@ type Occasion = {
 
 const occasions: Occasion[] = [
   {
-    title: "Welcome Dinner",
-    general: "White Night",
-    men: "Jackets, Slacks / Chinos. Ties optional.",
-    women: "Cocktail Dresses or Sun Dresses."
+    title: 'Welcome Dinner',
+    general: 'White Night',
+    men: 'Jackets, Slacks / Chinos. Ties optional.',
+    women: 'Cocktail Dresses or Sun Dresses.',
   },
   {
-    title: "Throughout the Week",
-    general: "Comfortable",
-    men: "Bathing suits welcome. Summer wear recommended.",
-    women: "Bathing suits welcome. Summer wear recommended."
+    title: 'Throughout the Week',
+    general: 'Comfortable',
+    men: 'Bathing suits welcome. Summer wear recommended.',
+    women: 'Bathing suits welcome. Summer wear recommended.',
   },
   {
-    title: "Wedding Dinner",
-    general: "Black Tie Optional",
-    men: "Suit and Tie. Tuxedo optional.",
-    women: "Cocktail Dresses or Long Dresses."
-  }
+    title: 'Wedding Dinner',
+    general: 'Black Tie',
+    men: 'Tuxedos',
+    women: 'Long Dresses.',
+  },
 ];
 
 const Attire = (): JSX.Element => (
-  <div className={s.Attire}>
+  <div>
     {occasions.map((occasion) => (
-      <div
-        key={occasion.title.toLowerCase()}
-        className={cn(s.Occasion, s.Container)}
-      >
-        <h1 className={cn(s.Occasion, s.Title)}>{occasion.title}</h1>
-        <div className={cn(s.Occasion, s.Subtitle)}>{occasion.general}</div>
+      <div key={occasion.title.toLowerCase()}>
+        <h1>{occasion.title}</h1>
+        <div>{occasion.general}</div>
         <div>
-          <span className={s.Gender}>Gentlemen: </span>
+          <span>Gentlemen: </span>
           {occasion.men}
         </div>
         <div>
-          <span className={s.Gender}>Ladies: </span>
+          <span>Ladies: </span>
           {occasion.women}
         </div>
       </div>

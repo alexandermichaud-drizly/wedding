@@ -2,7 +2,7 @@ import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 
 const Gifts = (): JSX.Element => (
-  <div className={s.GiftsCopy}>
+  <div>
     <div>
       Making the journey to Italy is more than we could ever expect from our
       guests, so please do not feel obligated to give us anything more. The

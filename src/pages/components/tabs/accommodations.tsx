@@ -1,8 +1,8 @@
-import * as React from "react";
-import s from "../../../styles/main.module.scss";
+import * as React from 'react';
+import s from '../../../styles/main.module.scss';
 
 const Accommodations = (): JSX.Element => (
-  <div className={s.Accommodations}>
+  <div>
     <h1>Accommodations</h1>
     <div>
       The castle is situated in the rustic Tuscan countryside. What were
