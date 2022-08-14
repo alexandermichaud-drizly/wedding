@@ -1,9 +1,19 @@
 import * as React from "react";
 import s from "../../../styles/main.module.scss";
 
-const placeholder =
-  "Guests will be able to RSVP through the site later this summer. We'll let you know when it's ready!";
+const mailToLink = "mailto:rsvp@andrea-alexander.wedding?subject=RSVP";
 
-const RSVP = (): JSX.Element => <div className={s.RSVP}>{placeholder}</div>;
+const RSVP = (): JSX.Element => (
+  <div className={s.RSVP}>
+    <div>
+      We ask that you RSVP by November 30, 2022 by emailing us at{" "}
+      <a href={mailToLink}>rsvp@andrea-alexander.wedding</a>.
+    </div>
+    <div>
+      If your Save-the-Date was addressed to multiple invitees, please specify
+      if everyone listed can attend.
+    </div>
+  </div>
+);
 
 export default RSVP;
