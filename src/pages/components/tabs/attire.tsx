@@ -1,3 +1,4 @@
+import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 import cn from 'classnames';
 
@@ -32,7 +33,7 @@ const occasions: Occasion[] = [
 const Attire = (): JSX.Element => 
   <div className={s.Attire}>
     {occasions.map(occasion => 
-      <div className={cn(s.Occasion, s.Container)}>
+      <div key={occasion.title.toLowerCase()} className={cn(s.Occasion, s.Container)}>
         <h1 className={cn(s.Occasion, s.Title)}>{occasion.title}</h1>
         <div className={cn(s.Occasion, s.Subtitle)}>{occasion.general}</div>
         <div><span className={s.Gender}>Gentlemen: </span>{occasion.men}</div>

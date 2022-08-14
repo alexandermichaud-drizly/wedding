@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { ImageList, ImageListItem } from "@mui/material";
 
 type Version = "venue" | "engagement";
@@ -35,7 +36,7 @@ const ENGAGEMENT_PHOTOS: Photo[] = [
 const VenuePhotos = (props: Props): JSX.Element => 
   <ImageList variant="quilted">
     {(props.version === "venue" ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS).map(data => 
-      <ImageListItem>
+      <ImageListItem key={data.alt}>
         <img
           {...srcset(data.src, 121, data.rows, data.cols)}
           alt={data.alt}

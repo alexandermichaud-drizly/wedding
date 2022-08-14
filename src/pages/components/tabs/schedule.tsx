@@ -1,3 +1,4 @@
+import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 
 type Event = {
@@ -97,11 +98,11 @@ const DAYS: Day[] = [
 const Schedule = (): JSX.Element => 
   <div className={s.Schedule}>
     {DAYS.map(day => 
-      <div className={s.Day}>
+      <div key={day.date.toLowerCase()} className={s.Day}>
         <h1>{day.date}</h1>
         <div>
           {day.events.map(event => 
-            <div className={s.Event}>
+            <div key={event.title.toLowerCase()} className={s.Event}>
               <div>
                 {event.time}
               </div>

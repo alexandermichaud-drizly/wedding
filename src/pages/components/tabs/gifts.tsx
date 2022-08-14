@@ -1,3 +1,4 @@
+import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 
 const expectations = "Making the journey to Italy is more than we could ever expect from our guests, so please do not feel obligated to give us anything more. The greatest gift we can receive is your presence on our special day.";

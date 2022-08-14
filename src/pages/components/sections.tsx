@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Box, Drawer, List, ListItemButton, ListItemText } from '@mui/material';
 import Photos from './tabs/photos';
 import RSVP from './tabs/rsvp';
@@ -77,7 +78,7 @@ export const drawer = (
   >
     <List>
       {Sections.map(section => 
-        <Box onClick={toggleDrawer()}>
+        <Box key={section.label.toLowerCase()} onClick={toggleDrawer()}>
           <ListItemButton onClick={onClickSection(section)}>
             <ListItemText classes={{primary: cn(s.Drawer, s.Text)}} primary={section.label} />
           </ListItemButton>

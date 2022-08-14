@@ -1,4 +1,4 @@
-
+import * as React from 'react';
 import s from '../../styles/main.module.scss'
 
 const Countdown = (): JSX.Element => {

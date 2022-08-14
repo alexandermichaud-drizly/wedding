@@ -1,3 +1,4 @@
+import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 
 const transportation = "Regardless of your travel plans, contact us when you have determined when and how you'll arrive. We can help you arrange transportation that's offered by the venue."

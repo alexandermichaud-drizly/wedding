@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import s from '../styles/main.module.scss';
 import valley from '../assets/valley.mp4';
@@ -27,7 +28,7 @@ const Main = (): JSX.Element => {
   const [selectedSection, setSelectedSection] = useState(Sections[0]);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const toggleDrawer = (newValue: boolean = !drawerOpen) => (): void => setDrawerOpen(newValue);
+  const toggleDrawer = (newValue = !drawerOpen) => (): void => setDrawerOpen(newValue);
   const handleSelectionClick = (section: SectionType) => () => setSelectedSection(section);
 
   useEffect((): void => {

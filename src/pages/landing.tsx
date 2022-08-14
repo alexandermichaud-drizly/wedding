@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { 
   Dialog, 
   DialogContent, 
@@ -9,7 +10,6 @@ import cn from 'classnames';
 import ring from "../assets/ring.jpg";
 import s from "../styles/landing.module.scss";
 import 'normalize.css';
-import React from 'react';
 
 type LandingPageProps = {
   tempPage: boolean;
@@ -49,7 +49,7 @@ const ComingSoon = (): JSX.Element => (
 const PasswordInput = (props: any): JSX.Element => (
   <Dialog open classes={{paper: cn(s.Dialog, s.Paper)}}>
     <DialogTitle className={cn(s.TitleText, s.Dialog)}>
-      What's the password? 
+      What&apos;s the password? 
     </DialogTitle>
     <DialogContent className={s.PasswordEntry}>
       <TextField classes={{root: s.InputField}} onChange={props.onInputChange} />
