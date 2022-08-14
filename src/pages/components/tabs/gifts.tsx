@@ -1,5 +1,7 @@
 import * as React from 'react';
 import s from '../../../styles/main.module.scss';
+import Venmo from '../../../assets/venmo_qr.png';
+import PayPal from '../../../assets/paypal_qr.png';
 
 const Gifts = (): JSX.Element => {
   return (
@@ -15,6 +17,8 @@ const Gifts = (): JSX.Element => {
         go toward furnishings, repairs, and upkeep. Anything helps, but again,
         nothing is expected.
       </div>
+      <img src={Venmo} alt="Venmo QR Code" />
+      <img src={PayPal} alt="PayPal QR Code" />
     </div>
   );
 };
