@@ -86,7 +86,50 @@
     brightness(94%) contrast(88%);
   padding: 0 15vw;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (min-width: 1200px) {
     padding: 0 10vw;
   }
+}
+
+.Modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ImageListItem,
+.SpotlightImage {
+  border-radius: 12px;
+}
+
+.SpotlightImageContainer {
+  z-index: 100;
+}
+
+.SpotlightImage {
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.ArrowLeft.root,
+.ArrowRight.root {
+  z-index: 200;
+  bottom: 50vh;
+  height: 3vw;
+  width: 3vw;
+  position: absolute;
+  color: white;
+
+  @media screen and (max-width: 600px) {
+    width: 8vw;
+    height: 8vw;
+  }
+}
+
+.ArrowLeft.root {
+  left: 5vw;
+}
+
+.ArrowRight.root {
+  right: 5vw;
 }

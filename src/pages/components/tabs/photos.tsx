@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ImageList, ImageListItem } from '@mui/material';
+import { Backdrop, Fade, ImageList, ImageListItem, Modal } from '@mui/material';
 import WineShop from '../../../assets/venue_photos/wine_shop.jpg';
 import VillaEntrance from '../../../assets/venue_photos/villa_entrance.jpg';
 import Castle from '../../../assets/venue_photos/castle.jpg';
@@ -33,6 +33,12 @@ import Arch from '../../../assets/venue_photos/arch.jpg';
 import Millstone from '../../../assets/venue_photos/millstone.jpg';
 import Lake from '../../../assets/venue_photos/lake.jpg';
 import Villa from '../../../assets/venue_photos/villa.jpg';
+import s from '../../../styles/main.module.scss';
+import {
+  ArrowCircleLeftTwoTone,
+  ArrowCircleRightTwoTone,
+} from '@mui/icons-material';
+import cn from 'classnames';
 
 type Version = 'venue' | 'engagement';
 type Props = { version: Version };
@@ -204,27 +210,74 @@ const ENGAGEMENT_PHOTOS: Photo[] = [
   },
 ];
 
-const VenuePhotos = (props: Props): JSX.Element => (
-  <div>
-    <h1>Venue Photos</h1>
-    <ImageList variant="quilted" cols={4}>
-      {(props.version === 'venue' ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS).map(
-        (data) => (
-          <ImageListItem
-            key={data.alt}
-            cols={data.cols || 1}
-            rows={data.rows || 1}
-          >
-            <img
-              {...srcset(data.src, 121, data.rows, data.cols)}
-              alt={data.alt}
-              loading="lazy"
+const VenuePhotos = (props: Props): JSX.Element => {
+  const [imageModalOpen, setImageModalOpen] = React.useState(false);
+  const [spotlitImageIndex, setSpotlitImageIndex] = React.useState(0);
+
+  const spotlightImage = (index: number) => {
+    setSpotlitImageIndex(index);
+    setImageModalOpen(true);
+  };
+
+  const handleArrowClick = (direction: 'left' | 'right') => {
+    const imageOffset = direction === 'left' ? -1 : 1;
+    const newIndex = spotlitImageIndex + imageOffset;
+    const numPhotos = VENUE_PHOTOS.length;
+    if (newIndex < 0) return setSpotlitImageIndex(numPhotos - 1);
+    if (newIndex > numPhotos - 1) return setSpotlitImageIndex(0);
+    return setSpotlitImageIndex(newIndex);
+  };
+
+  return (
+    <div>
+      <h1>Venue Photos</h1>
+      <ImageList variant="quilted" cols={4}>
+        {(props.version === 'venue' ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS).map(
+          (data, index) => (
+            <ImageListItem
+              key={data.alt}
+              cols={data.cols || 1}
+              rows={data.rows || 1}
+            >
+              <img
+                className={s.ImageListItem}
+                {...srcset(data.src, 121, data.rows, data.cols)}
+                alt={data.alt}
+                loading="lazy"
+                onClick={() => spotlightImage(index)}
+              />
+            </ImageListItem>
+          )
+        )}
+      </ImageList>
+      <Modal
+        className={s.Modal}
+        open={imageModalOpen}
+        onClose={() => setImageModalOpen(false)}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={imageModalOpen}>
+          <div className={s.SpotlightImageContainer}>
+            <ArrowCircleLeftTwoTone
+              classes={{ root: cn(s.ArrowLeft, s.root) }}
+              onClick={() => handleArrowClick('left')}
             />
-          </ImageListItem>
-        )
-      )}
-    </ImageList>
-  </div>
-);
+            <img
+              className={s.SpotlightImage}
+              src={VENUE_PHOTOS[spotlitImageIndex].src}
+              alt={VENUE_PHOTOS[spotlitImageIndex].src}
+            />
+            <ArrowCircleRightTwoTone
+              classes={{ root: cn(s.ArrowRight, s.root) }}
+              onClick={() => handleArrowClick('right')}
+            />
+          </div>
+        </Fade>
+      </Modal>
+    </div>
+  );
+};
 
 export default VenuePhotos;

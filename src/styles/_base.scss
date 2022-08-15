@@ -25,3 +25,8 @@ html {
   color: $brown2;
   width: 100%;
 }
+
+body {
+  overflow: auto !important;
+  padding-right: 0px !important;
+}
