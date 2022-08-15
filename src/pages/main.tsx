@@ -91,7 +91,7 @@ const Main = (): JSX.Element => {
         easing="ease-in"
         mountOnEnter
       >
-        <div>
+        <div className={s.Main}>
           <IconButton onClick={toggleDrawer()}>
             <MenuIcon />
             <div className={s.MenuText}>Menu</div>
@@ -102,9 +102,7 @@ const Main = (): JSX.Element => {
             <div className={s.Names}>Andrea and Alexander</div>
           </div>
           <Countdown />
-          <div className={s.Container}>
-            <div>{selectedSection.content}</div>
-          </div>
+          <div className={s.Container}>{selectedSection.content}</div>
         </div>
       </Fade>
       {drawer(drawerOpen, toggleDrawer, handleSelectionClick)}

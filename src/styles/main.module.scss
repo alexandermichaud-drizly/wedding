@@ -29,8 +29,8 @@
 }
 
 .Castle {
-  height: 450px;
-  width: 800px;
+  height: 40vw;
+  width: 60vw;
   object-fit: cover;
 
   @media screen and (max-width: 600px) {
@@ -64,10 +64,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 65vw;
+}
+
+.Main {
+  width: 70vw;
 }
 
 .MenuText {
-  margin-left: 12px;
-  font-size: 18px;
+  margin-left: 16px;
+  font-size: 24px;
 }
