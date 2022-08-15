@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import s from '../styles/main.module.scss';
 import valley from '../assets/valley.mp4';
-import castle from '../assets/castle.jpg';
+import castle from '../assets/castle.png';
 import { Fade } from '@mui/material';
 import {
   FADE_OUT_VIDEO_MS,

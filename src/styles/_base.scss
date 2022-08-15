@@ -1,26 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Amiri&family=EB+Garamond:ital,wght@1,600&display=swap");
-$amiri: "Amiri", serif;
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=EB+Garamond:ital,wght@1,600&display=swap');
+$amiri: 'Amiri', serif;
 
 @font-face {
-  font-family: "BlantePanamaScript";
-  src: local("BlantePanamaScript"),
-    url("../fonts/BlantePanamaScript.ttf") format("truetype");
+  font-family: 'BlantePanamaScript';
+  src: local('BlantePanamaScript'),
+    url('../fonts/BlantePanamaScript.ttf') format('truetype');
 }
 @font-face {
-  font-family: "MinionVariableRoman";
-  src: local("MinionVariableRoman"),
-    url("../fonts/MinionVariableRoman.otf") format("opentype");
+  font-family: 'MinionVariableRoman';
+  src: local('MinionVariableRoman'),
+    url('../fonts/MinionVariableRoman.otf') format('opentype');
 }
 @font-face {
-  font-family: "MinionVariableItalic";
-  src: local("MinionVariableItalic"),
-    url("../fonts/MinionVariableItalic.otf") format("opentype");
+  font-family: 'MinionVariableItalic';
+  src: local('MinionVariableItalic'),
+    url('../fonts/MinionVariableItalic.otf') format('opentype');
 }
 
 $brown: #50382a;
 $tan: #ba947b;
+$brown2: #68584d;
 
 html {
-  color: $brown;
+  color: $brown2;
   width: 100%;
 }
