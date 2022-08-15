@@ -34,8 +34,8 @@
   object-fit: cover;
 
   @media screen and (max-width: 600px) {
-    width: 80vw;
-    height: 230px;
+    width: 70vw;
+    height: 45vw;
   }
 }
 
@@ -50,6 +50,11 @@
   font-family: 'BlantePanamaScript';
   font-size: 64px;
   text-align: center;
+  margin-top: 28px;
+
+  @media screen and (max-width: 600px) {
+    line-height: 48px;
+  }
 }
 
 .Countdown {
@@ -73,4 +78,15 @@
 .MenuText {
   margin-left: 16px;
   font-size: 24px;
+}
+
+.Divider {
+  margin-top: 48px;
+  filter: invert(35%) sepia(6%) saturate(1339%) hue-rotate(341deg)
+    brightness(94%) contrast(88%);
+  padding: 0 15vw;
+
+  @media screen and (max-width: 1200px) {
+    padding: 0 10vw;
+  }
 }

@@ -17,6 +17,7 @@ import { drawer, Sections, SectionType } from './components/sections';
 import Countdown from './components/countdown';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from '@mui/material';
+import Divider from './divider';
 
 const Main = (): JSX.Element => {
   const videoRef = useRef() as React.RefObject<HTMLVideoElement>;
@@ -64,7 +65,7 @@ const Main = (): JSX.Element => {
   };
 
   return (
-    <div className={s.Wrapper}>
+    <div className={fadeInImage ? s.Wrapper : undefined}>
       <Fade
         in={fadeInVideo}
         timeout={{
@@ -102,6 +103,7 @@ const Main = (): JSX.Element => {
             <div className={s.Names}>Andrea and Alexander</div>
           </div>
           <Countdown />
+          <Divider />
           <div className={s.Container}>{selectedSection.content}</div>
         </div>
       </Fade>
