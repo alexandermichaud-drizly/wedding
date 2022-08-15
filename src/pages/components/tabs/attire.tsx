@@ -25,24 +25,25 @@ const occasions: Occasion[] = [
   {
     title: 'Wedding Dinner',
     general: 'Black Tie',
-    men: 'Tuxedos',
+    men: 'Tuxedos.',
     women: 'Long Dresses.',
   },
 ];
 
 const Attire = (): JSX.Element => (
-  <div>
+  <div className={s.Attire}>
     <h1>Attire</h1>
     {occasions.map((occasion) => (
-      <div key={occasion.title.toLowerCase()}>
-        <h2>{occasion.title}</h2>
-        <div>{occasion.general}</div>
+      <div className={s.AttireOccasion} key={occasion.title.toLowerCase()}>
+        <h2>
+          {occasion.title}: {occasion.general}
+        </h2>
         <div>
-          <span>Gentlemen: </span>
+          <span className={s.Gender}>Gentlemen: </span>
           {occasion.men}
         </div>
         <div>
-          <span>Ladies: </span>
+          <span className={s.Gender}>Ladies: </span>
           {occasion.women}
         </div>
       </div>
