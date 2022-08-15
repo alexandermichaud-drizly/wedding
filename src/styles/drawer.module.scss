@@ -1,10 +1,14 @@
-@use "base";
+@use 'base';
 
 .Drawer.Root {
   width: 30vw;
+
+  @media screen and (max-width: 600px) {
+    width: 50vw;
+  }
 }
 
 .Drawer.Text {
-  font-family: "MinionVariableRoman";
+  font-family: 'MinionVariableRoman';
   font-size: 24px;
 }

@@ -105,6 +105,7 @@ const Main = (): JSX.Element => {
           <Countdown />
           <Divider />
           <div className={s.Container}>{selectedSection.content}</div>
+          <div className={s.Author}>Site by Alexander</div>
         </div>
       </Fade>
       {drawer(drawerOpen, toggleDrawer, handleSelectionClick)}

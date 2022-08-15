@@ -117,7 +117,7 @@ const faqs: Faq[] = [
       'What are the surfaces at and around the Castle like? What shoes should I wear?',
     answer: (
       <div>
-        The path in between the villas/ apartments and the main restaurant and
+        The path in between the villas / apartments and the main restaurant and
         Castle (where the wedding ceremony will be held) is not paved, but on
         gravel or grass, so please bring comfortable shoes! For the wedding
         night, for women planning on wearing heels, we’d recommend considering
@@ -143,8 +143,9 @@ const faqs: Faq[] = [
         <div>
           Oh, where to start?! We&apos;ve curated some activities on / near the
           Castle grounds, such as horseback riding and vineyard tours, that
-          individuals and small groups can participate in on the second day. See
-          the &quot;Special Activities&quot; tab for more details.
+          individuals and small groups can participate in on the second or
+          fourth days. See the &quot;Special Activities&quot; tab for more
+          details.
         </div>
         <div>
           We know that many will want to travel the area before / after the
@@ -167,7 +168,7 @@ const FAQ = (): JSX.Element => (
     <h1>FAQ</h1>
     {faqs.map((faq) => (
       <div key={faq.question.toLowerCase()}>
-        <h1>{faq.question}</h1>
+        <h2>{faq.question}</h2>
         <div>{faq.answer}</div>
       </div>
     ))}

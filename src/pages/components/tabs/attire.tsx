@@ -35,7 +35,7 @@ const Attire = (): JSX.Element => (
     <h1>Attire</h1>
     {occasions.map((occasion) => (
       <div key={occasion.title.toLowerCase()}>
-        <h1>{occasion.title}</h1>
+        <h2>{occasion.title}</h2>
         <div>{occasion.general}</div>
         <div>
           <span>Gentlemen: </span>

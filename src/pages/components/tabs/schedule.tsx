@@ -96,21 +96,23 @@ const DAYS: Day[] = [
 ];
 
 const Schedule = (): JSX.Element => (
-  <div>
+  <div className={s.ScheduleWrapper}>
     <h1>Schedule</h1>
-    {DAYS.map((day) => (
-      <div key={day.date.toLowerCase()}>
-        <h1>{day.date}</h1>
-        <div>
-          {day.events.map((event) => (
-            <div key={event.title.toLowerCase()}>
-              <div>{event.time}</div>
-              <div>{event.title}</div>
-            </div>
-          ))}
+    <div className={s.Schedule}>
+      {DAYS.map((day) => (
+        <div key={day.date.toLowerCase()}>
+          <h2>{day.date}</h2>
+          <div>
+            {day.events.map((event) => (
+              <div key={event.title.toLowerCase()}>
+                <div>{event.time}</div>
+                <div>{event.title}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 );
 
