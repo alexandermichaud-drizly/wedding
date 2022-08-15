@@ -245,6 +245,22 @@ export const ENGAGEMENT_PHOTOS: Photo[] = [
     alt: 'Drink',
   },
   {
+    src: Shoulder,
+    alt: 'Shoulder',
+  },
+  {
+    src: Kiss,
+    alt: 'Kiss',
+  },
+  {
+    src: Dinner,
+    alt: 'Dinner',
+  },
+  {
+    src: LightWriting,
+    alt: 'Light Writing',
+  },
+  {
     src: Tree,
     alt: 'Tree',
     cols: 2,
@@ -262,21 +278,5 @@ export const ENGAGEMENT_PHOTOS: Photo[] = [
     src: Stumbling,
     alt: 'Stumbling',
     cols: 2,
-  },
-  {
-    src: Shoulder,
-    alt: 'Shoulder',
-  },
-  {
-    src: Kiss,
-    alt: 'Kiss',
-  },
-  {
-    src: Dinner,
-    alt: 'Dinner',
-  },
-  {
-    src: LightWriting,
-    alt: 'Light Writing',
   },
 ];
