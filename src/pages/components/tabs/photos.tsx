@@ -54,8 +54,28 @@ const srcset = (image: string, size: number, rows = 1, cols = 1) => {
 
 const VENUE_PHOTOS: Photo[] = [
   {
+    src: CastelloDelTrebbio,
+    alt: 'Castello del Trebbio',
+  },
+  {
+    src: Vineyard,
+    alt: 'Vineyard',
+    cols: 2,
+    rows: 2,
+  },
+  {
     src: WineShop,
     alt: 'Wine Shop',
+    rows: 2,
+  },
+  {
+    src: BasilGarden,
+    alt: 'Basil Garden',
+  },
+  {
+    src: RoadToCastle,
+    alt: 'Road to Castle',
+    rows: 2,
   },
   {
     src: VillaEntrance,
@@ -64,34 +84,37 @@ const VENUE_PHOTOS: Photo[] = [
   {
     src: Castle,
     alt: 'Castle',
+    cols: 2,
+    rows: 2,
   },
   {
-    src: CypressTrees,
-    alt: 'Cypress Trees',
-  },
-  {
-    src: RoadToCastle,
-    alt: 'Road to Castle',
-  },
-  {
-    src: Valley,
-    alt: 'Valley',
+    src: Garden,
+    alt: 'Garden',
   },
   {
     src: Olio,
     alt: 'Olio',
   },
   {
-    src: Magnum,
-    alt: 'Magnum',
+    src: Valley,
+    alt: 'Valley',
   },
   {
-    src: Window,
-    alt: 'Window',
+    src: Well,
+    alt: 'Well',
+    rows: 2,
   },
   {
-    src: CastleFromADistance,
-    alt: 'Castle From a Distance',
+    src: Millstone,
+    alt: 'Millstone',
+  },
+  {
+    src: CypressTrees,
+    alt: 'Cypress Trees',
+  },
+  {
+    src: Hearth,
+    alt: 'Hearth',
   },
   {
     src: Door,
@@ -102,88 +125,75 @@ const VENUE_PHOTOS: Photo[] = [
     alt: 'Chairs',
   },
   {
-    src: Hearth,
-    alt: 'Hearth',
-  },
-  {
-    src: Garden,
-    alt: 'Garden',
+    src: CastleFromADistance,
+    alt: 'Castle From a Distance',
   },
   {
     src: Barrels,
     alt: 'barrels',
   },
   {
-    src: Well,
-    alt: 'Well',
-  },
-  {
-    src: Gate,
-    alt: 'Gate',
-  },
-  {
-    src: Cellar,
-    alt: 'Cellar',
-  },
-  {
-    src: LakeView,
-    alt: 'Lake View',
-  },
-  {
-    src: Wines,
-    alt: 'Wines',
-  },
-  {
-    src: Restaurant,
-    alt: 'Restaurant',
-  },
-  {
-    src: BasilGarden,
-    alt: 'Basil Garden',
-  },
-  {
-    src: CastelloDelTrebbio,
-    alt: 'Castello del Trebbio',
-  },
-  {
-    src: Vineyard,
-    alt: 'Vineyard',
-  },
-  {
-    src: CastleNight,
-    alt: 'Castle Night',
-  },
-  {
-    src: Terrace,
-    alt: 'Terrace',
-  },
-  {
-    src: Patio,
-    alt: 'Patio',
-  },
-  {
-    src: LongTable,
-    alt: 'Long Table',
-  },
-  {
-    src: Wall,
-    alt: 'Wall',
-  },
-  {
-    src: Arch,
-    alt: 'Arch',
-  },
-  {
-    src: Millstone,
-    alt: 'Millstone',
+    src: Window,
+    alt: 'Window',
   },
   {
     src: Lake,
     alt: 'Lake',
   },
   {
+    src: Cellar,
+    alt: 'Cellar',
+    cols: 2,
+  },
+  {
+    src: Magnum,
+    alt: 'Magnum',
+  },
+  {
+    src: Patio,
+    alt: 'Patio',
+  },
+  {
+    src: Wines,
+    alt: 'Wines',
+  },
+  {
+    src: Terrace,
+    alt: 'Terrace',
+  },
+  {
     src: Villa,
     alt: 'Villa',
+  },
+  {
+    src: Arch,
+    alt: 'Arch',
+  },
+  {
+    src: LongTable,
+    alt: 'Long Table',
+  },
+  {
+    src: LakeView,
+    alt: 'Lake View',
+  },
+  {
+    src: Wall,
+    alt: 'Wall',
+  },
+  {
+    src: CastleNight,
+    alt: 'Castle Night',
+    rows: 2,
+    cols: 3,
+  },
+  {
+    src: Restaurant,
+    alt: 'Restaurant',
+  },
+  {
+    src: Gate,
+    alt: 'Gate',
   },
 ];
 
@@ -195,10 +205,14 @@ const ENGAGEMENT_PHOTOS: Photo[] = [
 ];
 
 const VenuePhotos = (props: Props): JSX.Element => (
-  <ImageList variant="quilted">
+  <ImageList variant="quilted" cols={4}>
     {(props.version === 'venue' ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS).map(
       (data) => (
-        <ImageListItem key={data.alt}>
+        <ImageListItem
+          key={data.alt}
+          cols={data.cols || 1}
+          rows={data.rows || 1}
+        >
           <img
             {...srcset(data.src, 121, data.rows, data.cols)}
             alt={data.alt}
