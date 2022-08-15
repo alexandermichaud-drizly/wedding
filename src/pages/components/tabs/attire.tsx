@@ -32,6 +32,7 @@ const occasions: Occasion[] = [
 
 const Attire = (): JSX.Element => (
   <div>
+    <h1>Attire</h1>
     {occasions.map((occasion) => (
       <div key={occasion.title.toLowerCase()}>
         <h1>{occasion.title}</h1>

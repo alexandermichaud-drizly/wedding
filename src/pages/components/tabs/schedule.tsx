@@ -97,6 +97,7 @@ const DAYS: Day[] = [
 
 const Schedule = (): JSX.Element => (
   <div>
+    <h1>Schedule</h1>
     {DAYS.map((day) => (
       <div key={day.date.toLowerCase()}>
         <h1>{day.date}</h1>

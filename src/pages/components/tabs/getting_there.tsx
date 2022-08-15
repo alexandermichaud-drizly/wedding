@@ -12,6 +12,7 @@ const driving =
 
 const GettingThere = (): JSX.Element => (
   <div>
+    <h1>Getting There</h1>
     <div>{transportation}</div>
     <div>{flying}</div>
     <div>{trains}</div>

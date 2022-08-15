@@ -205,23 +205,26 @@ const ENGAGEMENT_PHOTOS: Photo[] = [
 ];
 
 const VenuePhotos = (props: Props): JSX.Element => (
-  <ImageList variant="quilted" cols={4}>
-    {(props.version === 'venue' ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS).map(
-      (data) => (
-        <ImageListItem
-          key={data.alt}
-          cols={data.cols || 1}
-          rows={data.rows || 1}
-        >
-          <img
-            {...srcset(data.src, 121, data.rows, data.cols)}
-            alt={data.alt}
-            loading="lazy"
-          />
-        </ImageListItem>
-      )
-    )}
-  </ImageList>
+  <div>
+    <h1>Venue Photos</h1>
+    <ImageList variant="quilted" cols={4}>
+      {(props.version === 'venue' ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS).map(
+        (data) => (
+          <ImageListItem
+            key={data.alt}
+            cols={data.cols || 1}
+            rows={data.rows || 1}
+          >
+            <img
+              {...srcset(data.src, 121, data.rows, data.cols)}
+              alt={data.alt}
+              loading="lazy"
+            />
+          </ImageListItem>
+        )
+      )}
+    </ImageList>
+  </div>
 );
 
 export default VenuePhotos;

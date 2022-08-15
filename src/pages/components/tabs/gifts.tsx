@@ -6,6 +6,7 @@ import PayPal from '../../../assets/paypal_qr.png';
 const Gifts = (): JSX.Element => {
   return (
     <div>
+      <h1>Gifts</h1>
       <div>
         Making the journey to Italy is more than we could ever expect from our
         guests, so please do not feel obligated to give us anything more. The

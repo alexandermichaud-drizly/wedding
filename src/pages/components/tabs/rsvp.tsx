@@ -5,6 +5,7 @@ const mailToLink = 'mailto:rsvp@andrea-alexander.wedding?subject=RSVP';
 
 const RSVP = (): JSX.Element => (
   <div>
+    <h1>RSVP</h1>
     <div>
       We ask that you RSVP by November 30, 2022 by emailing us at{' '}
       <a href={mailToLink}>rsvp@andrea-alexander.wedding</a>.

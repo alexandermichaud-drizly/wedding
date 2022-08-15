@@ -164,6 +164,7 @@ const faqs: Faq[] = [
 
 const FAQ = (): JSX.Element => (
   <div>
+    <h1>FAQ</h1>
     {faqs.map((faq) => (
       <div key={faq.question.toLowerCase()}>
         <h1>{faq.question}</h1>

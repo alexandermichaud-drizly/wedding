@@ -3,6 +3,7 @@ import s from '../../../styles/main.module.scss';
 
 const SpecialActivities = (): JSX.Element => (
   <div>
+    <h1>Special Activities</h1>
     <div>
       In addition to the meals and events on the schedule, the activities below
       will be available.
