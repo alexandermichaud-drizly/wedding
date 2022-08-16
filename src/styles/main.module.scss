@@ -72,7 +72,7 @@
 }
 
 .Main {
-  width: 70vw;
+  width: 75vw;
 }
 
 .MenuText {
@@ -148,12 +148,11 @@
   align-items: normal;
   h1 {
     font-size: 48px;
-    margin-bottom: 56px;
+    margin-bottom: 72px;
   }
 
   h2 {
     font-size: 32px;
-    margin-bottom: 18px;
   }
 
   h1,
@@ -163,6 +162,7 @@
 
   div {
     margin-bottom: 18px;
+    line-height: 30px;
   }
 }
 
@@ -175,6 +175,14 @@
 
   .Gender {
     font-weight: 900;
+  }
+
+  h2 {
+    margin-bottom: 8px;
+  }
+
+  div {
+    margin-bottom: 8px;
   }
 }
 
