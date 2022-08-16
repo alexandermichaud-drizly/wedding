@@ -153,6 +153,7 @@
 
   h2 {
     font-size: 32px;
+    line-height: 40px;
   }
 
   h1,
@@ -162,6 +163,7 @@
 
   div {
     margin-bottom: 18px;
+    font-size: 18px;
     line-height: 30px;
   }
 }
@@ -202,6 +204,15 @@
   margin-bottom: 48px;
 }
 
+.SpecialActivities,
+.Photos {
+  h1 {
+    @media screen and (max-width: 600px) {
+      line-height: 52px;
+    }
+  }
+}
+
 .SpecialActivities {
   li {
     margin: 8px 0;
@@ -209,5 +220,13 @@
 
   span {
     font-weight: 900;
+  }
+}
+
+.Accommodations {
+  h1 {
+    @media screen and (max-width: 600px) {
+      font-size: 36px;
+    }
   }
 }

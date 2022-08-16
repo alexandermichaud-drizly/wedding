@@ -43,7 +43,7 @@ const Photos = (props: Props): JSX.Element => {
   };
 
   return (
-    <div>
+    <div className={s.Photos}>
       <h1>{venueVersion ? 'Venue Photos' : 'Engagement Photos'}</h1>
       <ImageList variant="quilted" cols={4}>
         {photoGroup.map((data, index) => (
