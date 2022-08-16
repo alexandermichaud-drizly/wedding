@@ -45,6 +45,11 @@ const Photos = (props: Props): JSX.Element => {
   return (
     <div className={s.Photos}>
       <h1>{venueVersion ? 'Venue Photos' : 'Engagement Photos'}</h1>
+      <div className={s.PhotoComment}>
+        {venueVersion
+          ? 'We visited the castle in April and took these photos ourselves!'
+          : "The Spanish Steps on New Year's Eve! We were glowing all through the next day."}
+      </div>
       <ImageList variant="quilted" cols={4}>
         {photoGroup.map((data, index) => (
           <ImageListItem
