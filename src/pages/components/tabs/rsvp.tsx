@@ -7,7 +7,8 @@ const RSVP = (): JSX.Element => (
   <div>
     <h1>RSVP</h1>
     <div>
-      We ask that you RSVP by November 30, 2022 by emailing us at{' '}
+      We ask that you RSVP by November 30, 2022 by contacting Andrea via{' '}
+      <a href="https://wa.me/13053363092">WhatsApp</a>, or by emailing us at{' '}
       <a href={mailToLink}>rsvp@andrea-alexander.wedding</a>.
     </div>
     <div>

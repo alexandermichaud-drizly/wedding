@@ -148,10 +148,12 @@
   align-items: normal;
   h1 {
     font-size: 48px;
+    margin-bottom: 56px;
   }
 
   h2 {
     font-size: 32px;
+    margin-bottom: 18px;
   }
 
   h1,
@@ -160,16 +162,12 @@
   }
 
   div {
-    margin-bottom: 12px;
+    margin-bottom: 18px;
   }
 }
 
 .Attire {
   text-align: center;
-
-  h2 {
-    margin-bottom: 18px;
-  }
 
   .AttireOccasion {
     margin-bottom: 48px;
@@ -177,5 +175,27 @@
 
   .Gender {
     font-weight: 900;
+  }
+}
+
+.Schedule {
+  .ScheduleDay {
+    margin-bottom: 48px;
+  }
+  .ScheduleDetails {
+    text-align: center;
+  }
+  .EventHour {
+    font-weight: 900;
+  }
+}
+
+.CastleHistory > div {
+  margin-bottom: 48px;
+}
+
+.SpecialActivities {
+  li {
+    margin: 8px 0;
   }
 }

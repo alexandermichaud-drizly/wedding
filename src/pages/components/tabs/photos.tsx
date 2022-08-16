@@ -21,9 +21,12 @@ const srcset = (image: string, size: number, rows = 1, cols = 1) => {
   };
 };
 
-const VenuePhotos = (props: Props): JSX.Element => {
+const Photos = (props: Props): JSX.Element => {
   const [imageModalOpen, setImageModalOpen] = React.useState(false);
   const [spotlitImageIndex, setSpotlitImageIndex] = React.useState(0);
+
+  const venueVersion = props.version === 'venue';
+  const photoGroup = venueVersion ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS;
 
   const spotlightImage = (index: number) => {
     setSpotlitImageIndex(index);
@@ -33,14 +36,11 @@ const VenuePhotos = (props: Props): JSX.Element => {
   const handleArrowClick = (direction: 'left' | 'right') => {
     const imageOffset = direction === 'left' ? -1 : 1;
     const newIndex = spotlitImageIndex + imageOffset;
-    const numPhotos = VENUE_PHOTOS.length;
+    const numPhotos = photoGroup.length;
     if (newIndex < 0) return setSpotlitImageIndex(numPhotos - 1);
     if (newIndex > numPhotos - 1) return setSpotlitImageIndex(0);
     return setSpotlitImageIndex(newIndex);
   };
-
-  const venueVersion = props.version === 'venue';
-  const photoGroup = venueVersion ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS;
 
   return (
     <div>
@@ -92,4 +92,4 @@ const VenuePhotos = (props: Props): JSX.Element => {
   );
 };
 
-export default VenuePhotos;
+export default Photos;

@@ -2,10 +2,10 @@ import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 
 const CastleHistory = (): JSX.Element => (
-  <div>
-    <h1>Castle History</h1>
-    <h2>Summary</h2>
+  <div className={s.CastleHistory}>
     <div>
+      <h1>Castle History</h1>
+      <h2>Summary</h2>
       Castello del Trebbio is rumored to have been the place where the Pazzis
       hatched their plan to murder Lorenzo Medici and his brother Giuliano. The
       assassination attempt took place at the Cathedral of Florence (better

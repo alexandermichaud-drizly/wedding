@@ -100,13 +100,15 @@ const Schedule = (): JSX.Element => (
     <h1>Schedule</h1>
     <div className={s.Schedule}>
       {DAYS.map((day) => (
-        <div key={day.date.toLowerCase()}>
+        <div className={s.ScheduleDay} key={day.date.toLowerCase()}>
           <h2>{day.date}</h2>
-          <div>
+          <div className={s.ScheduleDetails}>
             {day.events.map((event) => (
               <div key={event.title.toLowerCase()}>
-                <div>{event.time}</div>
-                <div>{event.title}</div>
+                <div>
+                  <span className={s.EventHour}>{event.time}: </span>
+                  {event.title}
+                </div>
               </div>
             ))}
           </div>
