@@ -43,7 +43,7 @@ const SpecialActivities = (): JSX.Element => (
             The meal comes with two wines with dinner and a dessert wine.
           </li>
           <li>
-            Cost
+            Cost:
             <ul>
               <li>
                 Premium Option: Includes a private room for the lunch.
