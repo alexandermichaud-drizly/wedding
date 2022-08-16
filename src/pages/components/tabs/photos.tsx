@@ -40,28 +40,27 @@ const VenuePhotos = (props: Props): JSX.Element => {
   };
 
   const venueVersion = props.version === 'venue';
+  const photoGroup = venueVersion ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS;
 
   return (
     <div>
       <h1>{venueVersion ? 'Venue Photos' : 'Engagement Photos'}</h1>
       <ImageList variant="quilted" cols={4}>
-        {(venueVersion ? VENUE_PHOTOS : ENGAGEMENT_PHOTOS).map(
-          (data, index) => (
-            <ImageListItem
-              key={data.alt}
-              cols={data.cols || 1}
-              rows={data.rows || 1}
-            >
-              <img
-                className={s.ImageListItem}
-                {...srcset(data.src, 121, data.rows, data.cols)}
-                alt={data.alt}
-                loading="lazy"
-                onClick={() => spotlightImage(index)}
-              />
-            </ImageListItem>
-          )
-        )}
+        {photoGroup.map((data, index) => (
+          <ImageListItem
+            key={data.alt}
+            cols={data.cols || 1}
+            rows={data.rows || 1}
+          >
+            <img
+              className={s.ImageListItem}
+              {...srcset(data.src, 121, data.rows, data.cols)}
+              alt={data.alt}
+              loading="lazy"
+              onClick={() => spotlightImage(index)}
+            />
+          </ImageListItem>
+        ))}
       </ImageList>
       <Modal
         className={s.Modal}
@@ -79,8 +78,8 @@ const VenuePhotos = (props: Props): JSX.Element => {
             />
             <img
               className={s.SpotlightImage}
-              src={VENUE_PHOTOS[spotlitImageIndex].src}
-              alt={VENUE_PHOTOS[spotlitImageIndex].src}
+              src={photoGroup[spotlitImageIndex].src}
+              alt={photoGroup[spotlitImageIndex].src}
             />
             <ArrowCircleRightTwoTone
               classes={{ root: cn(s.ArrowRight, s.root) }}
