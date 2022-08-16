@@ -1,44 +1,27 @@
-import * as React from 'react';
-import MainPage from './pages/main';
-import LandingPage from './pages/landing';
+import React, { useEffect, useState } from "react";
+import MainPage from "./pages/main";
+import LandingPage from "./pages/landing";
 
-interface AppState {
-  password: string;
-  accessGranted: boolean;
-}
+const App = (): JSX.Element => {
+  const [password, setPassword] = useState("");
+  const [accessGranted, setAccessGranted] = useState(false);
 
-const App = (): JSX.Element => {  
+  const onPasswordChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void =>
+    setPassword(e.target.value);
 
-  const [state, setState] = React.useState<AppState>({
-    password: '',
-    accessGranted: false,
-  });
-  
-  const onSubmitPassword = (): void => {
-    if (state.password === process.env.SITE_PASSWORD) {
-      setState({
-        ...state,
-        accessGranted: true
-      })
+  useEffect(() => {
+    if (password === process.env.SITE_PASSWORD) {
+      setAccessGranted(true);
     }
-  }
-
-  const onPasswordChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ): void => setState({ ...state, password: e.target.value} );
+  }, [password]);
 
   return (
     <div>
-      {
-        state.accessGranted 
-          ? <MainPage />
-          : <LandingPage
-              tempPage={false} 
-              onSubmitPassword={onSubmitPassword}
-              onPasswordChange={onPasswordChange}
-              accessGranted={state.accessGranted} 
-            />
-      }
+      {!accessGranted ? (
+        <MainPage />
+      ) : (
+        <LandingPage tempPage={false} onPasswordChange={onPasswordChange} />
+      )}
     </div>
   );
 };

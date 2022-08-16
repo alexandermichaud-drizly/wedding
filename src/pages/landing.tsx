@@ -1,43 +1,41 @@
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogContentText, 
-  DialogTitle, 
-  TextField ,
-  FormControl
-} from '@mui/material';
-import cn from 'classnames';
+import * as React from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  TextField
+} from "@mui/material";
+import cn from "classnames";
 import ring from "../assets/ring.jpg";
 import s from "../styles/landing.module.scss";
-import 'normalize.css';
+import "normalize.css";
 
 type LandingPageProps = {
   tempPage: boolean;
-  onSubmitPassword?(): void;
-  onPasswordChange?(e: React.ChangeEvent<HTMLInputElement>): void;
-  accessGranted?: boolean;
-}
+  onPasswordChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
+};
 
 const Background = (): JSX.Element => (
   <div className={s.Background}>
-    <div className={s.BackgroundImage} />        
-    <div className={s.Ring} > 
+    <div className={s.BackgroundImage} />
+    <div className={s.Ring}>
       <img src={ring} alt="ring" />
     </div>
   </div>
 );
 
 const ComingSoon = (): JSX.Element => (
-  <Dialog 
-    open 
+  <Dialog
+    open
     classes={{
       root: cn(s.Root, s.Dialog),
-      container: cn(s.Container, s.Dialog), 
-      paper: cn(s.Paper, s.Dialog) 
-    }} 
-    BackdropProps={{classes: { root: cn(s.Backdrop, s.Dialog) }}}
+      container: cn(s.Container, s.Dialog),
+      paper: cn(s.Paper, s.Dialog)
+    }}
+    BackdropProps={{ classes: { root: cn(s.Backdrop, s.Dialog) } }}
   >
-    <DialogTitle className={cn(s.TitleText, s.Dialog)} >
+    <DialogTitle className={cn(s.TitleText, s.Dialog)}>
       Coming soon...
     </DialogTitle>
     <DialogContent>
@@ -49,25 +47,30 @@ const ComingSoon = (): JSX.Element => (
 );
 
 const PasswordInput = (props: any): JSX.Element => (
-  <Dialog open classes={{root: s.PasswordModal}}>
+  <Dialog open classes={{ paper: cn(s.Dialog, s.Paper) }}>
     <DialogTitle className={cn(s.TitleText, s.Dialog)}>
-      What's the password? 
+      What&apos;s the password?
     </DialogTitle>
     <DialogContent className={s.PasswordEntry}>
-      <FormControl classes={{ root: s.InputField }}>
-        <TextField onChange={props.onPasswordChange} />
-      </FormControl>
+      <TextField
+        classes={{ root: s.InputField }}
+        onChange={props.onInputChange}
+      />
     </DialogContent>
   </Dialog>
 );
 
-const LandingPage = (props: LandingPageProps): JSX.Element => {  
+const LandingPage = (props: LandingPageProps): JSX.Element => {
   return (
     <>
       <Background />
-      {props.tempPage ? <ComingSoon /> : <PasswordInput />}
+      {props.tempPage ? (
+        <ComingSoon />
+      ) : (
+        <PasswordInput onInputChange={props.onPasswordChange} />
+      )}
     </>
-  )
+  );
 };
 
 export default LandingPage;
