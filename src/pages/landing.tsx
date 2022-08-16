@@ -1,15 +1,14 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Dialog,
   DialogContent,
   DialogContentText,
   DialogTitle,
-  TextField
-} from "@mui/material";
-import cn from "classnames";
-import ring from "../assets/ring.jpg";
-import s from "../styles/landing.module.scss";
-import "normalize.css";
+  TextField,
+} from '@mui/material';
+import cn from 'classnames';
+import ring from '../assets/ring.jpg';
+import s from '../styles/landing.module.scss';
 
 type LandingPageProps = {
   tempPage: boolean;
@@ -31,7 +30,7 @@ const ComingSoon = (): JSX.Element => (
     classes={{
       root: cn(s.Root, s.Dialog),
       container: cn(s.Container, s.Dialog),
-      paper: cn(s.Paper, s.Dialog)
+      paper: cn(s.Paper, s.Dialog),
     }}
     BackdropProps={{ classes: { root: cn(s.Backdrop, s.Dialog) } }}
   >
