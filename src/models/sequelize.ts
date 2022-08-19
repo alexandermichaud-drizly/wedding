@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize';
+import { Sequelize } from 'sequelize';
 
 const host = 'wedding-rsvp-database.c3xugced8cg2.us-east-1.rds.amazonaws.com';
 const dbUser = 'admin';

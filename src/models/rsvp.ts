@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize/types';
-import sequelize from '../sequelize';
+import sequelize from './sequelize';
 
 const Rsvp = sequelize.define('Rsvp', {
   id: {
