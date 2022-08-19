@@ -242,12 +242,13 @@ div.PhotoComment {
   flex-direction: row;
   margin-top: 48px;
 
-  a {
+  .Code {
     max-width: 35vw;
   }
 
   img {
     width: 100%;
+    height: 100%;
     filter: drop-shadow(4px 4px 4px black);
   }
 
@@ -256,6 +257,6 @@ div.PhotoComment {
   }
 
   img.Venmo {
-    height: 100%;
+    transform: scale(1.08);
   }
 }

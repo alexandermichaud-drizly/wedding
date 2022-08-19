@@ -24,12 +24,16 @@ const Gifts = (): JSX.Element => {
         directly.
       </div>
       <div className={s.QRCodes}>
-        <a href={paypalLink}>
-          <img className={s.PayPal} src={PayPal} alt="PayPal QR Code" />
-        </a>
-        <a href={venmoLink}>
-          <img className={s.Venmo} src={Venmo} alt="Venmo QR Code" />
-        </a>
+        <div className={s.Code}>
+          <a href={paypalLink}>
+            <img className={s.PayPal} src={PayPal} alt="PayPal QR Code" />
+          </a>
+        </div>
+        <div className={s.Code}>
+          <a href={venmoLink}>
+            <img className={s.Venmo} src={Venmo} alt="Venmo QR Code" />
+          </a>
+        </div>
       </div>
     </div>
   );
