@@ -15,8 +15,7 @@ const Gifts = (): JSX.Element => {
       <div>
         We recently purchased our dream home, so if you are strongly inclined to
         give us something, we would greatly appreciate contributions that will
-        go toward furnishings, repairs, and upkeep. Anything helps, but again,
-        nothing is expected.
+        go toward furnishings, repairs, and upkeep.
       </div>
       <img src={Venmo} alt="Venmo QR Code" />
       <img src={PayPal} alt="PayPal QR Code" />

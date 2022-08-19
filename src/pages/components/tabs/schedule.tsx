@@ -25,7 +25,7 @@ const DAYS: Day[] = [
       },
       {
         time: '7PM',
-        title: 'Welcome Dinner, Courtesy of Mr. and Mrs. Zurita',
+        title: "Welcome Dinner, Courtesy of Andrea's Parents",
       },
     ],
   },

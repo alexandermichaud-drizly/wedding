@@ -19,14 +19,15 @@ const occasions: Occasion[] = [
   {
     title: 'Throughout the Week',
     general: 'Comfortable',
-    men: 'Bathing suits welcome. Summer wear recommended.',
-    women: 'Bathing suits welcome. Summer wear recommended.',
+    men: 'Bathing suits welcome. Summer wear and comfortable shoes recommended.',
+    women:
+      'Bathing suits welcome. Summer wear and comfortable shoes recommended.',
   },
   {
     title: 'Wedding Dinner',
     general: 'Black Tie',
     men: 'Tuxedos.',
-    women: 'Long Dresses.',
+    women: 'Midi or Long Dresses.',
   },
 ];
 
