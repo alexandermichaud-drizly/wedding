@@ -3,6 +3,10 @@ import s from '../../../styles/main.module.scss';
 import Venmo from '../../../assets/venmo_qr.png';
 import PayPal from '../../../assets/paypal_qr.png';
 
+const venmoLink =
+  'https://venmo.com/code?user_id=1357470307975168599&created=1660458710';
+const paypalLink = 'https://paypal.me/andreaandalexander';
+
 const Gifts = (): JSX.Element => {
   return (
     <div>
@@ -14,11 +18,19 @@ const Gifts = (): JSX.Element => {
       </div>
       <div>
         We recently purchased our dream home, so if you are strongly inclined to
-        give us something, we would greatly appreciate contributions that will
-        go toward furnishings, repairs, and upkeep.
+        give us something, we would greatly appreciate contributions toward the
+        cost of furnishings, repairs, and upkeep. Click on or scan the QR codes
+        below to send a gift online, or else feel free to get in touch with us
+        directly.
       </div>
-      <img src={Venmo} alt="Venmo QR Code" />
-      <img src={PayPal} alt="PayPal QR Code" />
+      <div className={s.QRCodes}>
+        <a href={paypalLink}>
+          <img className={s.PayPal} src={PayPal} alt="PayPal QR Code" />
+        </a>
+        <a href={venmoLink}>
+          <img className={s.Venmo} src={Venmo} alt="Venmo QR Code" />
+        </a>
+      </div>
     </div>
   );
 };

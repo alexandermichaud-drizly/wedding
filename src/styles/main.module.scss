@@ -235,3 +235,27 @@ div.PhotoComment {
   text-align: center;
   margin-bottom: 48px;
 }
+
+.QRCodes {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 48px;
+
+  a {
+    max-width: 35vw;
+  }
+
+  img {
+    width: 100%;
+    filter: drop-shadow(4px 4px 4px black);
+  }
+
+  img.PayPal {
+    border-radius: 0.4em;
+  }
+
+  img.Venmo {
+    height: 100%;
+  }
+}
