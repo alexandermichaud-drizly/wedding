@@ -1,6 +1,6 @@
 import * as React from 'react';
 import s from '../../../styles/main.module.scss';
-import RsvpModel from '../../../models/rsvp';
+import { searchGuest } from '../../../api';
 import { TextField, Button } from '@mui/material';
 
 const mailToLink = 'mailto:rsvp@andrea-alexander.wedding?subject=RSVP';
@@ -30,8 +30,8 @@ const RSVP = (): JSX.Element => {
       lastName: lastName ? '' : 'Enter a last name',
     });
 
-    if (!errors.firstName || !errors.lastName) return;
-    // RsvpModel.findAll({ where: { first_name: , last_name:  } })
+    if (errors.firstName || errors.lastName) return;
+    searchGuest(firstName, lastName);
   };
 
   return (
