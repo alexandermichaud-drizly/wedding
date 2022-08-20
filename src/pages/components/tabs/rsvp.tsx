@@ -1,7 +1,7 @@
 import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 import RsvpModel from '../../../models/rsvp';
-import { TextField } from '@mui/material';
+import { TextField, Button } from '@mui/material';
 
 const mailToLink = 'mailto:rsvp@andrea-alexander.wedding?subject=RSVP';
 
@@ -24,8 +24,12 @@ const RSVP = (): JSX.Element => {
   };
 
   const handleSearchName = () => {
-    if (!firstName) setErrors({ ...errors, firstName: 'Enter a first name' });
-    if (!lastName) setErrors({ ...errors, firstName: 'Enter a last name' });
+    setErrors({
+      ...errors,
+      firstName: firstName ? '' : 'Enter a first name',
+      lastName: lastName ? '' : 'Enter a last name',
+    });
+
     if (!errors.firstName || !errors.lastName) return;
     // RsvpModel.findAll({ where: { first_name: , last_name:  } })
   };
@@ -55,6 +59,7 @@ const RSVP = (): JSX.Element => {
           error={!!errors.lastName}
           helperText={errors.lastName}
         />
+        <Button onClick={handleSearchName}>Search</Button>
       </div>
     </div>
   );
