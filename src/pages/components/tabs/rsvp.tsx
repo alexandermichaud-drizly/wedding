@@ -2,6 +2,7 @@ import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 import { searchGuest } from '../../../api';
 import { TextField, Button } from '@mui/material';
+import { GuestData } from '../../../types';
 
 const mailToLink = 'mailto:rsvp@andrea-alexander.wedding?subject=RSVP';
 
@@ -13,6 +14,7 @@ const RSVP = (): JSX.Element => {
     lastName: '',
     lookup: '',
   });
+  const [matches, setMatches] = React.useState<GuestData[]>([]);
 
   const handleFirstNameChange = (e: any) => {
     setErrors({ ...errors, firstName: '' });
@@ -31,7 +33,16 @@ const RSVP = (): JSX.Element => {
     });
 
     if (errors.firstName || errors.lastName) return;
-    searchGuest(firstName, lastName);
+    const callback = (matchesReturned: GuestData[]) => {
+      if (matchesReturned && matchesReturned.length)
+        return setMatches(matchesReturned);
+      setErrors({
+        ...errors,
+        lookup:
+          "Looks like that name doesn't match any on our guest list. Make sure it's spelled right and try again. If you have multiple last names, just use your first. If you're still having trouble, please reach out and we'll get it sorted.",
+      });
+    };
+    searchGuest(firstName, lastName, callback);
   };
 
   return (
