@@ -10,21 +10,27 @@ const client = axios.create({
 export const searchGuest = (
   firstName: string,
   lastName: string,
-  callback: (matches: GuestData[]) => void
+  callback: (matches: GuestData[]) => void,
+  handleError: () => void
 ) => {
   client
     .get(`/guest?first_name=${firstName}&last_name=${lastName}`)
-    .then((response) => {
-      console.log(response);
-      const matchingNames: GuestData[] = get(response, 'data.matches');
+    .then((resp) => {
+      console.log(resp);
+      const matchingNames: GuestData[] = get(resp, 'data.matches');
       callback(matchingNames);
     })
-    .catch((error) => console.log(error));
+    .catch(handleError);
 };
 
-export const submitReply = (guestId: number, attending: boolean) => {
+export const submitReply = (
+  guestId: number,
+  attending: boolean,
+  callback: (resp: unknown) => void,
+  handleError: () => void
+) => {
   client
     .post('/reply', { guest_id: guestId, attending })
-    .then((response) => console.log(response))
-    .catch((error) => console.log(error));
+    .then((resp) => callback(resp))
+    .catch(handleError);
 };

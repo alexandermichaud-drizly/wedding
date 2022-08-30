@@ -1,6 +1,6 @@
 import * as React from 'react';
 import s from '../../../styles/main.module.scss';
-import { searchGuest } from '../../../api';
+import { searchGuest, submitReply } from '../../../api';
 import {
   TextField,
   Button,
@@ -10,8 +10,12 @@ import {
   MenuItem,
 } from '@mui/material';
 import { GuestData } from '../../../types';
+import { isNil } from 'lodash';
 
-const mailToLink = 'mailto:rsvp@andrea-alexander.wedding?subject=RSVP';
+enum Responses {
+  NOT_GOING,
+  GOING,
+}
 
 const RSVP = (): JSX.Element => {
   const [firstName, setFirstName] = React.useState('');
@@ -20,9 +24,12 @@ const RSVP = (): JSX.Element => {
     firstName: '',
     lastName: '',
     lookup: '',
+    reply: '',
   });
   const [matches, setMatches] = React.useState<GuestData[]>([]);
   const [selectedGuestId, setSelectedGuestId] = React.useState(null);
+  const [responseSubmitted, setResponseSubmitted] =
+    React.useState<Responses | null>(null);
 
   const handleFirstNameChange = (e: any) => {
     setErrors({ ...errors, firstName: '' });
@@ -33,13 +40,19 @@ const RSVP = (): JSX.Element => {
     setLastName(e.target.value);
   };
   const handleSelectName = (e: any) => setSelectedGuestId(e.target.value);
-
   const handleSearchName = () => {
+    const handleError = () =>
+      setErrors({
+        ...errors,
+        lookup:
+          'There was an error looking up your RSVP. Please reach out to us so that we can look into it.',
+      });
     setErrors({
       ...errors,
       firstName: firstName ? '' : 'Enter a first name',
       lastName: lastName ? '' : 'Enter a last name',
       lookup: '',
+      reply: '',
     });
 
     if (errors.firstName || errors.lastName) return;
@@ -54,11 +67,57 @@ const RSVP = (): JSX.Element => {
       });
       setMatches([]);
     };
-    searchGuest(firstName, lastName, callback);
+    searchGuest(firstName, lastName, callback, handleError);
   };
+
+  const handleSubmitReply = (reply: Responses) => {
+    setErrors({ ...errors, reply: '' });
+
+    const handleError = () =>
+      setErrors({
+        ...errors,
+        reply:
+          'There was an error processing your RSVP. Please reach out to us directly.',
+      });
+
+    if (!selectedGuestId) return handleError();
+    const callback = (resp: any) => {
+      const { message } = resp;
+      if (message && message.length && message[0])
+        return setResponseSubmitted(reply);
+    };
+    submitReply(selectedGuestId, !!reply, callback, handleError);
+  };
+
+  const selectedGuestData = selectedGuestId
+    ? matches.find((match) => (match.guest_id = selectedGuestId))
+    : null;
+
+  const ReplyButtons = !isNil(responseSubmitted) ? (
+    <div>
+      {responseSubmitted === Responses.GOING
+        ? "We're thrilled you can attend! See you in Tuscany!"
+        : "Thank you for RSVPing. We're sad to hear you can't attend the wedding, but our paths will surely cross again soon!"}
+    </div>
+  ) : (
+    <div>
+      Click to submit your RSVP!
+      <Button onClick={() => handleSubmitReply(Responses.GOING)}>
+        I&apos;m Going!
+      </Button>
+      <Button onClick={() => handleSubmitReply(Responses.NOT_GOING)}>
+        Unfortunately, I can&apos;t make it.
+      </Button>
+    </div>
+  );
 
   const NameSelect = (
     <div>
+      <div>
+        {selectedGuestId
+          ? ''
+          : 'Select your name from the matching results. If you don&apos;t see your name, check the spelling and try again. If you have two last names, use just the first.'}
+      </div>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Name</InputLabel>
         <Select
@@ -78,6 +137,17 @@ const RSVP = (): JSX.Element => {
           ))}
         </Select>
       </FormControl>
+      {selectedGuestData ? (
+        <div>
+          {selectedGuestData.attending || selectedGuestData.attending === false
+            ? `It looks like you've already responded that you are ${
+                selectedGuestData.attending ? '' : 'not'
+              } attending. If you'd like to change your RSVP, please get in touch with us directly.`
+            : ReplyButtons}
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 
@@ -85,13 +155,9 @@ const RSVP = (): JSX.Element => {
     <div className={s.RsvpContainer}>
       <h1>RSVP</h1>
       <div>
-        We ask that you RSVP by November 30, 2022 by contacting Andrea via{' '}
-        <a href="https://wa.me/13053363092">WhatsApp</a>, or by emailing us at{' '}
-        <a href={mailToLink}>rsvp@andrea-alexander.wedding</a>.
-      </div>
-      <div>
-        If your Save-the-Date was addressed to multiple invitees, please specify
-        if everyone listed can attend.
+        We ask that you RSVP by November 30, 2022. To submit your reply, start
+        by entering your first and last name below. If your Save-the-Date was
+        addressed to multiple invitees, search for each name individually.
       </div>
       <div className={s.TextFields}>
         <TextField
