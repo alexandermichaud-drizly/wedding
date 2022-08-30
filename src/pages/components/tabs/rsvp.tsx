@@ -1,7 +1,14 @@
 import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 import { searchGuest } from '../../../api';
-import { TextField, Button } from '@mui/material';
+import {
+  TextField,
+  Button,
+  InputLabel,
+  FormControl,
+  Select,
+  MenuItem,
+} from '@mui/material';
 import { GuestData } from '../../../types';
 
 const mailToLink = 'mailto:rsvp@andrea-alexander.wedding?subject=RSVP';
@@ -15,6 +22,7 @@ const RSVP = (): JSX.Element => {
     lookup: '',
   });
   const [matches, setMatches] = React.useState<GuestData[]>([]);
+  const [selectedGuestId, setSelectedGuestId] = React.useState(null);
 
   const handleFirstNameChange = (e: any) => {
     setErrors({ ...errors, firstName: '' });
@@ -24,16 +32,19 @@ const RSVP = (): JSX.Element => {
     setErrors({ ...errors, lastName: '' });
     setLastName(e.target.value);
   };
+  const handleSelectName = (e: any) => setSelectedGuestId(e.target.value);
 
   const handleSearchName = () => {
     setErrors({
       ...errors,
       firstName: firstName ? '' : 'Enter a first name',
       lastName: lastName ? '' : 'Enter a last name',
+      lookup: '',
     });
 
     if (errors.firstName || errors.lastName) return;
     const callback = (matchesReturned: GuestData[]) => {
+      setSelectedGuestId(null);
       if (matchesReturned && matchesReturned.length)
         return setMatches(matchesReturned);
       setErrors({
@@ -41,9 +52,34 @@ const RSVP = (): JSX.Element => {
         lookup:
           "Looks like that name doesn't match any on our guest list. Make sure it's spelled right and try again. If you have multiple last names, just use your first. If you're still having trouble, please reach out and we'll get it sorted.",
       });
+      setMatches([]);
     };
     searchGuest(firstName, lastName, callback);
   };
+
+  const NameSelect = (
+    <div>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Name</InputLabel>
+        <Select
+          labelId="name-select"
+          id="name-select"
+          value={selectedGuestId ?? ''}
+          label="Name"
+          onChange={handleSelectName}
+        >
+          {matches.map((guest) => (
+            <MenuItem
+              key={`${guest.last_name}-${guest.guest_id}`}
+              value={guest.guest_id}
+            >
+              {guest.first_name} {guest.last_name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </div>
+  );
 
   return (
     <div className={s.RsvpContainer}>
@@ -72,6 +108,8 @@ const RSVP = (): JSX.Element => {
         />
         <Button onClick={handleSearchName}>Search</Button>
       </div>
+      {errors.lookup ? <div>{errors.lookup}</div> : <></>}
+      {matches && matches.length ? NameSelect : <></>}
     </div>
   );
 };
