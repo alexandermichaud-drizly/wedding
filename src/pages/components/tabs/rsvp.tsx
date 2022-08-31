@@ -82,8 +82,9 @@ const RSVP = (): JSX.Element => {
 
     if (!selectedGuestId) return handleError();
     const callback = (resp: any) => {
-      const { message } = resp;
-      if (message && message.length && message[0])
+      console.log(resp);
+      const { data } = resp;
+      if (data.message && data.message.length && data.message[0])
         return setResponseSubmitted(reply);
     };
     submitReply(selectedGuestId, !!reply, callback, handleError);
@@ -97,7 +98,7 @@ const RSVP = (): JSX.Element => {
     <div>
       {responseSubmitted === Responses.GOING
         ? "We're thrilled you can attend! See you in Tuscany!"
-        : "Thank you for RSVPing. We're sad to hear you can't attend the wedding, but our paths will surely cross again soon!"}
+        : "Thank you for RSVPing. We're sad to hear you can't attend the wedding, but we hope to catch up with you sometime soon!"}
     </div>
   ) : (
     <div>
@@ -116,7 +117,7 @@ const RSVP = (): JSX.Element => {
       <div>
         {selectedGuestId
           ? ''
-          : 'Select your name from the matching results. If you don&apos;t see your name, check the spelling and try again. If you have two last names, use just the first.'}
+          : "Select your name from the matching results. If you don't see your name, check the spelling and try again. If you have two last names, use just the first."}
       </div>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Name</InputLabel>
