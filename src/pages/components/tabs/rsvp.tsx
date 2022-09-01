@@ -65,7 +65,7 @@ const RSVP = (): JSX.Element => {
       setErrors({
         ...errors,
         lookup:
-          "Looks like that name doesn't match any on our guest list. Make sure it's spelled right and try again. If you have multiple last names, just use your first. If you're still having trouble, please reach out and we'll get it sorted.",
+          "Looks like that name doesn't match anyone on our guest list. Make sure it's spelled right and try again. If you have multiple last names, just use your first. If you're still having trouble, please reach out and we'll get it sorted.",
       });
       setMatches([]);
     };
