@@ -86,12 +86,7 @@ const Main = (): JSX.Element => {
           <source src={valley} type="video/mp4" />
         </video>
       </Fade>
-      <Fade
-        in={fadeInImage}
-        timeout={FADE_IN_CASTLE_MS}
-        easing="ease-in"
-        mountOnEnter
-      >
+      <Fade in={fadeInImage} timeout={FADE_IN_CASTLE_MS} easing="ease-in">
         <div className={s.Main}>
           <IconButton onClick={toggleDrawer()}>
             <MenuIcon />
