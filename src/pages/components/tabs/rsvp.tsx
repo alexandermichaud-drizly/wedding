@@ -8,9 +8,11 @@ import {
   FormControl,
   Select,
   MenuItem,
+  Box,
 } from '@mui/material';
 import { GuestData } from '../../../types';
 import { isNil } from 'lodash';
+import classNames from 'classnames';
 
 enum Responses {
   NOT_GOING,
@@ -101,12 +103,18 @@ const RSVP = (): JSX.Element => {
         : "Thank you for RSVPing. We're sad to hear you can't attend the wedding, but we hope to catch up with you sometime soon!"}
     </div>
   ) : (
-    <div>
+    <div className={s.RsvpButtons}>
       Click to submit your RSVP!
-      <Button onClick={() => handleSubmitReply(Responses.GOING)}>
+      <Button
+        variant="contained"
+        onClick={() => handleSubmitReply(Responses.GOING)}
+      >
         I&apos;m Going!
       </Button>
-      <Button onClick={() => handleSubmitReply(Responses.NOT_GOING)}>
+      <Button
+        variant="outlined"
+        onClick={() => handleSubmitReply(Responses.NOT_GOING)}
+      >
         Unfortunately, I can&apos;t make it.
       </Button>
     </div>
@@ -155,28 +163,40 @@ const RSVP = (): JSX.Element => {
   return (
     <div className={s.RsvpContainer}>
       <h1>RSVP</h1>
-      <div>
+      <div className={s.Instructions}>
         We ask that you RSVP by November 30, 2022. To submit your reply, start
         by entering your first and last name below. If your Save-the-Date was
         addressed to multiple invitees, search for each name individually.
       </div>
-      <div className={s.TextFields}>
+      <Box className={s.RSVP}>
         <TextField
           label="First Name"
           InputProps={{ onChange: handleFirstNameChange }}
           error={!!errors.firstName}
           helperText={errors.firstName}
+          classes={{
+            root: classNames(s.TextField, s.Root),
+          }}
         />
         <TextField
           label="Last Name"
           InputProps={{ onChange: handleLastNameChange }}
           error={!!errors.lastName}
           helperText={errors.lastName}
+          classes={{
+            root: classNames(s.TextField, s.Root),
+          }}
         />
-        <Button onClick={handleSearchName}>Search</Button>
-      </div>
-      {errors.lookup ? <div>{errors.lookup}</div> : <></>}
-      {matches && matches.length ? NameSelect : <></>}
+        <Button
+          variant="text"
+          onClick={handleSearchName}
+          classes={{ root: classNames(s.SearchButton, s.Root) }}
+        >
+          Search
+        </Button>
+        {errors.lookup ? <div>{errors.lookup}</div> : <></>}
+        {matches && matches.length ? NameSelect : <></>}
+      </Box>
     </div>
   );
 };

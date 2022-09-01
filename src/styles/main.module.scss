@@ -43,7 +43,7 @@
   text-align: center;
   margin: 48px 0 24px;
   font-family: 'MinionVariableItalic';
-  font-size: 54px;
+  font-size: 48px;
 }
 
 .Names {
@@ -263,4 +263,37 @@ div.PhotoComment {
 
 .Italic {
   font-style: italic;
+}
+
+.RsvpContainer {
+  div.Instructions {
+    margin-bottom: 36px;
+  }
+
+  .RSVP {
+    display: flex;
+    flex-direction: column;
+
+    .TextField.Root {
+      margin-bottom: 6px;
+      font-size: 16px;
+      line-height: 18px;
+      font-family: 'MinionVariableRoman';
+
+      div {
+        font-family: 'MinionVariableRoman';
+      }
+    }
+
+    .SearchButton.Root {
+      font-family: 'MinionVariableRoman';
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .RsvpButtons {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
