@@ -74,17 +74,22 @@ const Main = (): JSX.Element => {
         }}
         unmountOnExit
       >
-        <video
-          autoPlay
-          muted
-          id="valley"
-          className={s.Video}
-          onTimeUpdate={handleTimeUpdate}
-          ref={videoRef}
-          onClick={onClickVideo}
-        >
-          <source src={valley} type="video/mp4" />
-        </video>
+        <div>
+          <video
+            autoPlay
+            muted
+            id="valley"
+            className={s.Video}
+            onTimeUpdate={handleTimeUpdate}
+            ref={videoRef}
+            onClick={onClickVideo}
+          >
+            <source src={valley} type="video/mp4" />
+          </video>
+          <div className={fadeInVideo ? s.VideoOverlay : s.DisplayNone}>
+            Click to skip
+          </div>
+        </div>
       </Fade>
       <Fade in={fadeInImage} timeout={FADE_IN_CASTLE_MS} easing="ease-in">
         <div className={s.Main}>
