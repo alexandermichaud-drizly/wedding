@@ -19,27 +19,28 @@ const CastleHistory = (): JSX.Element => (
         The castle plays a role in a notable period of Florentine history.
         Florence is widely known for being the birthplace of the Renaissance,
         and it owes much of this legacy to the influence of the Medicis. During
-        their time as de facto rulers of Florence, the House of Medici
-        accumulated many enemies who were jealous of their wealth, influence,
-        and power. Chief among them was the Pazzi family, who, in 1478, began
-        plotting to murder Lorenzo and Giuliano de&apos; Medici, heirs to the
-        Medici empire. It is believed that their plan was developed in secrecy
-        in the halls of Castello del Trebbio. Initially, the plan was to poison
-        the two brothers during a banquet at Villa Medici in Fiesole. However,
-        Giuliano suddenly fell ill and could not attend the banquet, and the
-        assassination was postponed to the following day.
+        their time as <span className={s.Italic}>de facto</span> rulers of
+        Florence, the House of Medici accumulated many enemies who were jealous
+        of their wealth, influence, and power. Chief among them was the Pazzi
+        family, who, in 1478, began plotting to murder Lorenzo and Giuliano
+        de&apos; Medici, heirs to the Medici empire. It is believed that their
+        plan was developed in secrecy in the halls of Castello del Trebbio.
+        Initially, the plan was to poison the two brothers during a banquet at
+        Villa Medici in Fiesole. However, Giuliano suddenly fell ill and could
+        not attend the banquet, and the assassination was postponed to the
+        following day.
       </div>
       <div>
         On Sunday, April 26th, 1478, the conspirators waited for Lorenzo and
         Giuliano to attend mass at the Cathedral of Santa Maria del Fiore. As
         the priest raised the consecrated Host and the congregation knelt and
-        bowed their heads in reverence, the assassin leapt at their vulnerable
+        bowed their heads in reverence, the assassins leapt at their vulnerable
         targets. Armed with daggers and swords, the Pazzis and their allies
         managed to take the life of Giuliano de&apos; Medici at the altar.
-        Lorenzo was wounded superficially at the base of his neck, but managed
-        to escape to the sacristy and barricade the entrance. The congregation
-        had fled in fear, but soon a crowd had assembled to disarm the
-        conspirators and allow Lorenzo to escape alive.
+        Lorenzo was wounded superficially at the base of his neck but managed to
+        escape to the sacristy, barricading the entrance. The congregation had
+        fled in fear, but soon a crowd had assembled to disarm the conspirators,
+        allowing Lorenzo to escape alive.
       </div>
       <div>
         Shortly after, Lorenzo gave the order to hang all the conspirators in

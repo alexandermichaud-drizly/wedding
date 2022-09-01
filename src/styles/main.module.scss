@@ -43,7 +43,7 @@
   text-align: center;
   margin: 48px 0 24px;
   font-family: 'MinionVariableItalic';
-  font-size: 54px;
+  font-size: 48px;
 }
 
 .Names {
@@ -259,4 +259,73 @@ div.PhotoComment {
   img.Venmo {
     transform: scale(1.08);
   }
+}
+
+.Italic {
+  font-style: italic;
+}
+
+.RsvpContainer {
+  div.Instructions {
+    margin-bottom: 36px;
+  }
+
+  .RSVP {
+    display: flex;
+    flex-direction: column;
+
+    .TextField.Root > p {
+      font-family: 'MinionVariableRoman';
+      font-size: 14px;
+    }
+
+    .Select.Root {
+      margin-bottom: 0;
+      line-height: 22px;
+    }
+
+    .InputLabel.Root {
+      font-family: 'MinionVariableRoman';
+    }
+
+    .TextField.Root,
+    .Select.Root {
+      font-size: 18px;
+      font-family: 'MinionVariableRoman';
+      line-height: 26px;
+
+      div,
+      label {
+        font-family: 'MinionVariableRoman';
+      }
+    }
+
+    .SearchButton.Root {
+      font-family: 'MinionVariableRoman';
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 24px;
+    }
+
+    .RsvpButtons {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      div {
+        margin: 24px 0;
+        font-size: 20px;
+      }
+
+      button {
+        margin: 12px 0;
+        font-family: 'MinionVariableRoman';
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.MenuProps.Paper > ul > li {
+  font-family: 'MinionVariableRoman';
 }

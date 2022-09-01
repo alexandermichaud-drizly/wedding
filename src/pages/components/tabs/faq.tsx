@@ -114,14 +114,14 @@ const faqs: Faq[] = [
   },
   {
     question:
-      'What are the surfaces at and around the Castle like? What shoes should I wear?',
+      'What are the surfaces around the Castle like? What shoes should I wear?',
     answer: (
       <div>
         The path in between the villas / apartments and the main restaurant and
-        Castle (where the wedding ceremony will be held) is not paved, but on
+        Castle (where the wedding ceremony will be held) is not paved, but
         gravel or grass, so please bring comfortable shoes! For the wedding
-        night, for women planning on wearing heels, we’d recommend considering
-        wedges (given the aperitivo will be at a courtyard, on grass).
+        night, for women who plan to wear heels, we’d recommend considering
+        wedges (given that the aperitivo will be on the grass courtyard).
       </div>
     ),
   },
