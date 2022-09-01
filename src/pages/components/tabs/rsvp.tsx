@@ -111,7 +111,7 @@ const RSVP = (): JSX.Element => {
         variant="contained"
         onClick={() => handleSubmitReply(Responses.GOING)}
       >
-        I&apos;m Going
+        Of course I&apos;m Going!
       </Button>
       <Button
         variant="outlined"
