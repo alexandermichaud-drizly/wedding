@@ -274,13 +274,28 @@ div.PhotoComment {
     display: flex;
     flex-direction: column;
 
-    .TextField.Root {
-      margin-bottom: 6px;
-      font-size: 16px;
-      line-height: 18px;
+    .TextField.Root > p {
       font-family: 'MinionVariableRoman';
+      font-size: 14px;
+    }
 
-      div {
+    .Select.Root {
+      margin-bottom: 0;
+      line-height: 22px;
+    }
+
+    .InputLabel.Root {
+      font-family: 'MinionVariableRoman';
+    }
+
+    .TextField.Root,
+    .Select.Root {
+      font-size: 18px;
+      font-family: 'MinionVariableRoman';
+      line-height: 26px;
+
+      div,
+      label {
         font-family: 'MinionVariableRoman';
       }
     }
@@ -295,6 +310,22 @@ div.PhotoComment {
     .RsvpButtons {
       display: flex;
       flex-direction: column;
+      text-align: center;
+
+      div {
+        margin: 24px 0;
+        font-size: 20px;
+      }
+
+      button {
+        margin: 12px 0;
+        font-family: 'MinionVariableRoman';
+        font-weight: 600;
+      }
     }
   }
+}
+
+.MenuProps.Paper > ul > li {
+  font-family: 'MinionVariableRoman';
 }

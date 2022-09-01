@@ -49,6 +49,7 @@ const RSVP = (): JSX.Element => {
         lookup:
           'There was an error looking up your RSVP. Please reach out to us so that we can look into it.',
       });
+
     setErrors({
       ...errors,
       firstName: firstName ? '' : 'Enter a first name',
@@ -57,7 +58,8 @@ const RSVP = (): JSX.Element => {
       reply: '',
     });
 
-    if (errors.firstName || errors.lastName) return;
+    if (!firstName || !lastName) return;
+    console.log(errors);
     const callback = (matchesReturned: GuestData[]) => {
       setSelectedGuestId(null);
       if (matchesReturned && matchesReturned.length)
@@ -65,7 +67,7 @@ const RSVP = (): JSX.Element => {
       setErrors({
         ...errors,
         lookup:
-          "Looks like that name doesn't match anyone on our guest list. Make sure it's spelled right and try again. If you have multiple last names, just use your first. If you're still having trouble, please reach out and we'll get it sorted.",
+          "Looks like that name doesn't match anyone on our guest list. Make sure it's spelled right and try again. If you have multiple last names, just use your first. If you're still having trouble, please reach out and we'll get it sorted out.",
       });
       setMatches([]);
     };
@@ -104,18 +106,18 @@ const RSVP = (): JSX.Element => {
     </div>
   ) : (
     <div className={s.RsvpButtons}>
-      Click to submit your RSVP!
+      <div>Click to submit your RSVP!</div>
       <Button
         variant="contained"
         onClick={() => handleSubmitReply(Responses.GOING)}
       >
-        I&apos;m Going!
+        I&apos;m Going
       </Button>
       <Button
         variant="outlined"
         onClick={() => handleSubmitReply(Responses.NOT_GOING)}
       >
-        Unfortunately, I can&apos;t make it.
+        Unfortunately, I can&apos;t make it
       </Button>
     </div>
   );
@@ -128,13 +130,20 @@ const RSVP = (): JSX.Element => {
           : "Select your name from the matching results. If you don't see your name, check the spelling and try again. If you have two last names, use just the first."}
       </div>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Name</InputLabel>
+        <InputLabel
+          id="select-label"
+          classes={{ root: classNames(s.InputLabel, s.Root) }}
+        >
+          Name
+        </InputLabel>
         <Select
           labelId="name-select"
           id="name-select"
           value={selectedGuestId ?? ''}
           label="Name"
           onChange={handleSelectName}
+          classes={{ select: classNames(s.Select, s.Root) }}
+          MenuProps={{ classes: { paper: classNames(s.MenuProps, s.Paper) } }}
         >
           {matches.map((guest) => (
             <MenuItem
