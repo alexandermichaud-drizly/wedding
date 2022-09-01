@@ -23,8 +23,8 @@ const SpecialActivities = (): JSX.Element => (
       <li>
         <span>Wine Tour:</span> Tour of two nearby wineries, with tastings and
         lunch included. Cost: 85 EUR per person. Transportation costs to and
-        from the vineyards paid at the time of the tour, estimated [TODO FILL IN
-        COST].
+        from the vineyards paid at the time of the tour. Exact transportation
+        costs TBD.
       </li>
       <li>
         <span>Florence Guided Tour:</span> 3 hour walking tour of Florence in

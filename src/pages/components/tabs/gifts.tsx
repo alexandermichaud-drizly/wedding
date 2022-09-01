@@ -17,11 +17,10 @@ const Gifts = (): JSX.Element => {
         greatest gift we can receive is your presence on our special day.
       </div>
       <div>
-        We recently purchased our dream home, so if you are strongly inclined to
-        give us something, we would greatly appreciate contributions toward the
-        cost of furnishings, repairs, and upkeep. Click on or scan the QR codes
-        below to send a gift online, or else feel free to get in touch with us
-        directly.
+        We recently purchased our dream home, so if you are inclined to give us
+        something, we would greatly appreciate contributions toward the cost of
+        furnishings, repairs, and upkeep. Click on or scan the QR codes below to
+        send a gift online, or else feel free to get in touch with us directly.
       </div>
       <div className={s.QRCodes}>
         <div className={s.Code}>
