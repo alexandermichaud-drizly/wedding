@@ -12,6 +12,7 @@ import CastleHistory from './tabs/castle_history';
 import SpecialActivities from './tabs/special_activities';
 import cn from 'classnames';
 import s from '../../styles/drawer.module.scss';
+import Contact from './tabs/contact';
 
 export type SectionType = {
   label: string;
@@ -62,6 +63,10 @@ export const Sections: SectionType[] = [
   {
     label: 'Castle Website',
     content: 'https://www.castellodeltrebbio.com/',
+  },
+  {
+    label: 'Contact Us',
+    content: <Contact />,
   },
   {
     label: 'RSVP',
