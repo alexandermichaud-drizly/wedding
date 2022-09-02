@@ -12,7 +12,7 @@ type Occasion = {
 const occasions: Occasion[] = [
   {
     title: 'Welcome Dinner',
-    general: 'White Night',
+    general: 'Semi-Formal',
     men: 'Jackets, Slacks / Chinos. Ties optional.',
     women: 'Cocktail Dresses or Sun Dresses.',
   },
@@ -39,14 +39,23 @@ const Attire = (): JSX.Element => (
         <h2>
           {occasion.title}: {occasion.general}
         </h2>
-        <div>
-          <span className={s.Gender}>Gentlemen: </span>
-          {occasion.men}
-        </div>
-        <div>
-          <span className={s.Gender}>Ladies: </span>
-          {occasion.women}
-        </div>
+        {occasion.men === occasion.women ? (
+          <div>
+            <span className={s.Gender}>Ladies and Gentlemen: </span>
+            {occasion.men}
+          </div>
+        ) : (
+          <>
+            <div>
+              <span className={s.Gender}>Ladies: </span>
+              {occasion.women}
+            </div>
+            <div>
+              <span className={s.Gender}>Gentlemen: </span>
+              {occasion.men}
+            </div>
+          </>
+        )}
       </div>
     ))}
   </div>
