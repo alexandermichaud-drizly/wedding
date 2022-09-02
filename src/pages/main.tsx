@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import s from '../styles/main.module.scss';
 import valley from '../assets/valley.mp4';
+import castle from '../assets/castle.png';
 import { Fade } from '@mui/material';
 import {
   FADE_OUT_VIDEO_MS,
@@ -17,9 +18,6 @@ import Countdown from './components/countdown';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from '@mui/material';
 import Divider from './divider';
-
-const castle =
-  'https://imagedelivery.net/Xh-8qVol1Pftdals16ieKg/10958120-22ce-4772-2969-86061babe800/public';
 
 const Main = (): JSX.Element => {
   const videoRef = useRef() as React.RefObject<HTMLVideoElement>;

@@ -1,8 +1,10 @@
 import * as React from 'react';
 import s from '../../../styles/main.module.scss';
-import Venmo from '../../../assets/venmo_qr.png';
-import PayPal from '../../../assets/paypal_qr.png';
 
+const venmoSrc =
+  'https://imagedelivery.net/Xh-8qVol1Pftdals16ieKg/3e954264-7c4d-4fc6-605a-09280385b200/public';
+const paypalSrc =
+  'https://imagedelivery.net/Xh-8qVol1Pftdals16ieKg/69fbe449-d286-40f3-b3f1-8aca6ec10000/public';
 const venmoLink = 'https://venmo.com/code?user_id=1702589049602048491';
 const paypalLink = 'https://paypal.me/andreaandalexander';
 
@@ -24,12 +26,12 @@ const Gifts = (): JSX.Element => {
       <div className={s.QRCodes}>
         <div className={s.Code}>
           <a href={paypalLink}>
-            <img className={s.PayPal} src={PayPal} alt="PayPal QR Code" />
+            <img className={s.PayPal} src={paypalSrc} alt="PayPal QR Code" />
           </a>
         </div>
         <div className={s.Code}>
           <a href={venmoLink}>
-            <img className={s.Venmo} src={Venmo} alt="Venmo QR Code" />
+            <img className={s.Venmo} src={venmoSrc} alt="Venmo QR Code" />
           </a>
         </div>
       </div>
