@@ -3,8 +3,7 @@ import s from '../../../styles/main.module.scss';
 import Venmo from '../../../assets/venmo_qr.png';
 import PayPal from '../../../assets/paypal_qr.png';
 
-const venmoLink =
-  'https://venmo.com/code?user_id=1357470307975168599&created=1660458710';
+const venmoLink = 'https://venmo.com/code?user_id=1702589049602048491';
 const paypalLink = 'https://paypal.me/andreaandalexander';
 
 const Gifts = (): JSX.Element => {
