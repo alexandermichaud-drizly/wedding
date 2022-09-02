@@ -33,8 +33,12 @@ const DAYS: Day[] = [
     date: 'Monday, May 22',
     events: [
       {
-        time: '10AM',
+        time: '9AM',
         title: 'American Breakfast on the Restaurant Terrace',
+      },
+      {
+        time: '12PM',
+        title: 'Lunch of Grilled Italian Meats',
       },
       {
         time: '3PM',

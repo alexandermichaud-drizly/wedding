@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 
@@ -15,8 +16,8 @@ const faqs: Faq[] = [
         <ul>
           <li>May 21st (Arrival and check-in): Traditional Tuscan Dinner</li>
           <li>
-            May 22nd (Free Day): American Breakfast Buffet, Afternoon Gelatto
-            Bar, Wood-Fired Oven Pizza Dinner
+            May 22nd (Free Day): American Breakfast Buffet, Lunch of Grilled
+            Italian Meats, Afternoon Gelatto Bar, Wood-Fired Oven Pizza Dinner
           </li>
           <li>
             May 23rd (Wedding Day): Italian Breakfast Buffet, Aperitivo, Wedding
@@ -28,12 +29,11 @@ const faqs: Faq[] = [
           </li>
           <li>May 25th (Checkout): None – Checkout by 9AM</li>
         </ul>
-        Italian meals are large, so two per day will be enough for most. If you
-        anticipate that you would like additional meals, see below for more food
-        / dining options. PLEASE NOTE: The wedding dinner is a multi-course,
-        traditional Italian feast with generous portions. We know because we
-        tried it ourselves. We strongly recommend you save your appetite on the
-        wedding day.
+        If you anticipate that you would like additional meals or snacks, see
+        below for more food / dining options. PLEASE NOTE: The wedding dinner is
+        a multi-course, traditional Italian feast with generous portions. We
+        know because we tried it ourselves. We strongly recommend you save your
+        appetite on the wedding day.
       </div>
     ),
   },
@@ -59,13 +59,9 @@ const faqs: Faq[] = [
           events. If you are interested in freshly made, hot takeout food from
           the restaurant please contact us to order it at least 2 months before
           the wedding date; please specify for which days and times you would
-          like the order to be available. Takeout options include:
+          like the order to be available. Takeout options include Baked Lasagna,
+          Baked Pasta, Eggplant Parmigiana, each for $18 EUR per person.
         </div>
-        <ul>
-          <li>Baked Lasagna: $18 EUR per person</li>
-          <li>Baked Pasta: $18 EUR per person</li>
-          <li>Eggplant Parmigiana: $18 EUR per person</li>
-        </ul>
       </div>
     ),
   },
@@ -89,7 +85,8 @@ const faqs: Faq[] = [
     answer: (
       <div>
         Wine is included with the welcome dinner, the pizza dinner, and the
-        wedding feast. There will also be cocktails with the wedding aperitivo,
+        wedding feast. The castle&apos;s sparkling wine (Vino Spumante di
+        Qualità Brut Metodo Classico) will be served with the wedding aperitivo,
         and an open bar during the wedding party.
       </div>
     ),
