@@ -1,6 +1,4 @@
-import classNames from 'classnames';
 import * as React from 'react';
-import s from '../../../styles/main.module.scss';
 
 type Faq = {
   question: string;
@@ -84,10 +82,10 @@ const faqs: Faq[] = [
     question: 'What drinks are included?',
     answer: (
       <div>
-        Wine is included with the welcome dinner, the pizza dinner, and the
-        wedding feast. The castle&apos;s sparkling wine (Vino Spumante di
-        Qualità Brut Metodo Classico) will be served with the wedding aperitivo,
-        and an open bar during the wedding party.
+        Wine is included with the welcome dinner, lunch and dinner on the second
+        day, and the wedding feast. The castle&apos;s sparkling wine (Vino
+        Spumante di Qualità Brut Metodo Classico) will be served with the
+        wedding aperitivo, and an open bar during the wedding party.
       </div>
     ),
   },

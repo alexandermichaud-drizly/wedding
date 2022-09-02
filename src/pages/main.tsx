@@ -77,7 +77,6 @@ const Main = (): JSX.Element => {
         <div>
           <video
             autoPlay
-            muted
             id="valley"
             className={s.Video}
             onTimeUpdate={handleTimeUpdate}
