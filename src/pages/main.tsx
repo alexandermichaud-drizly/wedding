@@ -82,6 +82,7 @@ const Main = (): JSX.Element => {
             onTimeUpdate={handleTimeUpdate}
             ref={videoRef}
             onClick={onClickVideo}
+            muted
           >
             <source src={valley} type="video/mp4" />
           </video>
