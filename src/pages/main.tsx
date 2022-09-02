@@ -34,7 +34,7 @@ const Main = (): JSX.Element => {
 
   const handleSelectionClick = (section: SectionType) => () => {
     if (typeof section.content === 'string')
-      return window.open(section.content);
+      return window ? window.open(section.content) : null;
     setSelectedSection(section);
   };
 
