@@ -6,3 +6,10 @@ export type GuestData = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type CloudflareImageRequestResponse = {
+  result?: {
+    variants?: string[];
+  };
+  [key: string]: unknown;
+};

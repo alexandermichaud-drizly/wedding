@@ -1,55 +1,3 @@
-import WineShop from '../../../assets/venue_photos/wine_shop.jpg';
-import VillaEntrance from '../../../assets/venue_photos/villa_entrance.jpg';
-import Castle from '../../../assets/venue_photos/castle.jpg';
-import CypressTrees from '../../../assets/venue_photos/cypress_trees.jpg';
-import RoadToCastle from '../../../assets/venue_photos/road_to_castle.jpg';
-import Valley from '../../../assets/venue_photos/valley.jpg';
-import Olio from '../../../assets/venue_photos/olio.jpg';
-import Magnum from '../../../assets/venue_photos/magnum.jpg';
-import Window from '../../../assets/venue_photos/window.jpg';
-import CastleFromADistance from '../../../assets/venue_photos/castle_from_a_distance.jpg';
-import Door from '../../../assets/venue_photos/door.jpg';
-import Chairs from '../../../assets/venue_photos/chairs.jpg';
-import Hearth from '../../../assets/venue_photos/hearth.jpg';
-import Garden from '../../../assets/venue_photos/garden.jpg';
-import Barrels from '../../../assets/venue_photos/barrels.jpg';
-import Well from '../../../assets/venue_photos/well.jpg';
-import Gate from '../../../assets/venue_photos/gate.jpg';
-import Cellar from '../../../assets/venue_photos/cellar.jpg';
-import LakeView from '../../../assets/venue_photos/lake_view.jpg';
-import Wines from '../../../assets/venue_photos/wines.jpg';
-import Restaurant from '../../../assets/venue_photos/restaurant.jpg';
-import BasilGarden from '../../../assets/venue_photos/basil_garden.jpg';
-import CastelloDelTrebbio from '../../../assets/venue_photos/castello_del_trebbio.jpg';
-import Vineyard from '../../../assets/venue_photos/vineyard.jpg';
-import CastleNight from '../../../assets/venue_photos/castle_night.jpg';
-import Terrace from '../../../assets/venue_photos/terrace.jpg';
-import Patio from '../../../assets/venue_photos/patio.jpg';
-import LongTable from '../../../assets/venue_photos/long_table.jpg';
-import Wall from '../../../assets/venue_photos/wall.jpg';
-import Arch from '../../../assets/venue_photos/arch.jpg';
-import Millstone from '../../../assets/venue_photos/millstone.jpg';
-import Lake from '../../../assets/venue_photos/lake.jpg';
-import Villa from '../../../assets/venue_photos/villa.jpg';
-
-import CheekKiss from '../../../assets/engagement_photos/cheek_kiss.jpg';
-import Dinner from '../../../assets/engagement_photos/dinner.jpg';
-import Drink from '../../../assets/engagement_photos/drink.jpg';
-import FeaturedPhoto from '../../../assets/engagement_photos/featured_photo.jpg';
-import Fireworks from '../../../assets/engagement_photos/fireworks.jpg';
-import Hotel from '../../../assets/engagement_photos/hotel.jpg';
-import Kiss from '../../../assets/engagement_photos/kiss.jpg';
-import Knee from '../../../assets/engagement_photos/knee.jpg';
-import LightWriting from '../../../assets/engagement_photos/light_writing.jpg';
-import NextDay from '../../../assets/engagement_photos/next_day.jpg';
-import Obelisk from '../../../assets/engagement_photos/obelisk.jpg';
-import Ring from '../../../assets/engagement_photos/ring.jpg';
-import Shoulder from '../../../assets/engagement_photos/shoulder.jpg';
-import SpanishSteps from '../../../assets/engagement_photos/spanish_steps.jpg';
-import Stumbling from '../../../assets/engagement_photos/stumbling.jpg';
-import Tree from '../../../assets/engagement_photos/tree.jpg';
-import UnderTheLights from '../../../assets/engagement_photos/under_the_lights.jpg';
-
 type Photo = {
   src: string;
   alt: string;
@@ -59,223 +7,223 @@ type Photo = {
 
 export const VENUE_PHOTOS: Photo[] = [
   {
-    src: CastelloDelTrebbio,
+    src: 'castello_del_trebbio.jpg',
     alt: 'Castello del Trebbio',
   },
   {
-    src: Vineyard,
+    src: 'vineyard.jpg',
     alt: 'Vineyard',
     cols: 2,
     rows: 2,
   },
   {
-    src: WineShop,
+    src: 'wine_shop.jpg',
     alt: 'Wine Shop',
     rows: 2,
   },
   {
-    src: BasilGarden,
+    src: 'basil_garden.jpg',
     alt: 'Basil Garden',
   },
   {
-    src: RoadToCastle,
+    src: 'road_to_castle.jpg',
     alt: 'Road to Castle',
     rows: 2,
   },
   {
-    src: VillaEntrance,
+    src: 'villa_entrance.jpg',
     alt: 'Villa Entrance',
   },
   {
-    src: Castle,
+    src: 'castle.jpg',
     alt: 'Castle',
     cols: 2,
     rows: 2,
   },
   {
-    src: Garden,
+    src: 'garden.jpg',
     alt: 'Garden',
   },
   {
-    src: Olio,
+    src: 'olio.jpg',
     alt: 'Olio',
   },
   {
-    src: Valley,
+    src: 'valley.jpg',
     alt: 'Valley',
   },
   {
-    src: Well,
+    src: 'well.jpg',
     alt: 'Well',
     rows: 2,
   },
   {
-    src: Millstone,
+    src: 'millstone.jpg',
     alt: 'Millstone',
   },
   {
-    src: CypressTrees,
+    src: 'cypress_trees.jpg',
     alt: 'Cypress Trees',
   },
   {
-    src: Hearth,
+    src: 'hearth.jpg',
     alt: 'Hearth',
   },
   {
-    src: Door,
+    src: 'door.jpg',
     alt: 'Door',
   },
   {
-    src: Chairs,
+    src: 'chairs.jpg',
     alt: 'Chairs',
   },
   {
-    src: CastleFromADistance,
+    src: 'castle_from_a_distance.jpg',
     alt: 'Castle From a Distance',
   },
   {
-    src: Barrels,
+    src: 'barrels.jpg',
     alt: 'barrels',
   },
   {
-    src: Window,
+    src: 'window.jpg',
     alt: 'Window',
   },
   {
-    src: Lake,
+    src: 'lake.jpg',
     alt: 'Lake',
   },
   {
-    src: Cellar,
+    src: 'cellar.jpg',
     alt: 'Cellar',
     cols: 2,
   },
   {
-    src: Magnum,
+    src: 'magnum.jpg',
     alt: 'Magnum',
   },
   {
-    src: Patio,
+    src: 'patio.jpg',
     alt: 'Patio',
   },
   {
-    src: Wines,
+    src: 'wines.jpg',
     alt: 'Wines',
   },
   {
-    src: Terrace,
+    src: 'terrace.jpg',
     alt: 'Terrace',
   },
   {
-    src: Villa,
+    src: 'villa.jpg',
     alt: 'Villa',
   },
   {
-    src: Arch,
+    src: 'arch.jpg',
     alt: 'Arch',
   },
   {
-    src: LongTable,
+    src: 'long_table.jpg',
     alt: 'Long Table',
   },
   {
-    src: LakeView,
+    src: 'lake_view.jpg',
     alt: 'Lake View',
   },
   {
-    src: Wall,
+    src: 'wall.jpg',
     alt: 'Wall',
   },
   {
-    src: CastleNight,
+    src: 'castle_night.jpg',
     alt: 'Castle Night',
     rows: 2,
     cols: 3,
   },
   {
-    src: Restaurant,
+    src: 'restaurant.jpg',
     alt: 'Restaurant',
   },
   {
-    src: Gate,
+    src: 'gate.jpg',
     alt: 'Gate',
   },
 ];
 
 export const ENGAGEMENT_PHOTOS: Photo[] = [
   {
-    src: FeaturedPhoto,
+    src: 'featured_photo.jpg',
     alt: 'Featured Photo',
     cols: 2,
     rows: 2,
   },
   {
-    src: SpanishSteps,
+    src: 'spanish_steps.jpg',
     alt: 'Spanish Steps',
   },
   {
-    src: NextDay,
+    src: 'next_day.jpg',
     alt: 'Next Day',
   },
   {
-    src: Hotel,
+    src: 'hotel.jpg',
     alt: 'Hotel',
     cols: 2,
   },
   {
-    src: Fireworks,
+    src: 'fireworks.jpg',
     alt: 'Fireworks',
   },
   {
-    src: UnderTheLights,
+    src: 'under_the_lights.jpg',
     alt: 'Under the Lights',
   },
   {
-    src: Knee,
+    src: 'knee.jpg',
     alt: 'Knee',
     rows: 2,
     cols: 2,
   },
   {
-    src: Ring,
+    src: 'ring.jpg',
     alt: 'Ring',
   },
   {
-    src: Drink,
+    src: 'drink.jpg',
     alt: 'Drink',
   },
   {
-    src: Shoulder,
+    src: 'shoulder.jpg',
     alt: 'Shoulder',
   },
   {
-    src: Kiss,
+    src: 'kiss.jpg',
     alt: 'Kiss',
   },
   {
-    src: Dinner,
+    src: 'dinner.jpg',
     alt: 'Dinner',
   },
   {
-    src: LightWriting,
+    src: 'light_writing.jpg',
     alt: 'Light Writing',
   },
   {
-    src: Tree,
+    src: 'tree.jpg',
     alt: 'Tree',
     cols: 2,
     rows: 2,
   },
   {
-    src: CheekKiss,
+    src: 'cheek_kiss.jpg',
     alt: 'Cheek Kiss',
   },
   {
-    src: Obelisk,
+    src: 'obelisk.jpg',
     alt: 'Obelisk',
   },
   {
-    src: Stumbling,
+    src: 'stumbling.jpg',
     alt: 'Stumbling',
     cols: 2,
   },

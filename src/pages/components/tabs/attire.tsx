@@ -14,7 +14,7 @@ const occasions: Occasion[] = [
     title: 'Welcome Dinner',
     general: 'Semi-Formal',
     men: 'Jackets, Slacks. Ties optional.',
-    women: 'Cocktail Dresses or Sun Dresses.',
+    women: 'Cocktail Dresses.',
   },
   {
     title: 'Throughout the Week',
