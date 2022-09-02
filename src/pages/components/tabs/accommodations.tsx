@@ -26,6 +26,20 @@ const Accommodations = (): JSX.Element => (
       questions about your accommodations, feel free to reach out to us
       directly.
     </div>
+    <div>
+      If you are curious to learn more about the accommodations and their
+      amenities, see the following links to the castle website:
+      <ul>
+        <li>
+          <a href="https://www.castellodeltrebbio.com/en/villas/">Villas</a>
+        </li>
+        <li>
+          <a href="https://www.castellodeltrebbio.com/en/castle-stays-tuscany/">
+            Apartments
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 );
 

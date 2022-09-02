@@ -11,7 +11,8 @@ const GettingThere = (): JSX.Element => (
       be the Florence airport (FLO). You will almost certainly have to stop over
       in a larger European city on the way. If you are travelling in Italy
       beforehand, you might also consider arriving by train. We are also able to
-      arrange transportation from the Santa Maria Novella station.
+      arrange transportation from the Santa Maria Novella station. If you have
+      rented a car, there is free parking on-site.
     </div>
     <div>
       The castle is approximately a half hour drive from Florence.

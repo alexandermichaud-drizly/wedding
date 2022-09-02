@@ -31,8 +31,12 @@ const Main = (): JSX.Element => {
     (newValue = !drawerOpen) =>
     (): void =>
       setDrawerOpen(newValue);
-  const handleSelectionClick = (section: SectionType) => () =>
+
+  const handleSelectionClick = (section: SectionType) => () => {
+    if (typeof section.content === 'string')
+      return window ? window.open(section.content) : null;
     setSelectedSection(section);
+  };
 
   useEffect((): void => {
     const video = videoRef.current;
@@ -77,12 +81,12 @@ const Main = (): JSX.Element => {
         <div>
           <video
             autoPlay
-            muted
             id="valley"
             className={s.Video}
             onTimeUpdate={handleTimeUpdate}
             ref={videoRef}
             onClick={onClickVideo}
+            muted
           >
             <source src={valley} type="video/mp4" />
           </video>
