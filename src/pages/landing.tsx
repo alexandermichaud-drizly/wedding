@@ -7,13 +7,15 @@ import {
   TextField,
 } from '@mui/material';
 import cn from 'classnames';
-import ring from '../assets/ring.jpg';
 import s from '../styles/landing.module.scss';
 
 type LandingPageProps = {
   tempPage: boolean;
   onPasswordChange?(e: React.ChangeEvent<HTMLTextAreaElement>): void;
 };
+
+const ring =
+  'https://imagedelivery.net/Xh-8qVol1Pftdals16ieKg/bd5412fb-8727-4abc-04f1-2e76f5407100/public';
 
 const Background = (): JSX.Element => (
   <div className={s.Background}>
