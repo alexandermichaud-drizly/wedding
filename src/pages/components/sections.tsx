@@ -1,68 +1,72 @@
-import * as React from "react";
-import { Box, Drawer, List, ListItemButton, ListItemText } from "@mui/material";
-import Photos from "./tabs/photos";
-import RSVP from "./tabs/rsvp";
-import Schedule from "./tabs/schedule";
-import GettingThere from "./tabs/getting_there";
-import Accommodations from "./tabs/accommodations";
-import Gifts from "./tabs/gifts";
-import FAQ from "./tabs/faq";
-import Attire from "./tabs/attire";
-import CastleHistory from "./tabs/castle_history";
-import SpecialActivities from "./tabs/special_activities";
-import cn from "classnames";
-import s from "../../styles/drawer.module.scss";
+import * as React from 'react';
+import { Box, Drawer, List, ListItemButton, ListItemText } from '@mui/material';
+import Photos from './tabs/photos';
+import RSVP from './tabs/rsvp';
+import Schedule from './tabs/schedule';
+import GettingThere from './tabs/getting_there';
+import Accommodations from './tabs/accommodations';
+import Gifts from './tabs/gifts';
+import FAQ from './tabs/faq';
+import Attire from './tabs/attire';
+import CastleHistory from './tabs/castle_history';
+import SpecialActivities from './tabs/special_activities';
+import cn from 'classnames';
+import s from '../../styles/drawer.module.scss';
 
 export type SectionType = {
   label: string;
-  content: JSX.Element;
+  content: JSX.Element | string;
 };
 
 export const Sections: SectionType[] = [
   {
-    label: "Schedule",
-    content: <Schedule />
+    label: 'Schedule',
+    content: <Schedule />,
   },
   {
-    label: "Getting There",
-    content: <GettingThere />
+    label: 'Getting There',
+    content: <GettingThere />,
   },
   {
-    label: "Accommodations",
-    content: <Accommodations />
+    label: 'Accommodations',
+    content: <Accommodations />,
   },
   {
-    label: "Attire",
-    content: <Attire />
+    label: 'Attire',
+    content: <Attire />,
   },
   {
-    label: "Gifts",
-    content: <Gifts />
+    label: 'Gifts',
+    content: <Gifts />,
   },
   {
-    label: "History of the Castle",
-    content: <CastleHistory />
+    label: 'History of the Castle',
+    content: <CastleHistory />,
   },
   {
-    label: "Special Activities",
-    content: <SpecialActivities />
+    label: 'Special Activities',
+    content: <SpecialActivities />,
   },
   {
-    label: "Venue Photos",
-    content: <Photos version="venue" />
+    label: 'Venue Photos',
+    content: <Photos version="venue" />,
   },
   {
-    label: "Engagement Photos",
-    content: <Photos version="engagement" />
+    label: 'Engagement Photos',
+    content: <Photos version="engagement" />,
   },
   {
-    label: "FAQ",
-    content: <FAQ />
+    label: 'FAQ',
+    content: <FAQ />,
   },
   {
-    label: "RSVP",
-    content: <RSVP />
-  }
+    label: 'Castle Website',
+    content: 'https://www.castellodeltrebbio.com/',
+  },
+  {
+    label: 'RSVP',
+    content: <RSVP />,
+  },
 ];
 
 export const drawer = (

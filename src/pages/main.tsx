@@ -31,8 +31,12 @@ const Main = (): JSX.Element => {
     (newValue = !drawerOpen) =>
     (): void =>
       setDrawerOpen(newValue);
-  const handleSelectionClick = (section: SectionType) => () =>
+
+  const handleSelectionClick = (section: SectionType) => () => {
+    if (typeof section.content === 'string')
+      return window.open(section.content);
     setSelectedSection(section);
+  };
 
   useEffect((): void => {
     const video = videoRef.current;
