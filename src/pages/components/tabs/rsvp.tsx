@@ -43,6 +43,7 @@ const RSVP = (): JSX.Element => {
   };
   const handleSelectName = (e: any) => setSelectedGuestId(e.target.value);
   const handleSearchName = () => {
+    setSelectedGuestId(null);
     setResponseSubmitted(null);
     const handleError = () =>
       setErrors({
@@ -61,7 +62,6 @@ const RSVP = (): JSX.Element => {
 
     if (!firstName || !lastName) return;
     const callback = (matchesReturned: GuestData[]) => {
-      setSelectedGuestId(null);
       if (matchesReturned && matchesReturned.length)
         return setMatches(matchesReturned);
       setErrors({
