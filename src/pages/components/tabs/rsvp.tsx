@@ -43,6 +43,7 @@ const RSVP = (): JSX.Element => {
   };
   const handleSelectName = (e: any) => setSelectedGuestId(e.target.value);
   const handleSearchName = () => {
+    setResponseSubmitted(null);
     const handleError = () =>
       setErrors({
         ...errors,
@@ -59,7 +60,6 @@ const RSVP = (): JSX.Element => {
     });
 
     if (!firstName || !lastName) return;
-    console.log(errors);
     const callback = (matchesReturned: GuestData[]) => {
       setSelectedGuestId(null);
       if (matchesReturned && matchesReturned.length)
@@ -86,7 +86,6 @@ const RSVP = (): JSX.Element => {
 
     if (!selectedGuestId) return handleError();
     const callback = (resp: any) => {
-      console.log(resp);
       const { data } = resp;
       if (data.message && data.message.length && data.message[0])
         return setResponseSubmitted(reply);
@@ -95,7 +94,7 @@ const RSVP = (): JSX.Element => {
   };
 
   const selectedGuestData = selectedGuestId
-    ? matches.find((match) => (match.guest_id = selectedGuestId))
+    ? matches.find((match) => match.guest_id === selectedGuestId)
     : null;
 
   const ReplyButtons = !isNil(responseSubmitted) ? (

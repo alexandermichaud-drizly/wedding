@@ -16,7 +16,6 @@ export const searchGuest = (
   client
     .get(`/guest?first_name=${firstName}&last_name=${lastName}`)
     .then((resp) => {
-      console.log(resp);
       const matchingNames: GuestData[] = get(resp, 'data.matches');
       callback(matchingNames);
     })
