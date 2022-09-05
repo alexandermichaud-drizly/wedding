@@ -32,7 +32,8 @@ const SpecialActivities = (): JSX.Element => (
       </li>
       <li>
         <span>Florence Guided Tour:</span> 3 hour walking tour of Florence in
-        small groups, with a professional guide. Cost TBD.
+        small groups, with a professional guide. Spanish-speaking tour guides
+        available on request. Cost TBD.
       </li>
       <li>
         <span>Cooking Class (min. 4 people):</span>
