@@ -156,6 +156,15 @@ const faqs: Faq[] = [
       </div>
     ),
   },
+  {
+    question: 'Are there taxis available for short trips?',
+    answer: (
+      <div>
+        Yes. The castle reception can arrange a taxi for you with about twenty
+        minutes&apos; notice.
+      </div>
+    ),
+  },
 ];
 
 const FAQ = (): JSX.Element => (
