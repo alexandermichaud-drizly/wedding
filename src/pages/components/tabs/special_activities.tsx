@@ -6,7 +6,6 @@ const SpecialActivities = (): JSX.Element => (
   <div className={s.SpecialActivities}>
     <h1>Special Activities</h1>
     <div className={classNames(s.Infinity, s.Pool)}>
-      {' '}
       <img
         src="https://imagedelivery.net/Xh-8qVol1Pftdals16ieKg/77fd4cc6-33ae-4f81-56b5-6a5afc66d300/public"
         alt="infinity_pool"
