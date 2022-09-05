@@ -347,3 +347,14 @@ div.PhotoComment {
 .ContactInfo {
   text-align: center;
 }
+
+.Infinity.Pool {
+  display: flex;
+  justify-content: center;
+
+  img {
+    border-radius: 12px;
+    filter: drop-shadow(4px 4px 4px black);
+  }
+  margin-bottom: 48px;
+}
