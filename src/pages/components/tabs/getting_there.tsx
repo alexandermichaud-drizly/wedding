@@ -22,6 +22,7 @@ const GettingThere = (): JSX.Element => (
       directly to the villa in which you are staying. Let us save you the
       trouble of bringing your bags up the hill!
     </div>
+    <div>Address: Via di Santa Brigida, 9, 50065 Pontassieve FI, Italy</div>
   </div>
 );
 

@@ -21,7 +21,7 @@ const DAYS: Day[] = [
       },
       {
         time: '6PM',
-        title: 'Welcome Cocktails + Castle Tour',
+        title: 'Wine Tasting + Castle Tour',
       },
       {
         time: '7PM',
