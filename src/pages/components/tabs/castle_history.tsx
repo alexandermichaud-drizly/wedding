@@ -24,11 +24,11 @@ const CastleHistory = (): JSX.Element => (
         of their wealth, influence, and power. Chief among them was the Pazzi
         family, who, in 1478, began plotting to murder Lorenzo and Giuliano
         de&apos; Medici, heirs to the Medici empire. It is believed that their
-        plan was developed in secrecy in the halls of Castello del Trebbio.
-        Initially, the plan was to poison the two brothers during a banquet at
-        Villa Medici in Fiesole. However, Giuliano suddenly fell ill and could
-        not attend the banquet, and the assassination was postponed to the
-        following day.
+        plan was developed in secrecy in the halls of the Pazzis&apos;
+        countryside estate, Castello del Trebbio. Initially, the plan was to
+        poison the two brothers during a banquet at Villa Medici in Fiesole.
+        However, Giuliano suddenly fell ill and could not attend the banquet,
+        and the assassination was postponed to the following day.
       </div>
       <div>
         On Sunday, April 26th, 1478, the conspirators waited for Lorenzo and
