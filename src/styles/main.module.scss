@@ -339,9 +339,18 @@ div.PhotoComment {
   font-family: 'MinionVariableRoman';
 }
 
-.Contact.Name {
-  margin-bottom: 8px;
-  font-weight: 700;
+.Contact.Main {
+  div {
+    margin-bottom: 24px;
+
+    div {
+      margin-bottom: auto;
+    }
+
+    div:first-child {
+      font-weight: 700;
+    }
+  }
 }
 
 .ContactInfo {
@@ -355,6 +364,7 @@ div.PhotoComment {
   img {
     border-radius: 12px;
     filter: drop-shadow(4px 4px 4px black);
+    max-width: 100%;
   }
   margin-bottom: 48px;
 }

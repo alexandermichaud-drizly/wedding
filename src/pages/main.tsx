@@ -102,7 +102,12 @@ const Main = (): JSX.Element => {
           </div>
         </div>
       </Fade>
-      <Fade in={fadeInImage} timeout={FADE_IN_CASTLE_MS} easing="ease-in">
+      <Fade
+        in={fadeInImage}
+        timeout={FADE_IN_CASTLE_MS}
+        easing="ease-in"
+        mountOnEnter
+      >
         <div className={s.Main}>
           <IconButton onClick={toggleDrawer()}>
             <MenuIcon />
