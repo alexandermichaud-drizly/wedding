@@ -10,11 +10,15 @@ const SpecialActivities = (): JSX.Element => (
     </div>
     <ul>
       <li>
+        <span>Swimming:</span> There are three pools on the property, for
+        exclusive use by all guests at no cost.
+      </li>
+      <li>
         <span>Hiking:</span> No cost. Maps available at the wine shop.
       </li>
       <li>
-        <span>E-Bike:</span> Traverse the grounds and nearby trails with speed
-        and ease. Cost TBD.
+        <span>E-Bike:</span> A faster way to explore the grounds and nearby
+        trails. Cost TBD.
       </li>
       <li>
         <span>Horseback Riding:</span> A leisurely ride on trails near the
