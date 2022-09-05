@@ -12,7 +12,8 @@ const Accommodations = (): JSX.Element => (
     <div>
       During our stay, our wedding party will have the entire property for
       exclusive use, meaning that we will be the only ones staying in the villas
-      and apartments. All accommodations are on the property, no more than a 5
+      and apartments. Four nights of accommodations are included for all guests
+      at no cost. All accommodations are on the property, no more than a five
       minute walk to the castle. Each has a living room and a kitchen, and the
       villas include larger common areas which can be enjoyed by any guests
       regardless of where they are staying. There are also three pools for
