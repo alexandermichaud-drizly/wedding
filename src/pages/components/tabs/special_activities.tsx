@@ -1,9 +1,17 @@
+import classNames from 'classnames';
 import * as React from 'react';
 import s from '../../../styles/main.module.scss';
 
 const SpecialActivities = (): JSX.Element => (
   <div className={s.SpecialActivities}>
     <h1>Special Activities</h1>
+    <div className={classNames(s.Infinity, s.Pool)}>
+      <img
+        src="https://imagedelivery.net/Xh-8qVol1Pftdals16ieKg/77fd4cc6-33ae-4f81-56b5-6a5afc66d300/public"
+        alt="infinity_pool"
+      ></img>
+    </div>
+
     <div>
       In addition to the meals and events on the schedule, the activities below
       will be available.
@@ -32,7 +40,8 @@ const SpecialActivities = (): JSX.Element => (
       </li>
       <li>
         <span>Florence Guided Tour:</span> 3 hour walking tour of Florence in
-        small groups, with a professional guide. Cost TBD.
+        small groups, with a professional guide. Spanish-speaking tour guides
+        available on request. Cost TBD.
       </li>
       <li>
         <span>Cooking Class (min. 4 people):</span>

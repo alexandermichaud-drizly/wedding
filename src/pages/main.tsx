@@ -27,6 +27,8 @@ const Main = (): JSX.Element => {
   const [selectedSection, setSelectedSection] = useState(Sections[0]);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  const contentRef = useRef<null | HTMLDivElement>(null);
+
   const toggleDrawer =
     (newValue = !drawerOpen) =>
     (): void =>
@@ -42,6 +44,11 @@ const Main = (): JSX.Element => {
     const video = videoRef.current;
     if (video) video.playbackRate = PLAYBACK_RATE;
   });
+
+  useEffect((): void => {
+    if (contentRef.current && !fadeInVideo)
+      contentRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [selectedSection]);
 
   const handleTimeUpdate = (): void => {
     const video = videoRef.current;
@@ -95,7 +102,12 @@ const Main = (): JSX.Element => {
           </div>
         </div>
       </Fade>
-      <Fade in={fadeInImage} timeout={FADE_IN_CASTLE_MS} easing="ease-in">
+      <Fade
+        in={fadeInImage}
+        timeout={FADE_IN_CASTLE_MS}
+        easing="ease-in"
+        mountOnEnter
+      >
         <div className={s.Main}>
           <IconButton onClick={toggleDrawer()}>
             <MenuIcon />
@@ -108,7 +120,9 @@ const Main = (): JSX.Element => {
           </div>
           <Countdown />
           <Divider />
-          <div className={s.Container}>{selectedSection.content}</div>
+          <div ref={contentRef} className={s.Container}>
+            {selectedSection.content}
+          </div>
           <div className={s.Author}>Site made by Alexander</div>
         </div>
       </Fade>
