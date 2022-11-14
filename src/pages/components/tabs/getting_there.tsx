@@ -8,11 +8,11 @@ const GettingThere = (): JSX.Element => (
       Regardless of your travel plans, contact us when you have determined when
       and how you&apos;ll arrive. We can help you arrange transportation
       that&apos;s offered by the venue. The most convenient point of entry will
-      be the Florence airport (FLO). You will almost certainly have to stop over
-      in a larger European city on the way. If you are travelling in Italy
-      beforehand, you might also consider arriving by train. We are also able to
-      arrange transportation from the Santa Maria Novella station. If you have
-      rented a car, there is free parking on-site.
+      be the Florence Airport, Peretola (FLR). You will almost certainly have to
+      stop over in a larger European city on the way. If you are travelling in
+      Italy beforehand, you might also consider arriving by train. We are also
+      able to arrange transportation from the Santa Maria Novella station. If
+      you have rented a car, there is free parking on-site.
     </div>
     <div>
       The castle is approximately a half hour drive from Florence.
