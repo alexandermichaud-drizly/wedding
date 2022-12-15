@@ -33,3 +33,15 @@ export const submitReply = (
     .then((resp) => callback(resp))
     .catch(handleError);
 };
+
+export const submitMealPreference = (
+  guestId: number,
+  meal: number,
+  callback: (resp: unknown) => void,
+  handleError: () => void
+) => {
+  client
+    .post('/meal', { guest_id: guestId, meal })
+    .then((resp) => callback(resp))
+    .catch(handleError);
+};
