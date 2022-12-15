@@ -15,7 +15,7 @@ export const searchGuest = (
 ) => {
   client
     .get(`/guest?first_name=${firstName}&last_name=${lastName}`)
-    .then((resp) => {
+    .then((resp: unknown) => {
       const matchingNames: GuestData[] = get(resp, 'data.matches');
       callback(matchingNames);
     })
@@ -30,7 +30,7 @@ export const submitReply = (
 ) => {
   client
     .post('/reply', { guest_id: guestId, attending })
-    .then((resp) => callback(resp))
+    .then((resp: unknown) => callback(resp))
     .catch(handleError);
 };
 
@@ -42,6 +42,6 @@ export const submitMealPreference = (
 ) => {
   client
     .post('/meal', { guest_id: guestId, meal })
-    .then((resp) => callback(resp))
+    .then((resp: unknown) => callback(resp))
     .catch(handleError);
 };
