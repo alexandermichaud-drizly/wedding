@@ -5,8 +5,9 @@ export enum Meals {
 }
 
 export enum DietaryRestrictions {
-  NONE,
-  VEGETARIAN,
+  VEGETARIAN = 1,
   VEGAN,
   GLUTEN_FREE,
 }
+
+export type DietaryRestrictionsType = Record<DietaryRestrictions, boolean>;

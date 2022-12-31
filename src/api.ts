@@ -1,5 +1,9 @@
 import axios from 'axios';
 import { get } from 'lodash';
+import {
+  DietaryRestrictions,
+  DietaryRestrictionsType,
+} from './constants/meal_preferences';
 import { GuestData } from './types';
 
 const client = axios.create({
@@ -37,11 +41,20 @@ export const submitReply = (
 export const submitMealPreference = (
   guestId: number,
   meal: number,
+  dietaryRestrictions: DietaryRestrictionsType,
+  allergies: string,
   callback: (resp: unknown) => void,
   handleError: () => void
 ) => {
   client
-    .post('/meal', { guest_id: guestId, meal })
+    .post('/meal', {
+      guest_id: guestId,
+      meal,
+      vegetarian: dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+      vegan: dietaryRestrictions[DietaryRestrictions.VEGAN],
+      gluten_free: dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+      allergies,
+    })
     .then((resp: unknown) => callback(resp))
     .catch(handleError);
 };
