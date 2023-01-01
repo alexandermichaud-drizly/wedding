@@ -1,5 +1,9 @@
 import axios from 'axios';
 import { get } from 'lodash';
+import {
+  DietaryRestrictions,
+  DietaryRestrictionsType,
+} from './constants/meal_preferences';
 import { GuestData } from './types';
 
 const client = axios.create({
@@ -15,7 +19,7 @@ export const searchGuest = (
 ) => {
   client
     .get(`/guest?first_name=${firstName}&last_name=${lastName}`)
-    .then((resp) => {
+    .then((resp: unknown) => {
       const matchingNames: GuestData[] = get(resp, 'data.matches');
       callback(matchingNames);
     })
@@ -30,6 +34,27 @@ export const submitReply = (
 ) => {
   client
     .post('/reply', { guest_id: guestId, attending })
-    .then((resp) => callback(resp))
+    .then((resp: unknown) => callback(resp))
+    .catch(handleError);
+};
+
+export const submitMealPreference = (
+  guestId: number,
+  meal: number,
+  dietaryRestrictions: DietaryRestrictionsType,
+  allergies: string,
+  callback: (resp: unknown) => void,
+  handleError: () => void
+) => {
+  client
+    .post('/meal', {
+      guest_id: guestId,
+      meal,
+      vegetarian: dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+      vegan: dietaryRestrictions[DietaryRestrictions.VEGAN],
+      gluten_free: dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+      allergies,
+    })
+    .then((resp: unknown) => callback(resp))
     .catch(handleError);
 };

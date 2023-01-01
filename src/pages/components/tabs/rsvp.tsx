@@ -172,6 +172,10 @@ const RSVP = (): JSX.Element => {
     <div className={s.RsvpContainer}>
       <h1>RSVP</h1>
       <div className={s.Instructions}>
+        RSVPs are now closed. Meal selection for attending guests will be
+        available soon.
+      </div>
+      {/*
         We ask that you RSVP by November 30, 2022. To submit your reply, start
         by entering your first and last name below. If your Save-the-Date was
         addressed to multiple invitees, search for each name individually.
@@ -204,7 +208,7 @@ const RSVP = (): JSX.Element => {
         </Button>
         {errors.lookup ? <div>{errors.lookup}</div> : <></>}
         {matches && matches.length ? NameSelect : <></>}
-      </Box>
+      </Box>*/}
     </div>
   );
 };
