@@ -3,6 +3,7 @@ import { get } from 'lodash';
 import {
   DietaryRestrictions,
   DietaryRestrictionsType,
+  Entrees,
 } from './constants/meal_preferences';
 import { GuestData } from './types';
 
@@ -40,9 +41,9 @@ export const submitReply = (
 
 export const submitMealPreference = (
   guestId: number,
-  meal: number,
+  meal: Entrees,
   dietaryRestrictions: DietaryRestrictionsType,
-  allergies: string,
+  allergies: string | undefined,
   callback: (resp: unknown) => void,
   handleError: () => void
 ) => {

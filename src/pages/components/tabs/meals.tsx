@@ -1,6 +1,6 @@
 import * as React from 'react';
 import s from '../../../styles/main.module.scss';
-import { searchGuest, submitReply } from '../../../api';
+import { searchGuest, submitMealPreference } from '../../../api';
 import {
   TextField,
   Button,
@@ -9,15 +9,28 @@ import {
   Select,
   MenuItem,
   Box,
+  FormGroup,
+  SelectChangeEvent,
+  FormControlLabel,
+  Checkbox,
 } from '@mui/material';
 import { GuestData } from '../../../types';
 import { isNil } from 'lodash';
 import classNames from 'classnames';
+import {
+  DietaryRestrictions,
+  Entrees,
+  MealPreferenceFormData,
+} from '../../../constants/meal_preferences';
 
-enum Responses {
-  NOT_GOING,
-  GOING,
-}
+const emptyMealState: MealPreferenceFormData = {
+  meal: null,
+  dietaryRestrictions: {
+    [DietaryRestrictions.VEGETARIAN]: null,
+    [DietaryRestrictions.VEGAN]: null,
+    [DietaryRestrictions.GLUTEN_FREE]: null,
+  },
+};
 
 const Meals = (): JSX.Element => {
   const [firstName, setFirstName] = React.useState('');
@@ -30,8 +43,16 @@ const Meals = (): JSX.Element => {
   });
   const [matches, setMatches] = React.useState<GuestData[]>([]);
   const [selectedGuestId, setSelectedGuestId] = React.useState(null);
-  const [responseSubmitted, setResponseSubmitted] =
-    React.useState<Responses | null>(null);
+  const [mealsSelected, setMealsSelected] =
+    React.useState<MealPreferenceFormData>(emptyMealState);
+  const [mealsSubmitted, setMealsSubmitted] =
+    React.useState<MealPreferenceFormData | null>(null);
+
+  const resetReplyError = () =>
+    setErrors({
+      ...errors,
+      reply: '',
+    });
 
   const handleFirstNameChange = (e: any) => {
     setErrors({ ...errors, firstName: '' });
@@ -44,7 +65,7 @@ const Meals = (): JSX.Element => {
   const handleSelectName = (e: any) => setSelectedGuestId(e.target.value);
   const handleSearchName = () => {
     setSelectedGuestId(null);
-    setResponseSubmitted(null);
+    setMealsSubmitted(emptyMealState);
     const handleError = () =>
       setErrors({
         ...errors,
@@ -74,50 +95,114 @@ const Meals = (): JSX.Element => {
     searchGuest(firstName, lastName, callback, handleError);
   };
 
-  const handleSubmitReply = (reply: Responses) => {
-    setErrors({ ...errors, reply: '' });
+  const handleMealChange = (event: SelectChangeEvent) => {
+    resetReplyError();
+    setMealsSelected({
+      ...mealsSelected,
+      meal: parseInt(event.target.value),
+    });
+  };
 
+  const handleDietaryRestrictionsChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    resetReplyError();
+    setMealsSelected({
+      ...mealsSelected,
+      dietaryRestrictions: {
+        ...mealsSelected.dietaryRestrictions,
+        [event.target.name]: event.target.checked,
+      },
+    });
+  };
+
+  const handleAllergiesChange = (e: any) => {
+    resetReplyError();
+    setMealsSelected({ ...mealsSelected, allergies: e.target.value });
+  };
+
+  const handleSubmitMealPreferences = () => {
     const handleError = () =>
       setErrors({
         ...errors,
         reply:
-          'There was an error processing your RSVP. Please reach out to us directly.',
+          'There was an error processing your meal preferences. Please reach out to us directly.',
       });
 
-    if (!selectedGuestId) return handleError();
+    if (!selectedGuestId || !mealsSelected.meal) return handleError();
     const callback = (resp: any) => {
       const { data } = resp;
       if (data.message && data.message.length && data.message[0])
-        return setResponseSubmitted(reply);
+        return setMealsSubmitted(mealsSelected);
     };
-    submitReply(selectedGuestId, !!reply, callback, handleError);
+    submitMealPreference(
+      selectedGuestId,
+      mealsSelected.meal,
+      mealsSelected.dietaryRestrictions,
+      mealsSelected.allergies,
+      callback,
+      handleError
+    );
   };
 
   const selectedGuestData = selectedGuestId
     ? matches.find((match) => match.guest_id === selectedGuestId)
     : null;
 
-  const ReplyButtons = !isNil(responseSubmitted) ? (
+  const MealSelection = !isNil(mealsSubmitted) ? (
     <div>
-      {responseSubmitted === Responses.GOING
-        ? "We're thrilled you can attend! See you in Tuscany!"
-        : "Thank you for RSVPing. We're sad to hear you can't attend the wedding, but we hope to catch up with you sometime soon!"}
+      {'Thanks for submitting your preferences! Get ready for a feast.'}
     </div>
   ) : (
     <div className={s.RsvpButtons}>
-      <div>Click to submit your RSVP!</div>
+      <FormControl>
+        <InputLabel>Meal</InputLabel>
+        <Select
+          labelId="meal-select-label"
+          id="meal-select"
+          value={mealsSelected.meal?.toString()}
+          label="Meal"
+          onChange={handleMealChange}
+        >
+          {Object.entries(Entrees).map((name, value) => (
+            <MenuItem key={value} value={value}>
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <FormGroup>
+        {Object.values(DietaryRestrictions).map((restriction) => (
+          <FormControlLabel
+            key={restriction}
+            control={
+              <Checkbox
+                checked={
+                  mealsSelected.dietaryRestrictions[restriction] ?? undefined
+                }
+                onChange={handleDietaryRestrictionsChange}
+                name={restriction}
+              />
+            }
+            label={restriction}
+          />
+        ))}
+      </FormGroup>
+      <TextField
+        label="Allergies"
+        InputProps={{ onChange: handleAllergiesChange }}
+        classes={{
+          root: classNames(s.TextField, s.Root),
+        }}
+      />
       <Button
-        variant="contained"
-        onClick={() => handleSubmitReply(Responses.GOING)}
+        variant="text"
+        onClick={handleSubmitMealPreferences}
+        classes={{ root: classNames(s.SearchButton, s.Root) }}
       >
-        Of course I&apos;m Going!
+        Submit
       </Button>
-      <Button
-        variant="outlined"
-        onClick={() => handleSubmitReply(Responses.NOT_GOING)}
-      >
-        Unfortunately, I can&apos;t make it
-      </Button>
+      {errors.lookup ? <div>{errors.reply}</div> : <></>}
     </div>
   );
 
@@ -156,11 +241,9 @@ const Meals = (): JSX.Element => {
       </FormControl>
       {selectedGuestData ? (
         <div>
-          {selectedGuestData.attending || selectedGuestData.attending === false
-            ? `It looks like you've already responded that you are ${
-                selectedGuestData.attending ? '' : 'not'
-              } attending. If you'd like to change your RSVP, please get in touch with us directly.`
-            : ReplyButtons}
+          {!selectedGuestData?.attending
+            ? `Our records say that you are not attending. Please get in touch with us if this is an error.`
+            : MealSelection}
         </div>
       ) : (
         <></>
