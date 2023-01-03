@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Drawer, List, ListItemButton, ListItemText } from '@mui/material';
 import Photos from './tabs/photos';
-import RSVP from './tabs/rsvp';
+import Meals from './tabs/meals';
 import Schedule from './tabs/schedule';
 import GettingThere from './tabs/getting_there';
 import Accommodations from './tabs/accommodations';
@@ -69,8 +69,8 @@ export const Sections: SectionType[] = [
     content: <Contact />,
   },
   {
-    label: 'RSVP',
-    content: <RSVP />,
+    label: 'Wedding Dinner',
+    content: <Meals />,
   },
 ];
 

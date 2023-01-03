@@ -19,7 +19,7 @@ enum Responses {
   GOING,
 }
 
-const RSVP = (): JSX.Element => {
+const Meals = (): JSX.Element => {
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
   const [errors, setErrors] = React.useState({
@@ -170,15 +170,10 @@ const RSVP = (): JSX.Element => {
 
   return (
     <div className={s.RsvpContainer}>
-      <h1>RSVP</h1>
+      <h1>Wedding Dinner Selection</h1>
       <div className={s.Instructions}>
-        RSVPs are now closed. Meal selection for attending guests will be
-        available soon.
-      </div>
-      {/*
-        We ask that you RSVP by November 30, 2022. To submit your reply, start
-        by entering your first and last name below. If your Save-the-Date was
-        addressed to multiple invitees, search for each name individually.
+        We ask that you share your meal preference by January 23, 2023. To
+        submit your reply, start by entering your first and last name below.
       </div>
       <Box className={s.RSVP}>
         <TextField
@@ -208,9 +203,10 @@ const RSVP = (): JSX.Element => {
         </Button>
         {errors.lookup ? <div>{errors.lookup}</div> : <></>}
         {matches && matches.length ? NameSelect : <></>}
-      </Box>*/}
+      </Box>
+      *
     </div>
   );
 };
 
-export default RSVP;
+export default Meals;
