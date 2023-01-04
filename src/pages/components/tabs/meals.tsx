@@ -107,7 +107,6 @@ const Meals = (): JSX.Element => {
   const handleDietaryRestrictionsChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    resetReplyError();
     setMealsSelected({
       ...mealsSelected,
       dietaryRestrictions: {
@@ -118,19 +117,20 @@ const Meals = (): JSX.Element => {
   };
 
   const handleAllergiesChange = (e: any) => {
-    resetReplyError();
     setMealsSelected({ ...mealsSelected, allergies: e.target.value });
   };
 
   const handleSubmitMealPreferences = () => {
-    const handleError = () =>
+    const handleError = (general = true) =>
       setErrors({
         ...errors,
-        reply:
-          'There was an error processing your meal preferences. Please reach out to us directly.',
+        reply: general
+          ? 'There was an error processing your meal preferences. Please reach out to us directly.'
+          : 'Please select a meal from the dropdown.',
       });
 
-    if (!selectedGuestId || !mealsSelected.meal) return handleError();
+    if (!selectedGuestId) return handleError();
+    if (!mealsSelected.meal) return handleError(false);
     const callback = (resp: any) => {
       const { data } = resp;
       if (data.message && data.message.length && data.message[0])
@@ -202,7 +202,11 @@ const Meals = (): JSX.Element => {
     </div>
   ) : (
     <div className={s.MealSelection}>
-      <FormControl fullWidth>
+      <div className={s.SelectionInstructions}>
+        Make your entrée selection using the dropdown below. If you are a
+        vegetarian or vegan, select Other.
+      </div>
+      <FormControl fullWidth error={!!errors.reply}>
         <InputLabel classes={{ root: classNames(s.InputLabel, s.Root) }}>
           Meal
         </InputLabel>
@@ -224,6 +228,9 @@ const Meals = (): JSX.Element => {
             ))}
         </Select>
       </FormControl>
+      <div className={s.SelectionInstructions}>
+        Check all restrictions that apply.
+      </div>
       <FormGroup>
         {Object.values(DietaryRestrictions).map((restriction) => (
           <FormControlLabel
@@ -242,6 +249,9 @@ const Meals = (): JSX.Element => {
           />
         ))}
       </FormGroup>
+      <div className={s.SelectionInstructions}>
+        Describe any allergies you have. If none, leave this box blank.
+      </div>
       <TextField
         label="Allergies"
         InputProps={{ onChange: handleAllergiesChange }}
@@ -256,7 +266,7 @@ const Meals = (): JSX.Element => {
       >
         Submit
       </Button>
-      {errors.lookup ? <div>{errors.reply}</div> : <></>}
+      {errors.reply ? <div>{errors.reply}</div> : <></>}
     </div>
   );
 
@@ -316,9 +326,33 @@ const Meals = (): JSX.Element => {
   return (
     <div className={s.RsvpContainer}>
       <h1>Wedding Dinner Selection</h1>
+      <div>
+        All guests will enjoy a five-course Italian feast on the evening of our
+        wedding. You will be served one of two menus, depending on your choice
+        of a main course. Here are the entrées to choose from:
+      </div>
+      <div className={s.FeastEntrees}>
+        Rossini filet served with foie gras, black truffle and housemade Vin
+        Santo, with a side of potato torte
+      </div>
+      <div className={s.FeastEntrees}>
+        Chicken medallion wrapped in strips of Tuscan bacon, with a side of
+        grilled vegetables
+      </div>
+      <div>
+        {
+          "The chef can also prepare menus that do not include meat. These menus vary significantly depending on individuals' other dietary needs."
+        }{' '}
+        <span className={s.MealPreferenceBold}>
+          {
+            'Please only select this option if you are a practicing vegetarian or vegan.'
+          }
+        </span>
+      </div>
       <div className={s.Instructions}>
-        We ask that you share your meal preference by January 23, 2023. To
-        submit your reply, start by entering your first and last name below.
+        We ask that you share your meal preference and dietary restrictions by{' '}
+        <span className={s.MealPreferenceBold}>January 23, 2023</span>. To
+        submit your selection, start by entering your first and last name below.
       </div>
       <Box className={s.RSVP}>
         <TextField
