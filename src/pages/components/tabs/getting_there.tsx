@@ -14,10 +14,12 @@ const GettingThere = (): JSX.Element => (
       larger European city on the way.
     </div>
     <div>
-      If you are travelling in Italy beforehand, you might also consider
-      arriving by train. We are also able to arrange transportation from the
-      Santa Maria Novella station. If you have rented a car, there is free
-      parking on-site.
+      Another option would be to fly into Rome (FCO) and take a train to
+      Florence. Many European budget airlines fly to Rome, the trains to
+      Florence are affordable, and the castle can pick you up from Santa Maria
+      Novella station. Trains in Italy are generally affordable, so you might
+      also consider arriving by train if you are traveling in Italy beforehand.
+      If you have rented a car, there is free parking on-site at the venue.
     </div>
     <div>
       The castle is approximately a half hour drive from Florence.
