@@ -317,14 +317,21 @@ div.PhotoComment {
       margin-bottom: 24px;
     }
 
-    .RsvpButtons {
+    .MealSelection {
       display: flex;
       flex-direction: column;
       text-align: center;
 
-      div {
-        margin: 24px 0;
-        font-size: 20px;
+      label.Checkbox.Root {
+        margin-right: 0;
+
+        span {
+          font-family: 'MinionVariableRoman';
+        }
+      }
+
+      .Select.Root {
+        text-align: left;
       }
 
       button {
@@ -368,4 +375,33 @@ div.PhotoComment {
     max-width: 100%;
   }
   margin-bottom: 48px;
+}
+
+.MealsAlreadySelected {
+  div.Selection {
+    margin-left: 14px;
+    margin-bottom: 12px;
+  }
+
+  div.GetInTouch {
+    margin-top: 6px;
+  }
+}
+
+.MealPreferenceBold {
+  font-weight: 600;
+}
+
+.FeastEntrees {
+  font-family: 'MinionVariableItalic';
+  text-align: center;
+}
+
+.SelectionInstructions,
+.SelectionInstructions.Root {
+  text-align: left;
+  font-family: 'MinionVariableRoman';
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 30px;
 }

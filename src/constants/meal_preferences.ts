@@ -1,13 +1,22 @@
-export enum Meals {
-  CHICKEN = 1,
-  STEAK,
-  OTHER,
+export enum Entrees {
+  Chicken = 1,
+  Steak,
+  Other,
 }
 
 export enum DietaryRestrictions {
-  VEGETARIAN = 1,
-  VEGAN,
-  GLUTEN_FREE,
+  VEGETARIAN = 'Vegetarian',
+  VEGAN = 'Vegan',
+  GLUTEN_FREE = 'Gluten Free',
 }
 
-export type DietaryRestrictionsType = Record<DietaryRestrictions, boolean>;
+export type DietaryRestrictionsType = Record<
+  DietaryRestrictions,
+  boolean | null
+>;
+
+export type MealPreferenceFormData = {
+  meal: Entrees | null;
+  dietaryRestrictions: DietaryRestrictionsType;
+  allergies?: string;
+};
