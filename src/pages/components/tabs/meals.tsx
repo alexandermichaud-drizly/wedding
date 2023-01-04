@@ -139,7 +139,8 @@ const Meals = (): JSX.Element => {
     if (!selectedGuestId) return handleError();
     if (!mealsSelected.meal) return handleError(submissionErrors.missingMeal);
     if (
-      mealsSelected.meal === Entrees.Other &&
+      mealsSelected.meal ===
+        Entrees['Other (Vegetarian, Vegan, Gluten-Free)'] &&
       !Object.values(mealsSelected.dietaryRestrictions).some((r) => !!r)
     )
       return handleError(submissionErrors.restrictions);
@@ -243,7 +244,8 @@ const Meals = (): JSX.Element => {
             ))}
         </Select>
       </FormControl>
-      {mealsSelected.meal === Entrees.Other && (
+      {mealsSelected.meal ===
+        Entrees['Other (Vegetarian, Vegan, Gluten-Free)'] && (
         <>
           <FormControl error={errors.reply === submissionErrors.restrictions}>
             <FormLabel

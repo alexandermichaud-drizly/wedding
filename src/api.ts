@@ -51,9 +51,9 @@ export const submitMealPreference = (
     .post('/meal', {
       guest_id: guestId,
       meal,
-      vegetarian: dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
-      vegan: dietaryRestrictions[DietaryRestrictions.VEGAN],
-      gluten_free: dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
+      vegetarian: !!dietaryRestrictions[DietaryRestrictions.VEGETARIAN],
+      vegan: !!dietaryRestrictions[DietaryRestrictions.VEGAN],
+      gluten_free: !!dietaryRestrictions[DietaryRestrictions.GLUTEN_FREE],
       allergies,
     })
     .then((resp: unknown) => callback(resp))

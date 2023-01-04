@@ -25,6 +25,10 @@ export const Sections: SectionType[] = [
     content: <Schedule />,
   },
   {
+    label: 'Wedding Dinner',
+    content: <Meals />,
+  },
+  {
     label: 'Getting There',
     content: <GettingThere />,
   },
@@ -67,10 +71,6 @@ export const Sections: SectionType[] = [
   {
     label: 'Contact Us',
     content: <Contact />,
-  },
-  {
-    label: 'Wedding Dinner',
-    content: <Meals />,
   },
 ];
 

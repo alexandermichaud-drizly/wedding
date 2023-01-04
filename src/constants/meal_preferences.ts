@@ -1,7 +1,7 @@
 export enum Entrees {
   Chicken = 1,
   Steak,
-  Other,
+  'Other (Vegetarian, Vegan, Gluten-Free)',
 }
 
 export enum DietaryRestrictions {
