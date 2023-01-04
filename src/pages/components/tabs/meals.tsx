@@ -150,6 +150,52 @@ const Meals = (): JSX.Element => {
     ? matches.find((match) => match.guest_id === selectedGuestId)
     : null;
 
+  const booleanToYesNo = (x: boolean) => (x ? 'Yes' : 'No');
+
+  const recordedMealSelection = (
+    entree: string | Entrees,
+    vegetarian: boolean,
+    vegan: boolean,
+    glutenFree: boolean,
+    allergies: string
+  ) => (
+    <div className={s.MealsAlreadySelected}>
+      <div>
+        {"Our records show you've already submitted your meal preferences."}
+      </div>
+      <div className={s.Selection}>
+        Entree: <span className={s.MealPreferenceBold}>{entree}</span>
+      </div>
+      <div className={s.Selection}>
+        Vegetarian:{' '}
+        <span className={s.MealPreferenceBold}>
+          {booleanToYesNo(vegetarian)}
+        </span>
+      </div>
+      <div className={s.Selection}>
+        Vegan:{' '}
+        <span className={s.MealPreferenceBold}>{booleanToYesNo(vegan)}</span>
+      </div>
+      <div className={s.Selection}>
+        Gluten-Free:{' '}
+        <span className={s.MealPreferenceBold}>
+          {booleanToYesNo(glutenFree)}
+        </span>
+      </div>
+      <div className={s.Selection}>
+        Allergies:{' '}
+        <span className={s.MealPreferenceBold}>
+          {!allergies ? 'None' : allergies}
+        </span>
+      </div>
+      <div className={s.GetInTouch}>
+        {
+          'If you need to change your selection, please get in touch with us as soon as possible.'
+        }
+      </div>
+    </div>
+  );
+
   const MealSelection = !isNil(mealsSubmitted) ? (
     <div>
       {'Thanks for submitting your preferences! Get ready for a feast.'}
@@ -171,9 +217,9 @@ const Meals = (): JSX.Element => {
         >
           {Object.entries(Entrees)
             .filter((entry) => isNaN(Number(entry[0])))
-            .map((name, value) => (
-              <MenuItem key={`meal-selection-${value}`} value={value}>
-                {name[0]}
+            .map((entry) => (
+              <MenuItem key={`meal-selection-${entry[1]}`} value={entry[1]}>
+                {entry[0]}
               </MenuItem>
             ))}
         </Select>
@@ -250,7 +296,15 @@ const Meals = (): JSX.Element => {
       {selectedGuestData ? (
         <div>
           {!selectedGuestData?.attending
-            ? `Our records say that you are not attending. Please get in touch with us if this is an error.`
+            ? 'Our records say that you are not attending. Please get in touch with us if this is an error.'
+            : selectedGuestData?.meal
+            ? recordedMealSelection(
+                Object.values(Entrees)[selectedGuestData.meal - 1],
+                !!selectedGuestData.vegetarian,
+                !!selectedGuestData.vegan,
+                !!selectedGuestData.gluten_free,
+                selectedGuestData.allergies ?? ''
+              )
             : MealSelection}
         </div>
       ) : (
@@ -295,7 +349,6 @@ const Meals = (): JSX.Element => {
         {errors.lookup ? <div>{errors.lookup}</div> : <></>}
         {matches && matches.length ? NameSelect : <></>}
       </Box>
-      *
     </div>
   );
 };
