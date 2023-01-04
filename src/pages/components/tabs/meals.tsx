@@ -65,7 +65,8 @@ const Meals = (): JSX.Element => {
   const handleSelectName = (e: any) => setSelectedGuestId(e.target.value);
   const handleSearchName = () => {
     setSelectedGuestId(null);
-    setMealsSubmitted(emptyMealState);
+    setMealsSelected(emptyMealState);
+    setMealsSubmitted(null);
     const handleError = () =>
       setErrors({
         ...errors,
@@ -154,21 +155,27 @@ const Meals = (): JSX.Element => {
       {'Thanks for submitting your preferences! Get ready for a feast.'}
     </div>
   ) : (
-    <div className={s.RsvpButtons}>
-      <FormControl>
-        <InputLabel>Meal</InputLabel>
+    <div className={s.MealSelection}>
+      <FormControl fullWidth>
+        <InputLabel classes={{ root: classNames(s.InputLabel, s.Root) }}>
+          Meal
+        </InputLabel>
         <Select
           labelId="meal-select-label"
           id="meal-select"
           value={mealsSelected.meal?.toString()}
           label="Meal"
           onChange={handleMealChange}
+          classes={{ select: classNames(s.Select, s.Root) }}
+          MenuProps={{ classes: { paper: classNames(s.MenuProps, s.Paper) } }}
         >
-          {Object.entries(Entrees).map((name, value) => (
-            <MenuItem key={value} value={value}>
-              {name}
-            </MenuItem>
-          ))}
+          {Object.entries(Entrees)
+            .filter((entry) => isNaN(Number(entry[0])))
+            .map((name, value) => (
+              <MenuItem key={`meal-selection-${value}`} value={value}>
+                {name[0]}
+              </MenuItem>
+            ))}
         </Select>
       </FormControl>
       <FormGroup>
@@ -185,6 +192,7 @@ const Meals = (): JSX.Element => {
               />
             }
             label={restriction}
+            classes={{ root: classNames(s.Checkbox, s.Root) }}
           />
         ))}
       </FormGroup>

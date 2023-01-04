@@ -317,14 +317,21 @@ div.PhotoComment {
       margin-bottom: 24px;
     }
 
-    .RsvpButtons {
+    .MealSelection {
       display: flex;
       flex-direction: column;
       text-align: center;
 
-      div {
-        margin: 24px 0;
-        font-size: 20px;
+      label.Checkbox.Root {
+        margin-right: 0;
+
+        span {
+          font-family: 'MinionVariableRoman';
+        }
+      }
+
+      .Select.Root {
+        text-align: left;
       }
 
       button {
