@@ -341,11 +341,11 @@ const Meals = (): JSX.Element => {
       </div>
       <div>
         {
-          "The chef can also prepare menus that do not include meat. These menus vary significantly depending on individuals' other dietary needs."
+          "The chef can also prepare menus that do not include meat or gluten. These menus vary significantly depending on the individual's specific dietary needs."
         }{' '}
         <span className={s.MealPreferenceBold}>
           {
-            'Please only select this option if you are a practicing vegetarian or vegan.'
+            'Please only select these options if you are a practicing vegetarian or vegan, or if you are gluten-intolerant.'
           }
         </span>
       </div>
