@@ -53,8 +53,7 @@ const Meals = (): JSX.Element => {
   const [selectedGuestId, setSelectedGuestId] = React.useState(null);
   const [mealsSelected, setMealsSelected] =
     React.useState<MealPreferenceFormData>(emptyMealState);
-  const [mealsSubmitted, setMealsSubmitted] =
-    React.useState<MealPreferenceFormData | null>(null);
+  const [mealsSubmitted, setMealsSubmitted] = React.useState(false);
 
   const resetReplyError = () =>
     setErrors({
@@ -74,7 +73,7 @@ const Meals = (): JSX.Element => {
   const handleSearchName = () => {
     setSelectedGuestId(null);
     setMealsSelected(emptyMealState);
-    setMealsSubmitted(null);
+    setMealsSubmitted(false);
     const handleError = () =>
       setErrors({
         ...errors,
@@ -147,7 +146,7 @@ const Meals = (): JSX.Element => {
     const callback = (resp: any) => {
       const { data } = resp;
       if (data.message && data.message.length && data.message[0])
-        return setMealsSubmitted(mealsSelected);
+        return setMealsSubmitted(true);
     };
     submitMealPreference(
       selectedGuestId,
@@ -209,7 +208,7 @@ const Meals = (): JSX.Element => {
     </div>
   );
 
-  const MealSelection = !isNil(mealsSubmitted) ? (
+  const MealSelection = mealsSubmitted ? (
     <div>
       {'Thanks for submitting your preferences! Get ready for a feast.'}
     </div>
