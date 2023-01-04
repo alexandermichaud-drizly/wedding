@@ -1,5 +1,3 @@
-import { DietaryRestrictions } from './constants/meal_preferences';
-
 export interface GuestData {
   guest_id: number;
   first_name: string;

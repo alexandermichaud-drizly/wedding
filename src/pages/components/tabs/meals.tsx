@@ -13,6 +13,7 @@ import {
   SelectChangeEvent,
   FormControlLabel,
   Checkbox,
+  FormLabel,
 } from '@mui/material';
 import { GuestData } from '../../../types';
 import { isNil } from 'lodash';
@@ -22,6 +23,13 @@ import {
   Entrees,
   MealPreferenceFormData,
 } from '../../../constants/meal_preferences';
+
+const submissionErrors = {
+  generic:
+    'There was an error processing your meal preferences. Please reach out to us directly.',
+  missingMeal: 'Please select a meal from the dropdown.',
+  restrictions: 'Please select a dietary restriction from the list.',
+};
 
 const emptyMealState: MealPreferenceFormData = {
   meal: null,
@@ -107,6 +115,7 @@ const Meals = (): JSX.Element => {
   const handleDietaryRestrictionsChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
+    resetReplyError();
     setMealsSelected({
       ...mealsSelected,
       dietaryRestrictions: {
@@ -121,16 +130,20 @@ const Meals = (): JSX.Element => {
   };
 
   const handleSubmitMealPreferences = () => {
-    const handleError = (general = true) =>
+    const handleError = (error = submissionErrors.generic) => {
       setErrors({
         ...errors,
-        reply: general
-          ? 'There was an error processing your meal preferences. Please reach out to us directly.'
-          : 'Please select a meal from the dropdown.',
+        reply: error,
       });
+    };
 
     if (!selectedGuestId) return handleError();
-    if (!mealsSelected.meal) return handleError(false);
+    if (!mealsSelected.meal) return handleError(submissionErrors.missingMeal);
+    if (
+      mealsSelected.meal === Entrees.Other &&
+      !Object.values(mealsSelected.dietaryRestrictions).some((r) => !!r)
+    )
+      return handleError(submissionErrors.restrictions);
     const callback = (resp: any) => {
       const { data } = resp;
       if (data.message && data.message.length && data.message[0])
@@ -203,10 +216,13 @@ const Meals = (): JSX.Element => {
   ) : (
     <div className={s.MealSelection}>
       <div className={s.SelectionInstructions}>
-        Make your entrée selection using the dropdown below. If you are a
-        vegetarian or vegan, select Other.
+        Make your entrée selection using the dropdown. If you require a
+        vegetarian, vegan, or gluten-free menu, select Other.
       </div>
-      <FormControl fullWidth error={!!errors.reply}>
+      <FormControl
+        fullWidth
+        error={errors.reply === submissionErrors.missingMeal}
+      >
         <InputLabel classes={{ root: classNames(s.InputLabel, s.Root) }}>
           Meal
         </InputLabel>
@@ -228,27 +244,36 @@ const Meals = (): JSX.Element => {
             ))}
         </Select>
       </FormControl>
-      <div className={s.SelectionInstructions}>
-        Check all restrictions that apply.
-      </div>
-      <FormGroup>
-        {Object.values(DietaryRestrictions).map((restriction) => (
-          <FormControlLabel
-            key={restriction}
-            control={
-              <Checkbox
-                checked={
-                  mealsSelected.dietaryRestrictions[restriction] ?? undefined
-                }
-                onChange={handleDietaryRestrictionsChange}
-                name={restriction}
-              />
-            }
-            label={restriction}
-            classes={{ root: classNames(s.Checkbox, s.Root) }}
-          />
-        ))}
-      </FormGroup>
+      {mealsSelected.meal === Entrees.Other && (
+        <>
+          <FormControl error={errors.reply === submissionErrors.restrictions}>
+            <FormLabel
+              classes={{ root: classNames(s.SelectionInstructions, s.Root) }}
+            >
+              Check all restrictions that apply.
+            </FormLabel>
+            <FormGroup>
+              {Object.values(DietaryRestrictions).map((restriction) => (
+                <FormControlLabel
+                  key={restriction}
+                  control={
+                    <Checkbox
+                      checked={
+                        mealsSelected.dietaryRestrictions[restriction] ??
+                        undefined
+                      }
+                      onChange={handleDietaryRestrictionsChange}
+                      name={restriction}
+                    />
+                  }
+                  label={restriction}
+                  classes={{ root: classNames(s.Checkbox, s.Root) }}
+                />
+              ))}
+            </FormGroup>
+          </FormControl>
+        </>
+      )}
       <div className={s.SelectionInstructions}>
         Describe any allergies you have. If none, leave this box blank.
       </div>
@@ -328,20 +353,20 @@ const Meals = (): JSX.Element => {
       <h1>Wedding Dinner Selection</h1>
       <div>
         All guests will enjoy a five-course Italian feast on the evening of our
-        wedding. You will be served one of two menus, depending on your choice
-        of a main course. Here are the entrées to choose from:
+        wedding. Most guests will be served one of two menus, depending on their
+        choice of a main course. Here are the entrées to choose from:
+      </div>
+      <div className={s.FeastEntrees}>
+        Chicken medallion wrapped in strips of Tuscan bacon, with a side of
+        Scarpaccia and grilled vegetables
       </div>
       <div className={s.FeastEntrees}>
         Rossini filet served with foie gras, black truffle and housemade Vin
         Santo, with a side of potato torte
       </div>
-      <div className={s.FeastEntrees}>
-        Chicken medallion wrapped in strips of Tuscan bacon, with a side of
-        grilled vegetables
-      </div>
       <div>
         {
-          "The chef can also prepare menus that do not include meat or gluten. These menus vary significantly depending on the individual's specific dietary needs."
+          "The chef can also prepare menus that do not include meat or gluten. Due to their preparation, the entrées listed above are not available on the gluten-free menu. Menus without meat or gluten will vary significantly depending on the individual's specific combination of dietary needs, e.g. the standard vegan menu may be substantially different from a vegan menu that is also gluten-free."
         }{' '}
         <span className={s.MealPreferenceBold}>
           {
