@@ -5,6 +5,7 @@ import Meals from './tabs/meals';
 import Schedule from './tabs/schedule';
 import GettingThere from './tabs/getting_there';
 import Accommodations from './tabs/accommodations';
+import CastleMap from './tabs/map';
 import Gifts from './tabs/gifts';
 import FAQ from './tabs/faq';
 import Attire from './tabs/attire';
@@ -67,6 +68,10 @@ export const Sections: SectionType[] = [
   {
     label: 'Castle Website',
     content: 'https://www.castellodeltrebbio.com/',
+  },
+  {
+    label: 'Castle Map',
+    content: <CastleMap />,
   },
   {
     label: 'Contact Us',
