@@ -15,65 +15,47 @@ const faqs: Faq[] = [
           <li>May 21st (Arrival and check-in): Traditional Tuscan Dinner</li>
           <li>
             May 22nd (Free Day): American Breakfast Buffet, Lunch of Grilled
-            Italian Meats, Afternoon Gelatto Bar, Wood-Fired Oven Pizza Dinner
+            Italian Meats, Wood-Fired Oven Pizza Dinner
           </li>
           <li>
-            May 23rd (Wedding Day): Italian Breakfast Buffet, Aperitivo, Wedding
-            Feast
+            May 23rd (Wedding Day): Italian Breakfast Buffet, Take-away Paninis,
+            Aperitivo, Wedding Feast
           </li>
           <li>
-            May 24th (Hangover Day): Italian Brunch Buffet, Afternoon Italian
-            Dessert Buffet
+            May 24th (Hangover Day): Italian Brunch Buffet, Dessert-for-Dinner
+            Gelato Cart
           </li>
           <li>May 25th (Checkout): None – Checkout by 9AM</li>
         </ul>
-        If you anticipate that you would like additional meals or snacks, see
-        below for more food / dining options. PLEASE NOTE: The wedding dinner is
-        a multi-course, traditional Italian feast with generous portions. We
-        know because we tried it ourselves. We strongly recommend you save your
-        appetite on the wedding day.
+        PLEASE NOTE: The wedding dinner is a multi-course, traditional Italian
+        feast with generous portions. We know because we tried it ourselves. We
+        strongly recommend you save your appetite on the wedding day, but for
+        those who will need something to hold them over, we're providing
+        take-away paninis that afternoon.
       </div>
     ),
   },
   {
-    question: 'Where can I purchase more food?',
+    question: 'What if I would like more food?',
     answer: (
       <div>
         <div>
           <div>
-            Every villa or apartment has at least one fully equipped kitchen
-            (including stove, oven, microwave, fridge, freezer, and coffee
-            maker). Kitchens will be stocked with some snacks and coffee.
+            Kitchens will be stocked with some snacks and coffee. There are
+            grocery stores a short driving distance (see below) where additional
+            groceries can be bought. There will be daily grocery runs for which
+            you’ll also be able to put in requests. Every villa or apartment has
+            at least one fully equipped kitchen (including stove, oven,
+            microwave, fridge, freezer, and coffee maker).
           </div>
           <div>
-            There are also grocery stores a short driving distance (see details
-            in a question below) where additional groceries can be bought. There
-            will be daily grocery runs for which you’ll also be able to put in
-            requests.
+            Cooperativa Di Consumo (5 min drive, small grocery store): Via
+            Fratelli Carli, 41, 50065 Molino del Piano
           </div>
-        </div>
-        <div>
-          Although there is a restaurant on-site, it only opens for special
-          events. If you are interested in freshly made, hot takeout food from
-          the restaurant please contact us to order it at least 2 months before
-          the wedding date; please specify for which days and times you would
-          like the order to be available. Takeout options include Baked Lasagna,
-          Baked Pasta, Eggplant Parmigiana, each for $18 EUR per person.
-        </div>
-      </div>
-    ),
-  },
-  {
-    question: 'What grocery stores are nearby?',
-    answer: (
-      <div>
-        <div>
-          Cooperativa Di Consumo (5 min drive, small grocery store): Via
-          Fratelli Carli, 41, 50065 Molino del Piano
-        </div>
-        <div>
-          Unicoop (14 min drive, large supermarket): 3, Piazza Alfredo e Carlo
-          del Vivo, 1, 50065 Pontassieve
+          <div>
+            Unicoop (14 min drive, large supermarket): 3, Piazza Alfredo e Carlo
+            del Vivo, 1, 50065 Pontassieve
+          </div>
         </div>
       </div>
     ),
