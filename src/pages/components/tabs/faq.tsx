@@ -31,7 +31,7 @@ const faqs: Faq[] = [
         feast with generous portions. We know because we tried it ourselves. We
         strongly recommend you save your appetite on the wedding day, but for
         those who will need something to hold them over, we're providing
-        take-away panini that afternoon.
+        take-away paninis that afternoon.
       </div>
     ),
   },

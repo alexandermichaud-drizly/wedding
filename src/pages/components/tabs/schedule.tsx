@@ -54,7 +54,7 @@ const DAYS: Day[] = [
         title: 'Italian Breakfast on the Restaurant Terrace',
       },
       {
-        time: '2PM',
+        time: '1PM',
         title: 'Take-away Paninis',
       },
       {
