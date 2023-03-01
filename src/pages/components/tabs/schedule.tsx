@@ -84,7 +84,7 @@ const DAYS: Day[] = [
       },
       {
         time: '4PM',
-        title: 'Gelato Dessert for Dinner',
+        title: 'Gelato Dessert-for-Dinner',
       },
     ],
   },
