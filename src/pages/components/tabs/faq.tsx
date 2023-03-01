@@ -18,7 +18,7 @@ const faqs: Faq[] = [
             Italian Meats, Wood-Fired Oven Pizza Dinner
           </li>
           <li>
-            May 23rd (Wedding Day): Italian Breakfast Buffet, Takeaway Paninis,
+            May 23rd (Wedding Day): Italian Breakfast Buffet, Take-away Paninis,
             Aperitivo, Wedding Feast
           </li>
           <li>
@@ -30,8 +30,8 @@ const faqs: Faq[] = [
         PLEASE NOTE: The wedding dinner is a multi-course, traditional Italian
         feast with generous portions. We know because we tried it ourselves. We
         strongly recommend you save your appetite on the wedding day, but for
-        those who will need something to hold them over, we're providing some
-        paninis and lasagna.
+        those who will need something to hold them over, we're providing
+        take-away panini that afternoon.
       </div>
     ),
   },
