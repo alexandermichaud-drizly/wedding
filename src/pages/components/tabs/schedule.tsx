@@ -41,10 +41,6 @@ const DAYS: Day[] = [
         title: 'Lunch of Grilled Italian Meats',
       },
       {
-        time: '3PM',
-        title: 'Poolside Gelatto',
-      },
-      {
         time: '7PM',
         title: 'Wood-Fired Pizza Dinner',
       },
@@ -56,6 +52,10 @@ const DAYS: Day[] = [
       {
         time: '10AM',
         title: 'Italian Breakfast on the Restaurant Terrace',
+      },
+      {
+        time: '2PM',
+        title: 'Paninis, Lasagna, and Eggplant Parmigiana',
       },
       {
         time: '5PM',
@@ -84,7 +84,7 @@ const DAYS: Day[] = [
       },
       {
         time: '4PM',
-        title: 'Italian Dessert Buffet',
+        title: 'Gelato Dessert for Dinner',
       },
     ],
   },

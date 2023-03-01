@@ -1,5 +1,5 @@
-import * as React from "react";
-import s from "../../styles/main.module.scss";
+import * as React from 'react';
+import s from '../../styles/main.module.scss';
 
 const Countdown = (): JSX.Element => {
   const today = new Date();
@@ -8,8 +8,12 @@ const Countdown = (): JSX.Element => {
 
   const days = Math.ceil((MAY_21.getTime() - today.getTime()) / ONE_DAY);
 
-  return (
+  return days ? (
     <div className={s.Countdown}>Only {days} days until the ceremony!</div>
+  ) : days < 0 ? (
+    <div className={s.Countdown}>The ceremony is today!</div>
+  ) : (
+    <div className={s.Countdown}>It's official! They're married!</div>
   );
 };
 
