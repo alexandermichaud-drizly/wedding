@@ -34,15 +34,15 @@ const DAYS: Day[] = [
     events: [
       {
         time: '9AM',
-        title: 'American Breakfast in the Restaurant',
+        title: 'American Breakfast in Sosta del Gusto',
       },
       {
         time: '12PM',
-        title: 'Lunch of Grilled Italian Meats',
+        title: 'Lunch of Grilled Italian Meats at Villa Faltignano',
       },
       {
         time: '7PM',
-        title: 'Wood-Fired Pizza Dinner',
+        title: 'Wood-Fired Pizza Dinner at Villa Faltignano',
       },
     ],
   },
@@ -51,7 +51,7 @@ const DAYS: Day[] = [
     events: [
       {
         time: '10AM',
-        title: 'Italian Breakfast on the Restaurant Terrace',
+        title: 'Italian Breakfast in Sosta del Gusto',
       },
       {
         time: '1PM',
@@ -80,7 +80,7 @@ const DAYS: Day[] = [
     events: [
       {
         time: '11AM',
-        title: 'Brunch on the Restaurant Terrace',
+        title: 'Brunch in Sosta del Gusto',
       },
       {
         time: '4PM',
