@@ -37,7 +37,7 @@ const DAYS: Day[] = [
         title: 'American Breakfast at Sosta del Gusto',
       },
       {
-        time: '12PM',
+        time: '1PM',
         title: 'Lunch of Grilled Italian Meats at Villa Faltignano',
       },
       {
@@ -83,7 +83,7 @@ const DAYS: Day[] = [
         title: 'Brunch at Sosta del Gusto',
       },
       {
-        time: '4PM',
+        time: '3PM',
         title: 'Gelato Dessert',
       },
       {
