@@ -34,7 +34,7 @@ const DAYS: Day[] = [
     events: [
       {
         time: '9AM',
-        title: 'American Breakfast in Sosta del Gusto',
+        title: 'American Breakfast at Sosta del Gusto',
       },
       {
         time: '12PM',
@@ -51,7 +51,7 @@ const DAYS: Day[] = [
     events: [
       {
         time: '10AM',
-        title: 'Italian Breakfast in Sosta del Gusto',
+        title: 'Italian Breakfast at Sosta del Gusto',
       },
       {
         time: '1PM',
@@ -80,7 +80,7 @@ const DAYS: Day[] = [
     events: [
       {
         time: '11AM',
-        title: 'Brunch in Sosta del Gusto',
+        title: 'Brunch at Sosta del Gusto',
       },
       {
         time: '4PM',
