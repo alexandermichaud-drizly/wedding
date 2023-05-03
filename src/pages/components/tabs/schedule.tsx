@@ -34,7 +34,7 @@ const DAYS: Day[] = [
     events: [
       {
         time: '9AM',
-        title: 'American Breakfast on the Restaurant Terrace',
+        title: 'American Breakfast in the Restaurant',
       },
       {
         time: '12PM',
@@ -84,7 +84,11 @@ const DAYS: Day[] = [
       },
       {
         time: '4PM',
-        title: 'Gelato Dessert-for-Dinner',
+        title: 'Gelato Dessert',
+      },
+      {
+        time: '5PM',
+        title: 'Fiesole Excursion',
       },
     ],
   },
@@ -93,7 +97,7 @@ const DAYS: Day[] = [
     events: [
       {
         time: '9AM',
-        title: 'Guests Check Out',
+        title: 'Guests Check Out at the Wine Shop',
       },
     ],
   },

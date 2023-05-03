@@ -21,11 +21,8 @@ const faqs: Faq[] = [
             May 23rd (Wedding Day): Italian Breakfast Buffet, Take-away Paninis,
             Aperitivo, Wedding Feast
           </li>
-          <li>
-            May 24th (Hangover Day): Italian Brunch Buffet, Dessert-for-Dinner
-            Gelato Cart
-          </li>
-          <li>May 25th (Checkout): None – Checkout by 9AM</li>
+          <li>May 24th (Hangover Day): Italian Brunch Buffet, Gelato Cart</li>
+          <li>May 25th (Checkout): None – Checkout by 9AM at the Wine Shop</li>
         </ul>
         PLEASE NOTE: The wedding dinner is a multi-course, traditional Italian
         feast with generous portions. We know because we tried it ourselves. We
