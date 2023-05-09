@@ -18,8 +18,8 @@ const Gifts = (): JSX.Element => {
         We recently purchased our dream home, so if you are inclined to give us
         something, we would greatly appreciate contributions toward the cost of
         furnishings, repairs, and upkeep. Those with Venmo can click or scan the
-        QR code below, or else we would happily accept lluvias de sobres at the
-        wedding.
+        QR code below, or else we would happily accept anything directly in
+        Florence (lluvia de sobres, como dirian en Colombia).
       </div>
       <div className={s.QRCodes}>
         <div className={s.Code}>
