@@ -27,7 +27,7 @@ const faqs: Faq[] = [
         PLEASE NOTE: The wedding dinner is a multi-course, traditional Italian
         feast with generous portions. We know because we tried it ourselves. We
         strongly recommend you save your appetite on the wedding day, but for
-        those who will need something to hold them over, we're providing
+        those who will need something to hold them over, we&apos;re providing
         take-away paninis that afternoon.
       </div>
     ),

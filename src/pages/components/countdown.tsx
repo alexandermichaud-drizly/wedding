@@ -13,7 +13,7 @@ const Countdown = (): JSX.Element => {
   ) : days < 0 ? (
     <div className={s.Countdown}>The ceremony is today!</div>
   ) : (
-    <div className={s.Countdown}>It's official! They're married!</div>
+    <div className={s.Countdown}>It&apos;s official! They&apos;re married!</div>
   );
 };
 

@@ -248,12 +248,16 @@ div.PhotoComment {
 
 .QRCodes {
   display: flex;
-  justify-content: space-between;
   flex-direction: row;
   margin-top: 48px;
+  justify-content: center;
 
   .Code {
     max-width: 35vw;
+
+    @media screen and (max-width: 600px) {
+      max-width: 50vw;
+    }
   }
 
   img {
