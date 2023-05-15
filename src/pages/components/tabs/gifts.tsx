@@ -19,7 +19,7 @@ const Gifts = (): JSX.Element => {
         something, we would greatly appreciate contributions toward the cost of
         furnishings, repairs, and upkeep. Those with Venmo can click or scan the
         QR code below, or else we would happily accept anything directly in
-        Florence (lluvia de sobres, como dirian en Colombia).
+        Florence (lluvia de sobres, como dirían en Colombia).
       </div>
       <div className={s.QRCodes}>
         <div className={s.Code}>
