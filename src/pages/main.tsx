@@ -114,7 +114,7 @@ const Main = (): JSX.Element => {
             <div className={s.MenuText}>Menu</div>
           </IconButton>
           <div className={s.Hero}>
-            <div className={s.JoinUs}>Join us May 23, 2023</div>
+            <div className={s.JoinUs}>Thanks for Joining Us!</div>
             <img className={s.Castle} src={castle} alt="castle" />
             <div className={s.Names}>Andrea and Alexander</div>
           </div>
