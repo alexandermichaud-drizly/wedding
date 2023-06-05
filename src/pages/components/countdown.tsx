@@ -3,17 +3,16 @@ import s from '../../styles/main.module.scss';
 
 const Countdown = (): JSX.Element => {
   const today = new Date();
-  const MAY_21 = new Date(2023, 4, 23);
+  const nextYear = today.getFullYear() + 1;
+  const MAY_23 = new Date(nextYear, 4, 23);
   const ONE_DAY = 1000 * 60 * 60 * 24;
 
-  const days = Math.ceil((MAY_21.getTime() - today.getTime()) / ONE_DAY);
+  const days = Math.ceil((MAY_23.getTime() - today.getTime()) / ONE_DAY);
 
-  return days ? (
-    <div className={s.Countdown}>Only {days} days until the ceremony!</div>
-  ) : days < 0 ? (
-    <div className={s.Countdown}>The ceremony is today!</div>
-  ) : (
-    <div className={s.Countdown}>It&apos;s official! They&apos;re married!</div>
+  return (
+    <div className={s.Countdown}>
+      Only {days} days until our {nextYear - 2023} year anniversary!
+    </div>
   );
 };
 
